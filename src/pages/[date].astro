@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import IssueBody from '../components/IssueBody.astro';
+import Title from '../components/Title.astro';
+import { getIssues, getSkipped, neighbours } from '../lib/issues';
+import { copy } from '../content/copy';
+import type { IssueEntry } from '../content/schema';
+
+export function getStaticPaths() {
+  const issues = getIssues();
+  const skipped = getSkipped();
+  const paths: { params: { date: string }; props: { entry?: IssueEntry; skipped?: { reason?: string } } }[] = [];
+  for (const e of issues) paths.push({ params: { date: e.date }, props: { entry: e } });
+  for (const [date, day] of skipped) paths.push({ params: { date }, props: { skipped: day } });
+  return paths;
+}
+
+const { entry, skipped } = Astro.props as {
+  entry?: IssueEntry;
+  skipped?: { reason?: string; proposed?: number; kept?: number };
+};
+const date = Astro.params.date!;
+const issues = getIssues();
+
+let title: string;
+let body = '';
+let prev: string | null = null;
+let next: string | null = null;
+if (entry) {
+  title = copy.issueHeader.title.replace('{subject}', entry.subject).replace('{n}', String(entry.issue));
+} else {
+  title = copy.skippedPage.h1.replace('{date}', date);
+  body =
+    skipped?.reason ??
+    copy.skippedPage.body
+      .replace('{proposed}', String(skipped?.proposed ?? 'a few'))
+      .replace('{kept}', String(skipped?.kept ?? 'too few'));
+  ({ prev, next } = neighbours(date, issues));
+}
+---
+
+{entry ? (
+  <Base title={title} description={copy.positioning.short}>
+    <IssueBody entry={entry} />
+  </Base>
+) : (
+  <Base title={title} description={copy.positioning.short}>
+    <main class="col">
+      <Title level={1}>{title}</Title>
+      <p class="text-fg-2">{body}</p>
+      <p class="flex gap-4">
+        {prev && <a href={`/${prev}`}>{copy.skippedPage.prev.replace('{date}', prev)}</a>}
+        {next && <a href={`/${next}`}>{copy.skippedPage.next.replace('{date}', next)}</a>}
+      </p>
+    </main>
+  </Base>
+)}

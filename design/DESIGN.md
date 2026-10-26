@@ -162,7 +162,7 @@ the h1, then h2 blocks (Title level 2, sans, not mono) in this order:
 ### subscribe `/subscribe` + state routes
 no js is required. the form posts to the provider, which redirects to a static state route.
 
-- **[decision]** provider = buttondown: double opt-in, markdown email, open/click tracking disabled.
+- ~~**[decision]** provider = buttondown~~ — **SUPERSEDED 2026-10-26 (Kevin): the sending relay is parked, no provider is chosen.** Intent: leaning AWS SES with hard cost guardrails, and the subscriber list is planned to live in our own database (self-hosted tool) rather than at the provider. Until a provider is actually chosen, **copy must not name one.**
 
 | state | route | what renders |
 |---|---|---|
@@ -247,7 +247,7 @@ all components live in `src/components/`. every list is `flex flex-col gap-*`, a
 - trap prevented: dropping the dropped list "because it looks negative". it is the evidence that curation happened, so it is required whenever `dropped > 0`.
 
 **`SubscribeForm.astro`** `{variant: "full" | "compact", state?: "invalid"}`
-- `<form method="post" action="https://buttondown.com/api/emails/embed-subscribe/yaan" class="flex flex-col gap-2">`.
+- `<form method="post" class="flex flex-col gap-2">` — **no `action`**: the backend is parked, so the form must be inert. Never point it at a provider that has not been chosen.
   - the compact variant starts with a micro fg-3 promise line.
   - field row `flex flex-wrap gap-2`. the input is `type=email name=email required autocomplete=email`, styled `bg-surface-2 border border-line-strong rounded-1 px-3 py-2 text-fg-1 flex-1 min-w-55`. the button is `bg-surface-2 border border-line-strong rounded-1 px-4 py-2 text-fg-1 font-medium`.
   - the `<label>` is visually hidden, never omitted.
@@ -316,7 +316,7 @@ The rendered example below shows each label followed by its value:
 
 `sources 214  read 61  proposed 9  dropped 4  by hand 1  kept 6`
 `models claude-sonnet-4.5 (scouts), gpt-5-mini (dedupe), claude-opus-4.1 (draft)`
-`assembled 05:40 utc  curator léa`
+`assembled 05:40 utc  curator kevin`
 
 ### section names, as rendered (name + descriptor)
 
@@ -336,14 +336,14 @@ The rendered example below shows each label followed by its value:
 - examples:
   `3 · anthropic.com · scout-labs`
   `5 · github.com · scout-tools`
-  `7 · arxiv.org · léa · added by hand`
+  `7 · arxiv.org · kevin · added by hand`
 - domain is the registrable domain with `www.` stripped. `arxiv.org`, not `arxiv.org/abs`. it is computed by `domainOf(url)` in `src/lib/url.ts` and never typed into content.
 
 ### signal + fleet signatures
 
 - signal: `— {curator}`
 - fleet: `— {agent} · {model}`. example: `— scout-sota · claude-sonnet-4.5`
-- fleet note voice, as an example: `i proposed two papers that turned out to be the same result posted twice. dedupe caught one; léa caught the other. i've added author-overlap to my check.`
+- fleet note voice, as an example: `i proposed two papers that turned out to be the same result posted twice. dedupe caught one; kevin caught the other. i've added author-overlap to my check.`
 
 ### signoff
 
@@ -434,7 +434,7 @@ skip everything else. cite each item by number as https://yetanotherainewsletter
 ### privacy blocks (h2 → body)
 
 - **who runs it**: `yaan is run by {curator}, an individual, from {country}. it is not a company and has no investors or sponsors.`
-- **what's stored**: `if you subscribe: your email address and the date you confirmed. it is held by buttondown, our email provider.`
+- **what's stored**: `if you subscribe: your email address and the date you confirmed, kept in our own database. no tracking pixels, no third-party analytics. the sending relay that will deliver issues is not chosen yet; it will be named here before any issue is sent.`
 - **what isn't**: `no cookies, no analytics, no fingerprinting, no open or click tracking. links in the email go straight to the source.`
 - **email**: `one email on days with an issue. unsubscribe with the link in any email; your address is deleted, not archived.`
 - **logs**: `the host keeps standard request logs (ip, path, user agent) for up to 30 days for abuse and debugging. we don't read them for anything else.`
@@ -471,7 +471,7 @@ title: "{subject}"
 date: 2026-10-26
 issue: 142
 url: https://yetanotherainewsletter.org/2026-10-26
-curator: léa
+curator: kevin
 assembled: 2026-10-26T05:40:00Z
 stats: {sources: 214, read: 61, proposed: 9, dropped: 4, hand: 1, kept: 6}
 models: ["claude-sonnet-4.5 (scouts)", "gpt-5-mini (dedupe)", "claude-opus-4.1 (draft)"]
@@ -539,7 +539,7 @@ sections appear in the fixed order and are omitted exactly when the html omits t
 - the prompt always contains the dated `.md` url and never `latest`.
 - accent appears in exactly one component. no arbitrary tailwind values. no `font-bold`.
 - every page works with js disabled. the only script is the copy-button script, and it is inline.
-- no third-party requests on page load: no fonts, analytics or embeds. buttondown is contacted only on form post.
+- no third-party requests on page load: no fonts, analytics or embeds. no request is made on form submit either until a sending relay is chosen.
 - issue urls are permanent. a published date never 404s and never redirects.
 
 ### how a cheaper implementing agent will get this wrong

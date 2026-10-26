@@ -1,0 +1,13 @@
+---
+import { copy } from '../content/copy';
+interface Props {
+  text: string;
+  curator: string;
+}
+const { text, curator } = Astro.props;
+---
+
+<div id="signoff" class="flex flex-col gap-1">
+  <p class="text-fg-2">{text}</p>
+  <p class="text-micro text-fg-3">{copy.signoff.suffix.replace('{curator}', curator)}</p>
+</div>

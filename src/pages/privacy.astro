@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import Title from '../components/Title.astro';
+import Prose from '../components/Prose.astro';
+import { copy } from '../content/copy';
+import { getLatest, getIssues } from '../lib/issues';
+
+// privacy blocks come from the copy deck verbatim (DESIGN.md §4).
+const curator = getLatest(getIssues()).curator;
+const blocks = [
+  { id: 'who-runs-it', heading: copy.privacy.whoRunsIt, paragraphs: [copy.privacy.whoRunsItBody.replace('{curator}', curator).replace('{country}', 'france')] },
+  { id: 'whats-stored', heading: copy.privacy.whatsStored, paragraphs: [copy.privacy.whatsStoredBody] },
+  { id: 'whats-not', heading: copy.privacy.whatsNot, paragraphs: [copy.privacy.whatsNotBody] },
+  { id: 'email', heading: copy.privacy.email, paragraphs: [copy.privacy.emailBody] },
+  { id: 'logs', heading: copy.privacy.logs, paragraphs: [copy.privacy.logsBody] },
+  { id: 'license', heading: copy.privacy.license, paragraphs: [copy.privacy.licenseBody] },
+  { id: 'contact', heading: copy.privacy.contact, paragraphs: [copy.privacy.contactBody] },
+];
+---
+
+<Base title={`${copy.privacy.h1} · yaan`} description={copy.positioning.short}>
+  <main class="col">
+    <Title level={1}>{copy.privacy.h1}</Title>
+    <Prose blocks={blocks} />
+  </main>
+</Base>

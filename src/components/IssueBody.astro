@@ -1,0 +1,67 @@
+---
+// the issue reading order (DESIGN.md §2): header, strip, sections (fixed order,
+// signal only if present, fleet required), signoff, dropped, agent block, subscribe.
+import IssueHeader from './IssueHeader.astro';
+import MetaStrip from './MetaStrip.astro';
+import SectionHeader from './SectionHeader.astro';
+import ItemRow from './ItemRow.astro';
+import Signal from './Signal.astro';
+import FleetNote from './FleetNote.astro';
+import Signoff from './Signoff.astro';
+import DroppedList from './DroppedList.astro';
+import AgentBlock from './AgentBlock.astro';
+import SubscribeForm from './SubscribeForm.astro';
+import FixtureNote from './FixtureNote.astro';
+import { copy } from '../content/copy';
+import type { IssueEntry } from '../content/schema';
+
+interface Props {
+  entry: IssueEntry;
+}
+const { entry } = Astro.props;
+const bodyText = [
+  entry.intro,
+  ...entry.sections.flatMap((s) => s.items.map((i) => `${i.title} ${i.why}`)),
+  entry.signal?.text ?? '',
+  entry.fleet.text,
+  entry.signoff.text,
+].join(' ');
+---
+
+<main class="col">
+  <slot name="before" />
+  {entry.fixture && <FixtureNote />}
+  <IssueHeader date={entry.date} issue={entry.issue} subject={entry.subject} intro={entry.intro} bodyText={bodyText} />
+  <MetaStrip
+    sources={entry.stats.sources}
+    read={entry.stats.read}
+    proposed={entry.stats.proposed}
+    dropped={entry.stats.dropped}
+    hand={entry.stats.hand}
+    kept={entry.stats.kept}
+    models={entry.models}
+    assembled={entry.assembled}
+    curator={entry.curator}
+  />
+  {entry.sections.map((s) => (
+    <section class="flex flex-col gap-4" aria-labelledby={`s-${s.name}`}>
+      <SectionHeader name={copy.sections[s.name].name} descriptor={copy.sections[s.name].descriptor} id={`s-${s.name}`} />
+      <div class="flex flex-col gap-6">
+        {s.items.map((it) => (
+          <ItemRow n={it.n} title={it.title} url={it.url} why={it.why} agent={it.agent} hand={it.hand} />
+        ))}
+      </div>
+    </section>
+  ))}
+  {entry.signal && (
+    <section class="flex flex-col gap-4" aria-labelledby="s-signal">
+      <SectionHeader name={copy.sections.signal.name} descriptor={copy.sections.signal.descriptor} id="s-signal" />
+      <Signal text={entry.signal.text} curator={entry.curator} />
+    </section>
+  )}
+  <FleetNote agent={entry.fleet.agent} model={entry.fleet.model} text={entry.fleet.text} />
+  <Signoff text={entry.signoff.text} curator={entry.curator} />
+  {entry.dropped.length > 0 && <DroppedList items={entry.dropped} />}
+  <AgentBlock date={entry.date} issue={entry.issue} />
+  <SubscribeForm variant="compact" />
+</main>

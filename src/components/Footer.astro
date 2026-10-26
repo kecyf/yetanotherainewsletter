@@ -1,0 +1,16 @@
+---
+import { copy } from '../content/copy';
+---
+
+<footer class="border-t border-line pt-4 flex flex-col gap-1 text-micro text-fg-3">
+  <p>
+    {copy.site.brand} · {copy.footer.line1.text} · <a href="/rss.xml">{copy.footer.line1.rss}</a> ·
+    <a href="/feed.json">{copy.footer.line1.feedJson}</a> · <a href="/llms.txt">{copy.footer.line1.llmsTxt}</a> ·
+    <a href="/latest.md">{copy.footer.line1.latestMd}</a>
+  </p>
+  <p>{copy.footer.line2}</p>
+  <p>
+    {copy.footer.line3} · <a href="/privacy">{copy.footer.privacy}</a> ·
+    <a href={`mailto:${copy.site.email}`}>{copy.site.email}</a>
+  </p>
+</footer>

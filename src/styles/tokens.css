@@ -1,0 +1,68 @@
+:root {
+  color-scheme: dark;
+
+  /* colour: surfaces */
+  --bg:          #0c0c0d;  /* page background, everywhere */
+  --surface:     #141416;  /* blocks: agent block, fleet block, subscribe form, dropped list */
+  --surface-2:   #1b1b1e;  /* inset inside a surface: <pre>, input fill, inline code */
+  --line:        #26262a;  /* every 1px divider and block border */
+  --line-strong: #3a3a40;  /* input border, signal rule, metadata strip edges */
+
+  /* colour: text levels */
+  --fg-1: #ececee;  /* titles, item titles, link text, emphasis */
+  --fg-2: #b4b4ba;  /* body, intro, why-it-matters */
+  --fg-3: #7c7c84;  /* micro: dates, labels, provenance, metadata keys (4.9:1 on --bg) */
+
+  /* colour: accent + semantic */
+  --accent:     #b8e986;     /* reserved for the agent cta, focus ring, link hover. nothing else */
+  --accent-ink: #0c0c0d;     /* text on an --accent fill (copy button) */
+  --link:       var(--fg-1); /* links read as text, underline carries the affordance */
+  --link-line:  #4a4a52;     /* underline colour at rest */
+  --link-hover: var(--accent);
+  --success:    #8fd19e;     /* subscribe confirmed, "copied" */
+  --warning:    #e6c27a;     /* subscribe pending, skipped-day marker */
+  --danger:     #ef8a8a;     /* invalid email, service error */
+  --muted:      var(--fg-3); /* alias used by prose: "less important than body" */
+
+  /* type */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; /* human text */
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;   /* machine text: dates, section names, strip, prompt, urls */
+  --fs-title-1: 20px; --lh-title-1: 28px; /* h1 only: issue subject, page title */
+  --fs-title-2: 14px; --lh-title-2: 22px; /* h2: section names (mono), block titles */
+  --fs-body:    14px; --lh-body:    22px; /* all running text */
+  --fs-micro:   12px; --lh-micro:   18px; /* everything secondary, <pre>, strip */
+  --tr-title: -0.01em;  /* h1 only */
+  --tr-mono:  0;        /* mono is never tracked */
+  --fw-regular: 400; --fw-medium: 500; /* no bold. medium is the ceiling */
+
+  /* spacing (4px base). gaps only, never stacked margins */
+  --sp-1: 4px;  /* title ↔ its micro line */
+  --sp-2: 8px;  /* inside a component */
+  --sp-3: 12px; /* between items' internal groups */
+  --sp-4: 16px; /* block padding, between rows in a list */
+  --sp-6: 24px; /* between items in a section */
+  --sp-8: 32px; /* between page header parts, page top padding mobile */
+  --sp-12: 48px;/* between sections */
+
+  /* shape */
+  --r-1: 4px;  /* inputs, buttons, inline code, <pre> */
+  --r-2: 8px;  /* surface blocks */
+  --bw: 1px;   /* the only border width, except --bw-rule */
+  --bw-rule: 2px; /* signal callout left rule, focus outline */
+
+  /* layout */
+  --w-read: 620px;  /* every page's column. one width, no wide variant */
+  --gutter: 20px;   /* side padding < 768px */
+  --gutter-md: 24px;/* side padding ≥ 768px */
+  --w-date: 11ch;   /* dated-row date column, fits yyyy-mm-dd in mono */
+
+  /* code / mono treatment */
+  --code-bg: var(--surface-2);
+  --code-fg: var(--fg-2);
+  --code-pad: var(--sp-3) var(--sp-4);
+
+  /* metadata strip */
+  --strip-key: var(--fg-3);    /* "kept" */
+  --strip-val: var(--fg-1);    /* "6" */
+  --strip-sep: var(--line-strong); /* top/bottom edges */
+}

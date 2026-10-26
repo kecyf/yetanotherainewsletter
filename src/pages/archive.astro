@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+import Title from '../components/Title.astro';
+import DatedRow from '../components/DatedRow.astro';
+import StateTag from '../components/StateTag.astro';
+import SubscribeForm from '../components/SubscribeForm.astro';
+import Empty from '../components/Empty.astro';
+import { getIssues, getSkipped, launchDate } from '../lib/issues';
+import { copy } from '../content/copy';
+
+const issues = getIssues();
+const skipped = getSkipped();
+const first = launchDate(issues);
+const allDates = [...new Set([...issues.map((i) => i.date), ...skipped.keys()])].sort(); // newest last
+const months = new Map<string, { date: string; issue?: (typeof issues)[number]; skipped?: { reason?: string } }[]>();
+for (const d of allDates) {
+  const month = d.slice(0, 7);
+  const entry = issues.find((i) => i.date === d);
+  const day = skipped.get(d);
+  const rows = months.get(month) ?? [];
+  rows.push({ date: d, issue: entry, skipped: day });
+  months.set(month, rows);
+}
+const monthList = [...months.entries()].reverse(); // newest first
+const count = copy.archive.count
+  .replace('{issues}', String(issues.length))
+  .replace('{skipped}', String(skipped.size))
+  .replace('{firstDate}', first);
+---
+
+<Base title={`${copy.archive.h1} · yaan`} description={copy.positioning.short} current="archive">
+  <main class="col">
+    <Title level={1}>{copy.archive.h1}</Title>
+    {issues.length === 0 ? (
+      <Empty which="archive" />
+    ) : (
+      <>
+        <p class="font-mono text-micro text-fg-3">{count}</p>
+        {monthList.map(([month, rows]) => (
+          <section class="flex flex-col gap-4">
+            <Title level={2} mono>{month}</Title>
+            <div class="flex flex-col gap-4">
+              {rows.map((r) => (
+                <DatedRow date={r.date}>
+                  {r.issue ? (
+                    <>
+                      <a class="text-fg-1" href={`/${r.date}`}>{r.issue.subject}</a>
+                      <span class="font-mono text-micro text-fg-3">{copy.archive.rowMicro.replace('{kept}', String(r.issue.stats.kept))}</span>
+                    </>
+                  ) : (
+                    <>
+                      <span class="text-fg-3">{r.skipped?.reason}</span>
+                      <StateTag state="skipped" />
+                    </>
+                  )}
+                </DatedRow>
+              ))}
+            </div>
+          </section>
+        ))}
+        <SubscribeForm variant="compact" />
+      </>
+    )}
+  </main>
+</Base>

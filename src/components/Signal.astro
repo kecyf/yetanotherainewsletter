@@ -1,0 +1,13 @@
+---
+// the only justified callout, the only component with a left rule (DESIGN.md §3).
+interface Props {
+  text: string;
+  curator: string;
+}
+const { text, curator } = Astro.props;
+---
+
+<div class="border-l-2 border-line-strong pl-4 flex flex-col gap-2">
+  <p class="text-fg-2">{text}</p>
+  <p class="text-micro text-fg-3">— {curator}</p>
+</div>

@@ -1,0 +1,22 @@
+---
+import { copy } from '../content/copy';
+
+interface Props {
+  items: { title: string; url: string; agent: string; reason: string }[];
+}
+const { items } = Astro.props;
+if (items.length === 0) throw new Error('the dropped list is required whenever dropped > 0');
+const summary = copy.droppedList.summary.replace('{count}', String(items.length));
+---
+
+<details class="bg-surface border border-line rounded-2 p-4">
+  <summary class="font-mono text-micro text-fg-3"><span class="mark"></span> {summary}</summary>
+  <ul class="flex flex-col gap-3 pt-3">
+    {items.map((it) => (
+      <li class="flex flex-col gap-1">
+        <a class="text-fg-1" href={it.url}>{it.title}</a>
+        <span class="font-mono text-micro text-fg-3">{it.agent} · {it.reason}</span>
+      </li>
+    ))}
+  </ul>
+</details>

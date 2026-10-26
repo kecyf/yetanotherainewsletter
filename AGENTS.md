@@ -15,6 +15,7 @@
 **NEVER**
 - Invent data: no fabricated provider links (the conception mockup wrongly pointed unsubscribe at buttondown.com), no invented byline (`curator léa` was a placeholder — the curator is Kevin), no invented model names in the metadata strip, no invented item URLs. These four are explicit failure conditions.
 - Add a reading gate: no JS-only rendering, no cookie wall, no "subscribe to read". Agents must be able to fetch an issue in one request.
+- **Name a sending provider in copy.** None is chosen (the relay is parked in the brain). The subscribe form stays inert — no `action`, no network call — and the privacy copy must not claim an email provider until one is actually selected.
 - Put secrets, tokens or keys in the repo, in a fixture, or in a committed `.env`.
 - Deploy to production, create a Cloudflare/DNS record, or buy anything without an explicit GO from Kevin.
 - Add a dependency that is not needed to satisfy the spec; no CSS framework beyond Tailwind, no JS framework beyond Astro islands.

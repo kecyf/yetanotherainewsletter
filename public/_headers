@@ -1,0 +1,13 @@
+# static hosts ignore astro endpoint headers for unknown extensions;
+# pin the markdown twins' content-type here too (DESIGN.md §6).
+/*.md
+  Content-Type: text/markdown; charset=utf-8
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/feed.json
+  Content-Type: application/json; charset=utf-8
+
+/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8

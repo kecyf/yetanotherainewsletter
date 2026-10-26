@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import Title from '../../components/Title.astro';
+import StateTag from '../../components/StateTag.astro';
+import { copy } from '../../content/copy';
+import { getIssues, getLatest } from '../../lib/issues';
+
+const latest = getLatest(getIssues());
+---
+
+<Base title={`${copy.subscribe.confirmedH1} · yaan`} description={copy.positioning.short} current="subscribe">
+  <main class="col">
+    <div class="flex items-baseline gap-3">
+      <Title level={1}>{copy.subscribe.confirmedH1}</Title>
+      <StateTag state="confirmed" />
+    </div>
+    <p class="text-fg-2">{copy.subscribe.confirmedBody}</p>
+    <p class="flex gap-4">
+      <a href={`/${latest.date}`}>{copy.subscribe.confirmedReadLatest}</a>
+      <a href="/archive">{copy.subscribe.confirmedBrowseArchive}</a>
+    </p>
+  </main>
+</Base>

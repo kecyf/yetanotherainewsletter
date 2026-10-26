@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import Title from '../components/Title.astro';
+import Prose from '../components/Prose.astro';
+import DatedRow from '../components/DatedRow.astro';
+import { getIssues, getLatest, fleetRows } from '../lib/issues';
+import { copy } from '../content/copy';
+
+const latest = getLatest(getIssues());
+const fleet = fleetRows(latest);
+const changelog = latest.models.map((m) => ({ key: latest.date, value: m }));
+
+const blocks = [
+  { id: 'what-this-is', heading: copy.about.whatThisIs, paragraphs: [copy.positioning.long] },
+  { id: 'the-fleet', heading: copy.about.theFleet, paragraphs: [] },
+  { id: 'the-human', heading: copy.about.theHuman, paragraphs: [copy.about.theHumanBody] },
+  { id: 'the-rule', heading: copy.about.theRule, paragraphs: [copy.about.theRuleBody] },
+  { id: 'the-pipeline', heading: copy.about.thePipeline, paragraphs: [] },
+  { id: 'citing', heading: copy.about.citing, paragraphs: [copy.about.citingBody] },
+  { id: 'doesnt-do', heading: copy.about.doesntDo, paragraphs: [copy.about.doesntDoBody] },
+  { id: 'changelog', heading: copy.about.changelog, paragraphs: [] },
+];
+---
+
+<Base title={`${copy.about.h1} · yaan`} description={copy.positioning.short} current="about">
+  <main class="col">
+    <Title level={1}>{copy.about.h1}</Title>
+    <Prose blocks={blocks}>
+      <div slot="the-fleet" class="flex flex-col gap-4">
+        {fleet.map((r) => (
+          <DatedRow date={r.key}>
+            <span class="text-fg-2">{r.value}</span>
+          </DatedRow>
+        ))}
+      </div>
+      <div slot="the-pipeline" class="flex flex-col gap-4">
+        {copy.about.pipelineRows.map((r) => (
+          <DatedRow date={r.key}>
+            <span class="text-fg-2">{r.value}</span>
+          </DatedRow>
+        ))}
+      </div>
+      <div slot="changelog" class="flex flex-col gap-4">
+        {changelog.map((r) => (
+          <DatedRow date={r.key}>
+            <span class="text-fg-2">{r.value}</span>
+          </DatedRow>
+        ))}
+      </div>
+    </Prose>
+  </main>
+</Base>

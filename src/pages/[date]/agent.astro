@@ -1,0 +1,42 @@
+---
+// the agent view (DESIGN.md §2): the prompt, the endpoints and the raw markdown.
+import Base from '../../layouts/Base.astro';
+import Title from '../../components/Title.astro';
+import DatedRow from '../../components/DatedRow.astro';
+import { getIssues } from '../../lib/issues';
+import { toMarkdown } from '../../lib/toMarkdown';
+import { agentPrompt } from '../../lib/prompt';
+import { copy } from '../../content/copy';
+import type { IssueEntry } from '../../content/schema';
+
+export function getStaticPaths() {
+  return getIssues().map((e) => ({ params: { date: e.date }, props: { entry: e } }));
+}
+
+const { entry } = Astro.props as { entry: IssueEntry };
+const prompt = agentPrompt(entry.date, entry.issue);
+const md = toMarkdown(entry);
+const h1 = copy.agentBlock.agentViewTitle.replace('{date}', entry.date);
+const endpoints = [
+  [copy.agentBlock.endpoints.thisIssue, `/${entry.date}.md`],
+  [copy.agentBlock.endpoints.latest, '/latest.md'],
+  [copy.agentBlock.endpoints.rss, '/rss.xml'],
+  [copy.agentBlock.endpoints.feedJson, '/feed.json'],
+  [copy.agentBlock.endpoints.llmsTxt, '/llms.txt'],
+] as const;
+---
+
+<Base title={h1} description={copy.positioning.short}>
+  <main class="col">
+    <Title level={1}>{h1}</Title>
+    <pre id="prompt" class="bg-surface-2 border border-line rounded-1 p-3 px-4 font-mono text-micro text-fg-2 whitespace-pre-wrap break-words">{prompt}</pre>
+    <div class="flex flex-col gap-3">
+      {endpoints.map(([label, href]) => (
+        <DatedRow date={label}>
+          <a class="font-mono text-micro text-fg-3" href={href}>{href}</a>
+        </DatedRow>
+      ))}
+    </div>
+    <pre class="bg-surface-2 border border-line rounded-1 p-3 px-4 font-mono text-micro text-fg-2 whitespace-pre-wrap break-words">{md}</pre>
+  </main>
+</Base>

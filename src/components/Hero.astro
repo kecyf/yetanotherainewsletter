@@ -1,0 +1,15 @@
+---
+// renders on / only (DESIGN.md §3). one line, plus a micro line when today's
+// issue hasn't landed.
+import { copy } from '../content/copy';
+
+interface Props {
+  todayHasIssue: boolean;
+}
+const { todayHasIssue } = Astro.props;
+---
+
+<div class="flex flex-col gap-1">
+  <p class="text-fg-1">{copy.hero.line}</p>
+  {!todayHasIssue && <p class="text-micro text-fg-3">{copy.hero.notToday}</p>}
+</div>

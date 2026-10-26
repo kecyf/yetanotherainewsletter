@@ -1,0 +1,49 @@
+---
+import { copy } from '../content/copy';
+import { formatUtcTime } from '../lib/date';
+
+interface Props {
+  sources: number;
+  read: number;
+  proposed: number;
+  dropped: number;
+  hand: number;
+  kept: number;
+  models: string[];
+  assembled: string;
+  curator: string;
+}
+const { sources, read, proposed, dropped, hand, kept, models, assembled, curator } = Astro.props;
+if (kept !== proposed - dropped + hand) {
+  throw new Error(`meta strip does not reconcile: kept (${kept}) != proposed - dropped + hand`);
+}
+const pairs = [
+  [copy.strip.sources, String(sources)],
+  [copy.strip.read, String(read)],
+  [copy.strip.proposed, String(proposed)],
+  [copy.strip.dropped, String(dropped)],
+  [copy.strip.byHand, String(hand)],
+  [copy.strip.kept, String(kept)],
+];
+---
+
+<dl class="flex flex-wrap gap-x-4 gap-y-1 border-t border-b border-line-strong py-3 font-mono text-micro" aria-label={copy.strip.ariaLabel}>
+  {pairs.map(([k, v]) => (
+    <div class="flex gap-1">
+      <dt class="text-fg-3">{k}</dt>
+      <dd class="text-fg-1">{v}</dd>
+    </div>
+  ))}
+  <div class="basis-full flex gap-1">
+    <dt class="text-fg-3">{copy.strip.models}</dt>
+    <dd class="text-fg-1">{models.join(', ')}</dd>
+  </div>
+  <div class="flex gap-1">
+    <dt class="text-fg-3">{copy.strip.assembled}</dt>
+    <dd class="text-fg-1">{formatUtcTime(assembled)}</dd>
+  </div>
+  <div class="flex gap-1">
+    <dt class="text-fg-3">{copy.strip.curator}</dt>
+    <dd class="text-fg-1">{curator}</dd>
+  </div>
+</dl>

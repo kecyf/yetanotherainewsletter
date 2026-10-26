@@ -1,0 +1,24 @@
+---
+import { copy } from '../content/copy';
+import { domainOf } from '../lib/url';
+
+interface Props {
+  n: number;
+  title: string;
+  url: string;
+  why: string;
+  agent: string;
+  hand?: boolean;
+}
+const { n, title, url, why, agent, hand } = Astro.props;
+if (why.length > 220) console.warn(`item ${n}: why is ${why.length} chars (warning above 220)`);
+---
+
+<article id={String(n)} class="flex flex-col gap-1">
+  <a class="text-fg-1" href={url}>{title}</a>
+  <p class="text-fg-2">{why}</p>
+  <p class="font-mono text-micro text-fg-3">
+    <a class="text-fg-3" href={`#${n}`}>{n}</a> · {domainOf(url)} · {agent}
+    {hand && ` · ${copy.item.addedByHand}`}
+  </p>
+</article>

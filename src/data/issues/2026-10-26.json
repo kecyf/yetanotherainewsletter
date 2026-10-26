@@ -1,0 +1,120 @@
+{
+  "fixture": true,
+  "_comment": "FIXTURE — a labelled stand-in for a Lumi brain issue record (AGENTS.md: 'a fixture is a stand-in for a brain record and must be labelled as such'). every url, model id and number here is illustrative, kept consistent with the conception mockup design/mockups/issue.html. the site renders a fixture notice whenever 'fixture' is true. replaced by the real content pipeline when it lands.",
+  "date": "2026-10-26",
+  "issue": 142,
+  "subject": "gemma 4 goes open with a 1m context; open weights clear 80% on swe-bench",
+  "intro": "quiet weekend, loud monday. six kept from nine fleet proposals plus one by hand: two lab releases that change what you can run on your own hardware, one benchmark number i reran before believing, two tools, and a consultation deadline the eu will not extend.",
+  "curator": "kevin",
+  "assembled": "2026-10-26T05:40:00Z",
+  "stats": { "sources": 214, "read": 61, "proposed": 9, "dropped": 4, "hand": 1, "kept": 6 },
+  "models": [
+    "claude-sonnet-4.5 (scouts)",
+    "gpt-5-mini (dedupe)",
+    "claude-opus-4.1 (draft)"
+  ],
+  "sections": [
+    {
+      "name": "labs",
+      "items": [
+        {
+          "n": 1,
+          "title": "Gemma 4: open weights, 1M-token context, and a 9B model that fits on a laptop",
+          "url": "https://deepmind.google/discover/blog/gemma-4-open-models-long-context/",
+          "why": "the 9b variant keeps recall above 90% at 512k tokens on their needle tests. if it holds up, whole-repo context stops being an api-only feature.",
+          "agent": "scout-labs"
+        },
+        {
+          "n": 2,
+          "title": "Mistral adds a per-request reasoning budget to its API",
+          "url": "https://docs.mistral.ai/capabilities/reasoning/budget/",
+          "why": "you cap thinking tokens per call instead of picking a model tier. it's the first lab to price reasoning as a dial, and the others will copy it.",
+          "agent": "scout-labs"
+        }
+      ]
+    },
+    {
+      "name": "sota",
+      "items": [
+        {
+          "n": 3,
+          "title": "OpenHands-R2: an open-weights agent reaches 81.4% on SWE-bench Verified",
+          "url": "https://arxiv.org/abs/2610.14421",
+          "why": "first open model above 80%, with the harness and trajectories published. the gap to closed frontier models is now under four points.",
+          "agent": "scout-arxiv"
+        }
+      ]
+    },
+    {
+      "name": "tools",
+      "items": [
+        {
+          "n": 4,
+          "title": "llama.cpp b5120: Gemma 4 support and draft-model speculative decoding on Metal",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b5120",
+          "why": "day-one support for item 1, plus roughly 1.8× tokens per second on apple silicon when you pair the 9b with its 1b draft model.",
+          "agent": "scout-github"
+        },
+        {
+          "n": 5,
+          "title": "llm 0.31 runs tool calls inside a WASM sandbox by default",
+          "url": "https://simonwillison.net/2026/Oct/25/llm-tools-sandbox/",
+          "why": "tool calls from untrusted prompts no longer touch your filesystem unless you opt in. a sane default that most agent clis still lack.",
+          "agent": "kevin",
+          "hand": true
+        }
+      ]
+    },
+    {
+      "name": "timeline",
+      "items": [
+        {
+          "n": 6,
+          "title": "EU AI Office consultation on serious-incident reporting for GPAI models closes 2026-11-20",
+          "url": "https://digital-strategy.ec.europa.eu/en/consultations/gpai-serious-incident-reporting",
+          "why": "this sets what counts as an incident and the reporting window. if you fine-tune and redistribute a general-purpose model, it applies to you.",
+          "agent": "scout-calendar"
+        }
+      ]
+    }
+  ],
+  "signal": {
+    "text": "the per-request reasoning budget in item 2 is the quiet pricing shift of the quarter. when every lab matches it, reasoning stops being sold by model tier, and how you cap thinking per call becomes the number that matters."
+  },
+  "fleet": {
+    "agent": "scout-arxiv",
+    "model": "claude-sonnet-4.5",
+    "text": "i proposed the swe-bench result twice, under the arxiv id and under the lab's blog post, and dedupe missed it because the titles shared no words. i now match on the reported score plus the benchmark name. i also nearly dropped item 4 as a minor release, until i saw that it was the first runtime with gemma 4 support."
+  },
+  "signoff": {
+    "text": "that's the day. if you only open one link, open 3 and read the failure analysis at the end. it's more useful than the headline number."
+  },
+  "dropped": [
+    {
+      "title": "ChatGPT memory now supports folders",
+      "url": "https://openai.com/index/chatgpt-memory-folders/",
+      "agent": "scout-labs",
+      "reason": "product ui change, nothing you can build on"
+    },
+    {
+      "title": "OpenHands-R2: an open-weights agent reaches 81.4% on SWE-bench Verified (lab blog mirror)",
+      "url": "https://blog.all-hands.dev/openhands-r2-swe-bench",
+      "agent": "scout-labs",
+      "reason": "duplicate of #3, the lab's mirror of the same result; dedupe missed it, the curator caught it"
+    },
+    {
+      "title": "Vercel AI SDK 6.2",
+      "url": "https://github.com/vercel/ai/releases/tag/ai%406.2.0",
+      "agent": "scout-github",
+      "reason": "point release, a changelog of bug fixes"
+    },
+    {
+      "title": "Report: lab weighs new funding round at higher valuation",
+      "url": "https://www.theinformation.com/articles/anthropic-weighs-new-funding-round",
+      "agent": "scout-labs",
+      "reason": "unsourced funding rumour, paywalled"
+    }
+  ],
+  "prev": null,
+  "next": null
+}

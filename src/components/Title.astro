@@ -1,0 +1,16 @@
+---
+// the only component that renders h1/h2 (DESIGN.md §3).
+interface Props {
+  level: 1 | 2;
+  mono?: boolean;
+  id?: string;
+}
+const { level, mono, id } = Astro.props;
+const cls = level === 1 ? 'text-t1 text-fg-1 font-medium tr-title' : 'text-t2 text-fg-1 font-medium';
+---
+
+{level === 1 ? (
+  <h1 class={cls} id={id}><slot /></h1>
+) : (
+  <h2 class={mono ? `${cls} font-mono` : cls} id={id}><slot /></h2>
+)}

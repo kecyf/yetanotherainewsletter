@@ -1,0 +1,31 @@
+---
+// the subscribe form. deliberately inert in this pass: the sender backend is
+// parked (AGENTS.md scope boundaries) — no action, no provider, no network call.
+// it renders exactly as it will once a backend exists.
+import { copy } from '../content/copy';
+
+interface Props {
+  variant: 'full' | 'compact';
+}
+const { variant } = Astro.props;
+---
+
+<form method="post" class="flex flex-col gap-2">
+  {variant === 'compact' && <p class="text-micro text-fg-3">{copy.subscribe.compactPromise}</p>}
+  <div class="flex flex-wrap gap-2">
+    <label class="sr-only" for="email">{copy.subscribe.hiddenLabel}</label>
+    <input
+      id="email"
+      type="email"
+      name="email"
+      required
+      autocomplete="email"
+      placeholder={copy.subscribe.placeholder}
+      class="bg-surface-2 border border-line-strong rounded-1 px-3 py-2 text-fg-1 flex-1 min-w-55"
+    />
+    <button
+      type="submit"
+      class="bg-surface-2 border border-line-strong rounded-1 px-4 py-2 text-fg-1 font-medium cursor-pointer"
+    >{copy.subscribe.button}</button>
+  </div>
+</form>

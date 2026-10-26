@@ -1,0 +1,14 @@
+---
+// the single sanctioned grid (DESIGN.md §3): the .dated utility in global.css.
+interface Props {
+  date: string; // the date column, or the key column on the about page
+}
+const { date } = Astro.props;
+---
+
+<div class="dated">
+  <span class="font-mono text-micro text-fg-3">{date}</span>
+  <div class="flex flex-wrap items-baseline gap-x-3">
+    <slot />
+  </div>
+</div>

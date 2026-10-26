@@ -1,0 +1,17 @@
+---
+import { copy } from '../content/copy';
+
+interface Props {
+  state: 'pending' | 'confirmed' | 'error' | 'skipped';
+}
+const { state } = Astro.props;
+const colors = { pending: 'text-warning', confirmed: 'text-success', error: 'text-danger', skipped: 'text-warning' };
+const labels = {
+  pending: copy.subscribe.pendingTag,
+  confirmed: copy.subscribe.confirmedTag,
+  error: copy.subscribe.errorTag,
+  skipped: copy.archive.skippedTag,
+};
+---
+
+<span class={`font-mono text-micro ${colors[state]}`}>{labels[state]}</span>

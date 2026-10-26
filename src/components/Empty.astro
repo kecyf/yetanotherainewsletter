@@ -1,0 +1,12 @@
+---
+// the zero-issue copy (DESIGN.md §4, empty + first-visit states).
+import { copy } from '../content/copy';
+
+interface Props {
+  which: 'home' | 'archive';
+}
+const { which } = Astro.props;
+const text = which === 'home' ? copy.empty.home : copy.empty.archive;
+---
+
+<p class="text-fg-2">{text.replace('{launch_date}', copy.site.launchDate)}</p>

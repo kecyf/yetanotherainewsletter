@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+@theme inline {
+  --color-bg: var(--bg); --color-surface: var(--surface); --color-surface-2: var(--surface-2);
+  --color-line: var(--line); --color-line-strong: var(--line-strong);
+  --color-fg-1: var(--fg-1); --color-fg-2: var(--fg-2); --color-fg-3: var(--fg-3);
+  --color-accent: var(--accent); --color-accent-ink: var(--accent-ink);
+  --color-success: var(--success); --color-warning: var(--warning); --color-danger: var(--danger);
+  --font-sans: var(--font-sans); --font-mono: var(--font-mono);
+  --text-micro: var(--fs-micro); --text-micro--line-height: var(--lh-micro);
+  --text-body: var(--fs-body); --text-body--line-height: var(--lh-body);
+  --text-t1: var(--fs-title-1); --text-t1--line-height: var(--lh-title-1);
+  --text-t2: var(--fs-title-2); --text-t2--line-height: var(--lh-title-2);
+  --radius-1: var(--r-1); --radius-2: var(--r-2);
+}
+
+/* utilities defined once — arbitrary values are banned in markup (DESIGN.md §1) */
+@utility col {
+  margin-inline: auto;
+  max-width: var(--w-read);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-12);
+}
+@utility tr-title {
+  letter-spacing: var(--tr-title);
+}
+@utility dated {
+  display: grid;
+  grid-template-columns: var(--w-date) 1fr;
+  gap: var(--sp-4);
+  align-items: baseline;
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--fg-2);
+    font: 400 var(--fs-body)/var(--lh-body) var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    padding: var(--sp-8) var(--gutter);
+  }
+  /* 48rem is tailwind's md: breakpoint, expressed without a raw px literal */
+  @media (min-width: 48rem) {
+    body { padding-top: var(--sp-12); padding-inline: var(--gutter-md); }
+  }
+  a {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-color: var(--link-line);
+    text-decoration-thickness: var(--bw);
+    text-underline-offset: var(--sp-1);
+  }
+  a:hover { color: var(--link-hover); text-decoration-color: var(--link-hover); }
+  :focus-visible {
+    outline: var(--bw-rule) solid var(--accent);
+    outline-offset: var(--bw-rule);
+    border-radius: var(--r-1);
+  }
+  details summary { list-style: none; cursor: pointer; }
+  details summary::-webkit-details-marker { display: none; }
+  main code {
+    background: var(--code-bg);
+    color: var(--code-fg);
+    border-radius: var(--r-1);
+    padding: var(--sp-1);
+    font-family: var(--font-mono);
+    font-size: var(--fs-micro);
+  }
+  details summary .mark::before { content: "+"; }
+  details[open] summary .mark::before { content: "−"; }
+}

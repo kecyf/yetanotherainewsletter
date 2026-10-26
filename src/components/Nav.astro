@@ -1,0 +1,25 @@
+---
+import { copy } from '../content/copy';
+const { current } = Astro.props as { current?: string };
+const links = [
+  { key: 'archive', href: '/archive', label: copy.nav.archive },
+  { key: 'about', href: '/about', label: copy.nav.about },
+  { key: 'subscribe', href: '/subscribe', label: copy.nav.subscribe },
+];
+---
+
+<nav class="flex justify-between items-baseline" aria-label="site">
+  <a class="font-mono text-fg-1 no-underline" href="/">{copy.site.brand}</a>
+  <div class="flex items-baseline gap-2 text-micro text-fg-3">
+    {links.map((l, i) => (
+      <>
+        {i > 0 && <span class="text-fg-3">·</span>}
+        <a
+          class={current === l.key ? 'text-fg-1' : 'text-fg-3'}
+          href={l.href}
+          aria-current={current === l.key ? 'page' : undefined}
+        >{l.label}</a>
+      </>
+    ))}
+  </div>
+</nav>

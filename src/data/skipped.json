@@ -1,0 +1,9 @@
+{
+  "fixture": true,
+  "_comment": "FIXTURE — labelled stand-in for the pipeline's skipped-day record. dates with no issue and a reason; the reason replaces the default skipped copy verbatim (DESIGN.md §2).",
+  "days": {
+    "2026-10-25": {
+      "reason": "pipeline outage from 02:10 to 07:30 utc. we'd rather skip than ship half an issue."
+    }
+  }
+}

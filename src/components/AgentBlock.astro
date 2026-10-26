@@ -1,0 +1,47 @@
+---
+import Title from './Title.astro';
+import { copy } from '../content/copy';
+import { agentPrompt } from '../lib/prompt';
+
+interface Props {
+  date: string;
+  issue: number;
+}
+const { date, issue } = Astro.props;
+const prompt = agentPrompt(date, issue);
+if (prompt.includes('latest')) throw new Error('the prompt must always point at the dated .md, never latest.md');
+---
+
+<section id="agent" class="bg-surface border border-line rounded-2 p-4 flex flex-col gap-3">
+  <Title level={2}>give it to your agent</Title>
+  <p class="text-micro text-fg-3">{copy.agentBlock.instruction}</p>
+  <pre id="prompt" class="bg-surface-2 border border-line rounded-1 p-3 px-4 font-mono text-micro text-fg-2 whitespace-pre-wrap break-words">{prompt}</pre>
+  <div class="flex flex-wrap items-baseline gap-3">
+    <button
+      class="bg-accent text-accent-ink rounded-1 px-4 py-2 font-mono text-micro font-medium"
+      type="button"
+      hidden
+      data-copy
+      data-copied={copy.agentBlock.copied}
+      data-copy-failed={copy.agentBlock.copyFailed}
+    >{copy.agentBlock.copyButton}</button>
+    <span class="text-micro text-success" role="status" data-status></span>
+    <a class="text-micro" href={`/${date}/agent`}>{copy.agentBlock.viewAsMarkdown}</a>
+    <a class="font-mono text-micro" href={`/${date}.md`}>{date}.md</a>
+  </div>
+</section>
+
+<script is:inline>
+  // 8 lines: un-hide the copy button only when the clipboard api exists.
+  // without js the <pre> is still selectable and nothing is lost (DESIGN.md §3).
+  var b = document.querySelector('[data-copy]');
+  var s = document.querySelector('[data-status]');
+  if (b && s && navigator.clipboard) {
+    b.hidden = false;
+    b.addEventListener('click', function () {
+      navigator.clipboard.writeText(document.getElementById('prompt').textContent.trim())
+        .then(function () { s.textContent = b.dataset.copied; s.className = 'text-micro text-success'; })
+        .catch(function () { s.textContent = b.dataset.copyFailed; s.className = 'text-micro text-danger'; });
+    });
+  }
+</script>

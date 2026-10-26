@@ -1,0 +1,28 @@
+---
+import Title from './Title.astro';
+import { copy } from '../content/copy';
+import { formatIssueDate, readMinutes } from '../lib/date';
+
+interface Props {
+  date: string;
+  issue: number;
+  subject: string;
+  intro: string;
+  bodyText: string; // the issue body whose word count drives read time
+}
+const { date, issue, subject, intro, bodyText } = Astro.props;
+const { weekday } = formatIssueDate(date);
+const micro = copy.issueHeader.micro
+  .replace('{date}', date)
+  .replace('{weekday}', weekday)
+  .replace('{n}', String(issue))
+  .replace('{m}', String(readMinutes(bodyText)));
+---
+
+<header class="flex flex-col gap-3">
+  <p class="font-mono text-micro text-fg-3">
+    {micro}<a class="text-fg-3" href="#agent">{copy.issueHeader.agentCta}</a>
+  </p>
+  <Title level={1}>{subject}</Title>
+  <p class="text-fg-2">{intro}</p>
+</header>

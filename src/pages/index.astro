@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import IssueBody from '../components/IssueBody.astro';
+import Hero from '../components/Hero.astro';
+import SubscribeForm from '../components/SubscribeForm.astro';
+import Empty from '../components/Empty.astro';
+import { getIssues, getLatest, assertCalendarComplete } from '../lib/issues';
+import { todayUtc } from '../lib/date';
+import { copy } from '../content/copy';
+
+const issues = getIssues();
+if (issues.length > 0) assertCalendarComplete(issues);
+const latest = issues.length > 0 ? getLatest(issues) : null;
+const todayHasIssue = latest !== null && latest.date === todayUtc();
+---
+
+{latest ? (
+  <Base
+    title={copy.issueHeader.title.replace('{subject}', latest.subject).replace('{n}', String(latest.issue))}
+    description={copy.positioning.short}
+  >
+    <IssueBody entry={latest}>
+      <Hero slot="before" todayHasIssue={todayHasIssue} />
+    </IssueBody>
+  </Base>
+) : (
+  <Base title={copy.site.brand} description={copy.positioning.short}>
+    <main class="col">
+      <Hero todayHasIssue={todayHasIssue} />
+      <Empty which="home" />
+      <SubscribeForm variant="compact" />
+    </main>
+  </Base>
+)}

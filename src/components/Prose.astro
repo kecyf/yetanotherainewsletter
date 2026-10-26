@@ -1,0 +1,19 @@
+---
+// the wrapper for about and privacy: h2 + p+ blocks (DESIGN.md §3).
+interface Block {
+  heading: string;
+  id?: string;
+  paragraphs: string[];
+}
+const { blocks } = Astro.props as { blocks: Block[] };
+---
+
+<div class="flex flex-col gap-12">
+  {blocks.map((b) => (
+    <section class="flex flex-col gap-3" id={b.id}>
+      <h2 class="text-t2 text-fg-1 font-medium">{b.heading}</h2>
+      {b.paragraphs.map((p) => <p class="text-fg-2">{p}</p>)}
+      <slot name={b.id} />
+    </section>
+  ))}
+</div>

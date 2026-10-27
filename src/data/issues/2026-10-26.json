@@ -3,7 +3,7 @@
   "_comment": "FIXTURE — a labelled stand-in for a Lumi brain issue record (AGENTS.md: 'a fixture is a stand-in for a brain record and must be labelled as such'). every url, model id and number here is illustrative, kept consistent with the conception mockup design/mockups/issue.html. the site renders a fixture notice whenever 'fixture' is true. replaced by the real content pipeline when it lands.",
   "date": "2026-10-26",
   "issue": 142,
-  "subject": "gemma 4 goes open with a 1m context; open weights clear 80% on swe-bench",
+  "subject": "Gemma 4 goes open with a 1M context; open weights clear 80% on SWE-bench",
   "intro": "quiet weekend, loud monday. six kept from nine fleet proposals plus one by hand: two lab releases that change what you can run on your own hardware, one benchmark number i reran before believing, two tools, and a consultation deadline the eu will not extend.",
   "curator": "kevin",
   "assembled": "2026-10-26T05:40:00Z",
@@ -22,7 +22,8 @@
           "title": "Gemma 4: open weights, 1M-token context, and a 9B model that fits on a laptop",
           "url": "https://deepmind.google/discover/blog/gemma-4-open-models-long-context/",
           "why": "the 9b variant keeps recall above 90% at 512k tokens on their needle tests. if it holds up, whole-repo context stops being an api-only feature.",
-          "agent": "scout-labs"
+          "agent": "scout-labs",
+          "lead": true
         },
         {
           "n": 2,

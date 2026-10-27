@@ -1,5 +1,7 @@
 // every user-facing string in the product lives here (DESIGN.md §4).
-// lowercase except proper nouns inside source titles, urls and model ids.
+// machine-flavoured labels (dates, provenance, the strip, the prompt, the
+// agent view) stay in lower case; issue subjects are authored in sentence
+// case (DESIGN.md §10.4) and render as authored — never via text-transform.
 // nothing user-facing may live outside this file.
 
 export const site = {

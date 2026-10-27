@@ -12,6 +12,9 @@ const itemSchema = z.object({
   why: z.string().min(1).refine((s) => s.length <= 220, { message: 'why must stay within 220 chars (warning threshold)' }),
   agent: z.string().min(1),
   hand: z.boolean().optional().default(false),
+  // v1.1 (DESIGN.md §10.3.2): optional flag on exactly one item; the first
+  // item of the first section is the lead when no item is flagged.
+  lead: z.boolean().optional().default(false),
 });
 
 export const issueSchema = z
@@ -22,8 +25,9 @@ export const issueSchema = z
     subject: z
       .string()
       .min(1)
-      .refine((s) => s.length <= 72 && !s.endsWith('.') && !/[?!]/.test(s), {
-        message: 'subject: one line, lowercase, <= 72 chars, no trailing period, no questions',
+      // v1.1 (DESIGN.md §10.4): sentence case, target <= 72, hard ceiling 80
+      .refine((s) => s.length <= 80 && !s.endsWith('.') && !/[?!]/.test(s), {
+        message: 'subject: one line, sentence case, <= 80 chars hard ceiling (target 72), no trailing period, no questions',
       }),
     intro: z.string().min(1),
     curator: z.string().min(1),
@@ -75,6 +79,8 @@ export const issueSchema = z
     if (e.dropped.length !== e.stats.dropped) fail(`dropped[].length (${e.dropped.length}) != stats.dropped (${e.stats.dropped})`);
     const handCount = items.filter((i) => i.hand).length;
     if (handCount !== e.stats.hand) fail(`hand items (${handCount}) != stats.hand (${e.stats.hand})`);
+    const leadCount = items.filter((i) => i.lead).length;
+    if (leadCount > 1) fail(`lead: true flags at most one item; found ${leadCount}`);
 
     // section order + continuous numbering
     const names = e.sections.map((s) => s.name);

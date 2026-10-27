@@ -63,6 +63,36 @@
 
   /* metadata strip */
   --strip-key: var(--fg-3);    /* "kept" */
-  --strip-val: var(--fg-1);    /* "6" */
+  --strip-val: var(--fg-1);    /* "6" — agent scope; the reader scope demotes it below */
   --strip-sep: var(--line-strong); /* top/bottom edges */
+  --strip-bw: var(--bw);       /* strip edge width; the reader scope drops the rules */
+
+  /* --- v1.1 (DESIGN.md §10.2): reader scale, reading ink, air --- */
+  --fg-reading: #c9c9cf;        /* body + why-it-matters on the reader view */
+  --fs-subject: 26px;  --lh-subject: 34px;   /* page h1, the day's subject (was 20/28) */
+  --fs-lead:    20px;  --lh-lead:    28px;   /* the lead item's title */
+  --fs-lead-why: 17px; --lh-lead-why: 26px;  /* the lead item's why-it-matters */
+  --fs-item:    17px;  --lh-item:    25px;   /* every other item title */
+  --fs-body-r:  16.5px;--lh-body-r:  27px;   /* reader running text (was 14/22) */
+  --fs-kicker:  13px;  --lh-kicker:  20px;   /* section names, rendered uppercase */
+  --tr-kicker:  0.08em;
+  --sp-16: 64px;                 /* between reader sections (was 48) */
+
+  /* v1.1 scope plumbing: the view scope overrides token values, not markup */
+  --col-gap: var(--sp-12);      /* the .col column gap; reader widens it to --sp-16 */
+  --tt-kicker: none;            /* display transform for section names; reader uppercases */
+}
+
+/* --- v1.1 reader scope (DESIGN.md §10.1): one record, two token scopes.
+       the agent scope is the untouched :root above. --- */
+[data-view='reader'] {
+  --fg-2: var(--fg-reading);      /* raise the payload */
+  --fs-title-1: var(--fs-subject);
+  --lh-title-1: var(--lh-subject);
+  --fs-body: var(--fs-body-r);
+  --lh-body: var(--lh-body-r);
+  --col-gap: var(--sp-16);        /* between reader sections */
+  --tt-kicker: uppercase;         /* section names; the data stays lowercase */
+  --strip-val: var(--fg-3);       /* the strip is a whisper on the reader view */
+  --strip-bw: 0px;                /* no rules around the demoted strip */
 }

@@ -7,11 +7,12 @@ interface Props {
   title: string;
   description?: string;
   current?: 'archive' | 'about' | 'subscribe';
+  /** v1.1 (DESIGN.md §10.1): token scope. reader = every human page, agent = the machine surface. */
+  view?: 'reader' | 'agent';
 }
-const { title, description, current } = Astro.props;
+const { title, description, current, view = 'reader' } = Astro.props;
 const desc = description ?? '';
 ---
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,7 +22,7 @@ const desc = description ?? '';
     {desc && <meta name="description" content={desc} />}
     <meta name="generator" content={Astro.generator} />
   </head>
-  <body class="bg-bg text-fg-2 text-body font-sans">
+  <body class="bg-bg text-fg-2 text-body font-sans" data-view={view}>
     <div class="col">
       <Nav current={current} />
       <slot />

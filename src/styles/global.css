@@ -21,7 +21,39 @@
   max-width: var(--w-read);
   display: flex;
   flex-direction: column;
-  gap: var(--sp-12);
+  gap: var(--col-gap); /* v1.1: 48 agent / 64 reader */
+}
+/* v1.1 reader utilities — every size/colour resolves through tokens.css */
+@utility fs-lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+}
+@utility fs-lead-why {
+  font-size: var(--fs-lead-why);
+  line-height: var(--lh-lead-why);
+}
+@utility fs-item {
+  font-size: var(--fs-item);
+  line-height: var(--lh-item);
+}
+@utility fs-kicker {
+  font-size: var(--fs-kicker);
+  line-height: var(--lh-kicker);
+}
+@utility kicker {
+  text-transform: var(--tt-kicker); /* none in data, caps on reader (DESIGN.md §10.3) */
+  letter-spacing: var(--tr-kicker);
+}
+@utility lead {
+  /* --sp-12 of air above and below the lead (§10.3.2), inside the wider --col-gap */
+  margin-block: calc(var(--sp-12) - var(--col-gap));
+}
+@utility strip {
+  border-top: var(--strip-bw) solid var(--strip-sep);
+  border-bottom: var(--strip-bw) solid var(--strip-sep);
+}
+@utility text-strip-val {
+  color: var(--strip-val);
 }
 @utility tr-title {
   letter-spacing: var(--tr-title);

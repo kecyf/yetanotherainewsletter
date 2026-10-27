@@ -9,14 +9,16 @@ interface Props {
   why: string;
   agent: string;
   hand?: boolean;
+  /** v1.1 (DESIGN.md §10.3.2): the lead item — size and air only, no badge, colour or border. */
+  lead?: boolean;
 }
-const { n, title, url, why, agent, hand } = Astro.props;
+const { n, title, url, why, agent, hand, lead } = Astro.props;
 if (why.length > 220) console.warn(`item ${n}: why is ${why.length} chars (warning above 220)`);
 ---
 
 <article id={String(n)} class="flex flex-col gap-1">
-  <a class="text-fg-1" href={url}>{title}</a>
-  <p class="text-fg-2">{why}</p>
+  <a class={`text-fg-1 ${lead ? 'fs-lead' : 'fs-item'}`} href={url}>{title}</a>
+  <p class={`text-fg-2${lead ? ' fs-lead-why' : ''}`}>{why}</p>
   <p class="font-mono text-micro text-fg-3">
     <a class="text-fg-3" href={`#${n}`}>{n}</a> · {domainOf(url)} · {agent}
     {hand && ` · ${copy.item.addedByHand}`}

@@ -1,6 +1,8 @@
 ---
-// the issue reading order (DESIGN.md §2): header, strip, sections (fixed order,
-// signal only if present, fleet required), signoff, dropped, agent block, subscribe.
+// the issue reading order (DESIGN.md §2 + §10.3, v1.1): header (subject → date
+// line → intro), lead item, sections (fixed order, signal only if present,
+// fleet required), signoff, metadata strip (demoted to the end), dropped,
+// agent block, subscribe.
 import IssueHeader from './IssueHeader.astro';
 import MetaStrip from './MetaStrip.astro';
 import SectionHeader from './SectionHeader.astro';
@@ -26,28 +28,35 @@ const bodyText = [
   entry.fleet.text,
   entry.signoff.text,
 ].join(' ');
+
+// v1.1 (DESIGN.md §10.3.2): the lead — the flagged item, else the first item of
+// the first section. It renders immediately after the intro and is not
+// repeated inside its section.
+const flagged = entry.sections.flatMap((s) => s.items).filter((i) => i.lead);
+if (flagged.length > 1)
+  throw new Error(`lead: true may flag exactly one item; found ${flagged.length}`);
+const leadItem = flagged[0] ?? entry.sections[0]?.items[0];
+const leadSection = leadItem
+  ? entry.sections.find((s) => s.items.some((i) => i.n === leadItem.n))
+  : undefined;
+const isLead = (sectionName: string, n: number) =>
+  leadItem !== undefined && sectionName === leadSection?.name && n === leadItem.n;
 ---
 
 <main class="col">
   <slot name="before" />
   {entry.fixture && <FixtureNote />}
   <IssueHeader date={entry.date} issue={entry.issue} subject={entry.subject} intro={entry.intro} bodyText={bodyText} />
-  <MetaStrip
-    sources={entry.stats.sources}
-    read={entry.stats.read}
-    proposed={entry.stats.proposed}
-    dropped={entry.stats.dropped}
-    hand={entry.stats.hand}
-    kept={entry.stats.kept}
-    models={entry.models}
-    assembled={entry.assembled}
-    curator={entry.curator}
-  />
+  {leadItem && (
+    <div class="lead">
+      <ItemRow n={leadItem.n} title={leadItem.title} url={leadItem.url} why={leadItem.why} agent={leadItem.agent} hand={leadItem.hand} lead />
+    </div>
+  )}
   {entry.sections.map((s) => (
     <section class="flex flex-col gap-4" aria-labelledby={`s-${s.name}`}>
       <SectionHeader name={copy.sections[s.name].name} descriptor={copy.sections[s.name].descriptor} id={`s-${s.name}`} />
       <div class="flex flex-col gap-6">
-        {s.items.map((it) => (
+        {s.items.filter((it) => !isLead(s.name, it.n)).map((it) => (
           <ItemRow n={it.n} title={it.title} url={it.url} why={it.why} agent={it.agent} hand={it.hand} />
         ))}
       </div>
@@ -61,6 +70,17 @@ const bodyText = [
   )}
   <FleetNote agent={entry.fleet.agent} model={entry.fleet.model} text={entry.fleet.text} />
   <Signoff text={entry.signoff.text} curator={entry.curator} />
+  <MetaStrip
+    sources={entry.stats.sources}
+    read={entry.stats.read}
+    proposed={entry.stats.proposed}
+    dropped={entry.stats.dropped}
+    hand={entry.stats.hand}
+    kept={entry.stats.kept}
+    models={entry.models}
+    assembled={entry.assembled}
+    curator={entry.curator}
+  />
   {entry.dropped.length > 0 && <DroppedList items={entry.dropped} />}
   <AgentBlock date={entry.date} issue={entry.issue} />
   <SubscribeForm variant="compact" />

@@ -27,23 +27,23 @@ const pairs = [
 ];
 ---
 
-<dl class="flex flex-wrap gap-x-4 gap-y-1 border-t border-b border-line-strong py-3 font-mono text-micro" aria-label={copy.strip.ariaLabel}>
+<dl class="strip flex flex-wrap gap-x-4 gap-y-1 py-3 font-mono text-micro" aria-label={copy.strip.ariaLabel}>
   {pairs.map(([k, v]) => (
     <div class="flex gap-1">
       <dt class="text-fg-3">{k}</dt>
-      <dd class="text-fg-1">{v}</dd>
+      <dd class="text-strip-val">{v}</dd>
     </div>
   ))}
   <div class="basis-full flex gap-1">
     <dt class="text-fg-3">{copy.strip.models}</dt>
-    <dd class="text-fg-1">{models.join(', ')}</dd>
+    <dd class="text-strip-val">{models.join(', ')}</dd>
   </div>
   <div class="flex gap-1">
     <dt class="text-fg-3">{copy.strip.assembled}</dt>
-    <dd class="text-fg-1">{formatUtcTime(assembled)}</dd>
+    <dd class="text-strip-val">{formatUtcTime(assembled)}</dd>
   </div>
   <div class="flex gap-1">
     <dt class="text-fg-3">{copy.strip.curator}</dt>
-    <dd class="text-fg-1">{curator}</dd>
+    <dd class="text-strip-val">{curator}</dd>
   </div>
 </dl>

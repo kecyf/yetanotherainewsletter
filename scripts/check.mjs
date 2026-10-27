@@ -198,6 +198,10 @@ console.log('\n[5] parity: html issue == markdown twin (content, order, sections
   for (const d of issueDates) {
     const html = parseHtmlIssue(read(page(d)));
     const md = parseMdIssue(read(path.join(DIST, `${d}.md`)));
+    // v1.1: the lead item renders above the sections on the reader page; the
+    // comparison is by n (the .md is n-ordered by the numbering invariant),
+    // so this stays an order-sensitive comparison, not a weakening.
+    html.items.sort((a, b) => a.n - b.n);
     const diffs = [];
     if (html.subject !== md.subject) diffs.push(`subject: ${JSON.stringify(html.subject)} != ${JSON.stringify(md.subject)}`);
     if (html.intro !== md.intro) diffs.push(`intro: ${JSON.stringify(html.intro)} != ${JSON.stringify(md.intro)}`);
@@ -359,6 +363,146 @@ console.log('\n[12] md twins <= 12 kb, issue html <= 30 kb gzipped');
   }
   if (bad.length) fail('size budget', bad.join('\n'));
   else ok('within size budgets');
+}
+
+console.log('\n[13] v1.1: the metadata strip comes after the signoff in reader DOM order (§10.5.1)');
+{
+  const bad = [];
+  for (const d of issueDates) {
+    const html = read(page(d));
+    const so = html.indexOf('id="signoff"');
+    const strip = html.indexOf('aria-label="how this issue was made"');
+    if (so === -1 || strip === -1) bad.push(`${d}: signoff (${so}) or strip (${strip}) missing`);
+    else if (strip < so) bad.push(`${d}: strip (offset ${strip}) renders before the signoff (offset ${so})`);
+  }
+  if (bad.length) fail('strip after signoff', bad.join('\n'));
+  else ok('the strip follows the signoff on every reader page');
+}
+
+console.log('\n[14] v1.1: >= 3 distinct type sizes above the strip on the reader page (§10.5.2)');
+{
+  const bad = [];
+  const tokens = read(path.join(SRC, 'styles/tokens.css'));
+  const px = (name) => {
+    const m = new RegExp(`--${name}:\\s*([0-9.]+)px`).exec(tokens);
+    return m ? m[1] : null;
+  };
+  const subject = px('fs-subject');
+  const item = px('fs-item') ?? px('fs-lead');
+  const bodyR = px('fs-body-r');
+  const sizes = new Set([subject, item, bodyR].filter(Boolean));
+  if (sizes.size < 3) bad.push(`reader scale collapses: subject=${subject}, item=${item}, body=${bodyR}`);
+  for (const d of issueDates) {
+    const html = read(page(d));
+    const strip = html.indexOf('aria-label="how this issue was made"');
+    if (strip === -1) {
+      bad.push(`${d}: no strip`);
+      continue;
+    }
+    const above = html.slice(0, strip);
+    if (!/data-view="reader"/.test(above)) bad.push(`${d}: page root is not data-view="reader"`);
+    if (!/<h1[^>]*class="[^"]*text-t1/.test(above)) bad.push(`${d}: no subject h1 above the strip`);
+    if (!/(fs-lead|fs-item)/.test(above)) bad.push(`${d}: no lead/item title size above the strip`);
+    if (!/<p class="text-fg-2[^"]*">/.test(above)) bad.push(`${d}: no body text above the strip`);
+  }
+  if (bad.length) fail('reader type hierarchy', bad.join('\n'));
+  else ok(`reader scale holds: subject ${subject}px, item ${item}px, body ${bodyR}px — 3+ sizes above the strip`);
+}
+
+console.log('\n[15] v1.1: kickers uppercase via CSS, copy.ts and the .md stay lowercase (§10.5.3)');
+{
+  const bad = [];
+  const tokens = read(path.join(SRC, 'styles/tokens.css'));
+  const global = read(path.join(SRC, 'styles/global.css'));
+  const cssDir = path.join(DIST, '_astro');
+  const cssFiles = fs
+    .readdirSync(cssDir)
+    .filter((f) => f.endsWith('.css'))
+    .map((f) => read(path.join(cssDir, f)));
+  if (!/--tt-kicker:\s*uppercase/.test(tokens.slice(tokens.indexOf("[data-view='reader']"))))
+    bad.push("tokens.css: the reader scope does not set --tt-kicker: uppercase");
+  if (!/--tt-kicker:\s*none/.test(tokens.slice(0, tokens.indexOf("[data-view='reader']"))))
+    bad.push('tokens.css: :root does not keep --tt-kicker: none (authored case)');
+  if (!/\.kicker\{[^}]*text-transform:\s*var\(--tt-kicker\)/.test([...cssFiles].join('')))
+    bad.push('dist css: the .kicker rule does not transform via the token');
+  const copySrc = read(path.join(SRC, 'content/copy.ts'));
+  for (const m of copySrc.matchAll(/name:\s*'([^']+)'/g)) {
+    if (m[1] !== m[1].toLowerCase()) bad.push(`copy.ts: section name "${m[1]}" is not authored lowercase`);
+  }
+  for (const d of issueDates) {
+    const md = read(path.join(DIST, `${d}.md`));
+    const headings = [...md.matchAll(/^## (.+)$/gm)].map((m) => m[1]);
+    const upper = headings.filter((h) => h !== h.toLowerCase());
+    if (upper.length) bad.push(`${d}.md: section headings rendered uppercase: ${upper.join(', ')}`);
+  }
+  if (bad.length) fail('kicker case split', bad.join('\n'));
+  else ok('kickers uppercase via CSS only; data and twins stay lowercase');
+}
+
+console.log('\n[16] v1.1: the agent view keeps the v1 tokens and mono treatment (§10.5.4)');
+{
+  const bad = [];
+  const tokens = read(path.join(SRC, 'styles/tokens.css'));
+  if (tokens.includes("[data-view='agent']"))
+    bad.push('tokens.css defines an agent scope; the agent view must ride the untouched :root');
+  if (!/--fs-body:\s*14px/.test(tokens) || !/--fs-title-1:\s*20px/.test(tokens))
+    bad.push('tokens.css: :root no longer carries the v1 agent values (--fs-body 14px, --fs-title-1 20px)');
+  for (const d of issueDates) {
+    const agent = read(path.join(DIST, d, 'agent', 'index.html'));
+    if (!/data-view="agent"/.test(agent)) bad.push(`${d}/agent: page root is not data-view="agent"`);
+    if (/data-view="reader"/.test(agent)) bad.push(`${d}/agent: carries the reader scope`);
+    for (const cls of ['kicker', 'fs-lead', 'fs-item', 'fs-lead-why', 'class="lead"', 'text-strip-val'])
+      if (agent.includes(cls)) bad.push(`${d}/agent: carries reader treatment "${cls}"`);
+    if (!/<pre id="prompt"[^>]*class="[^"]*font-mono[^"]*text-micro/.test(agent))
+      bad.push(`${d}/agent: the prompt block is no longer mono micro`);
+  }
+  if (bad.length) fail('agent view unchanged', bad.join('\n'));
+  else ok('agent view rides the untouched :root, dense mono treatment intact');
+}
+
+console.log('\n[17] v1.1: no text-transform on any headline string (§10.5.5)');
+{
+  const bad = [];
+  const walk = (dir) => {
+    for (const f of fs.readdirSync(dir)) {
+      const p = path.join(dir, f);
+      if (fs.statSync(p).isDirectory()) walk(p);
+      else if (f.endsWith('.astro')) {
+        const src = read(p);
+        if (/text-transform/.test(src)) bad.push(`${path.relative(ROOT, p)}: text-transform in a component`);
+      }
+    }
+  };
+  walk(SRC);
+  // no shipped headline carries a case transform: no <h1>/<h2> with an
+  // uppercase/lowercase utility class or an inline text-transform. (the bare
+  // .uppercase/.lowercase utilities exist in the css because tailwind reads
+  // candidates from tokens.css values; unused rules are not a violation.)
+  const walkDist = (dir) => {
+    for (const f of fs.readdirSync(dir)) {
+      const p = path.join(dir, f);
+      if (fs.statSync(p).isDirectory()) walkDist(p);
+      else if (f.endsWith('.html')) {
+        const html = read(p);
+        if (/text-transform/.test(html)) bad.push(`${path.relative(DIST, p)}: inline text-transform`);
+        for (const m of html.matchAll(/<(h[12])[^>]*>/g)) {
+          if (/text-transform/.test(m[0])) bad.push(`${path.relative(DIST, p)}: <${m[1]}> carries an inline text-transform`);
+          if (/(^|["' ])(uppercase|lowercase|capitalize)(["' ]|$)/.test(m[0]))
+            bad.push(`${path.relative(DIST, p)}: <${m[1]}> carries a case-transform class: ${m[0]}`);
+        }
+      }
+    }
+  };
+  walkDist(DIST);
+  // the subject renders as authored: the fixture subject equals the h1 text
+  for (const d of issueDates) {
+    const subject = JSON.parse(read(path.join(SRC, 'data/issues', `${d}.json`))).subject;
+    const html = read(page(d));
+    const h1 = /<h1[^>]*>([\s\S]*?)<\/h1>/.exec(html)[1];
+    if (norm(h1) !== norm(subject)) bad.push(`${d}: h1 "${h1}" != authored subject "${subject}"`);
+  }
+  if (bad.length) fail('no transform on headlines', bad.join('\n'));
+  else ok('no text-transform on any headline; subjects render as authored');
 }
 
 console.log('');

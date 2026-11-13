@@ -15,7 +15,7 @@ export const site = {
 
 export const positioning = {
   short: 'a daily ai veille. agents assemble it, a human curates it, your agent can read it.',
-  long: 'yaan is a daily ai veille: what the labs shipped, what moved the state of the art, which tools are worth installing, and which dates are coming. a fleet of agents reads a couple of hundred sources overnight and proposes items. one human keeps the ones that earn it, cuts the rest and says why. if fewer than three items earn it, there is no issue that day. every issue has a markdown twin, so your agent can read it in one fetch and tell you what matters to you.',
+  long: 'yaan is a daily ai veille: what the labs shipped, what moved the state of the art, which tools are worth installing, and which dates are coming. a rail of agents polls lab and vendor sources every day and proposes items. one human keeps the ones that earn it, cuts the rest and says why. if fewer than three items earn it, there is no issue that day. every issue has a markdown twin, so your agent can read it in one fetch and tell you what matters to you.',
 };
 
 export const hero = {
@@ -169,9 +169,9 @@ export const about = {
   theRuleBody: 'three items or nothing: if fewer than three earn a place, there is no issue that day. every issue stays under 600 words, so it can be read, not skimmed.',
   thePipeline: 'the pipeline',
   pipelineRows: [
-    { key: 'overnight utc', value: 'the scouts read the source pool and propose items' },
-    { key: '05:40 utc', value: 'dedupe and draft assemble the proposal' },
-    { key: '06:00 utc', value: 'the curator publishes the issue, its markdown twin, feed.json and rss together' },
+    { key: 'daily', value: 'the veille rail polls the lab and vendor sources and lands new items' },
+    { key: 'then', value: 'an agent reads the pages, keeps what earns it and drafts the issue' },
+    { key: 'last', value: 'the curator approves; the issue, its markdown twin, feed.json and rss ship together' },
   ],
   citing: 'citing yaan',
   citingBody: 'cite an item as yetanotherainewsletter.org/{date}#{n}. those urls never change. issues are never edited after 12:00 utc on their day; corrections go in the next issue\'s intro.',

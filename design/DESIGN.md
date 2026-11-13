@@ -154,7 +154,7 @@ the h1, then h2 blocks (Title level 2, sans, not mono) in this order:
 2. **the fleet**: dated-row variant with key column = agent name and value = job · model · source count. one row per agent.
 3. **the human**: what curation means.
 4. **the rule**: 3 items or skip; under 600 words.
-5. **the pipeline**: utc times, as rows.
+5. **the pipeline**: the stages, as rows, with no clock times and no source count. the veille rail polls the lab and vendor sources every day, an agent reads the pages and drafts, the curator approves. (v1.2: this was "utc times"; the pipeline has no fixed schedule.)
 6. **citing yaan**.
 7. **what yaan doesn't do**.
 8. **model changelog**: dated rows.
@@ -296,7 +296,7 @@ all copy is lowercase except proper nouns inside source titles, urls and model i
 - **short** (meta description, og, rss channel description):
   `a daily ai veille. agents assemble it, a human curates it, your agent can read it.`
 - **long** (about → what this is, llms.txt intro):
-  `yaan is a daily ai veille: what the labs shipped, what moved the state of the art, which tools are worth installing, and which dates are coming. a fleet of agents reads a couple of hundred sources overnight and proposes items. one human keeps the ones that earn it, cuts the rest and says why. if fewer than three items earn it, there is no issue that day. every issue has a markdown twin, so your agent can read it in one fetch and tell you what matters to you.`
+  `yaan is a daily ai veille: what the labs shipped, what moved the state of the art, which tools are worth installing, and which dates are coming. a rail of agents polls lab and vendor sources every day and proposes items. one human keeps the ones that earn it, cuts the rest and says why. if fewer than three items earn it, there is no issue that day. every issue has a markdown twin, so your agent can read it in one fetch and tell you what matters to you.`
 
 ### hero (`/` only)
 
@@ -314,9 +314,9 @@ all copy is lowercase except proper nouns inside source titles, urls and model i
 
 The rendered example below shows each label followed by its value:
 
-`sources 214  read 61  proposed 9  dropped 4  by hand 1  kept 6`
+`sources {n}  read {n}  proposed {n}  dropped {n}  by hand {n}  kept {n}` (illustrative values: `sources 5  read 1570  proposed 5  dropped 2  by hand 0  kept 3`; every number is a per-issue fact from the record, never a fleet size)
 `models claude-sonnet-4.5 (scouts), gpt-5-mini (dedupe), claude-opus-4.1 (draft)`
-`assembled 05:40 utc  curator kevin`
+`assembled {hh:mm} utc  curator kevin` (a per-issue timestamp from the record, not a schedule: the rail runs every day and the issue is assembled when the curator approves)
 
 ### section names, as rendered (name + descriptor)
 
@@ -472,8 +472,8 @@ date: 2026-10-26
 issue: 142
 url: https://yetanotherainewsletter.org/2026-10-26
 curator: kevin
-assembled: 2026-10-26T05:40:00Z
-stats: {sources: 214, read: 61, proposed: 9, dropped: 4, hand: 1, kept: 6}
+assembled: 2026-10-26T{hh:mm}:00Z   # per-issue fact, no fixed hour
+stats: {sources: 5, read: 1570, proposed: 5, dropped: 2, hand: 0, kept: 3}   # illustrative
 models: ["claude-sonnet-4.5 (scouts)", "gpt-5-mini (dedupe)", "claude-opus-4.1 (draft)"]
 prev: 2026-10-25
 next: null
@@ -624,3 +624,57 @@ The `agent` scope keeps every v1 value untouched (`--fs-body: 14px`, `--fs-title
 3. Section names are rendered uppercase via CSS while `copy.ts` keeps them lowercase, and the `.md` twin is byte-identical to what it was before the revision apart from the subject case.
 4. The agent view is unchanged: same tokens as v1, same mono treatment.
 5. No `text-transform` applied to any headline string.
+
+## 11. Revision v1.2 — type, one measure, one label, one spacing scale
+
+**Why this exists.** A fresh critique of the v1.1 render found a scale that contradicted itself (the lead's body at 18px outranked the issue intro at 15px), three different text widths in one column (510, 561 and 612px), a hairline divider that stopped at 408px while the others spanned 620px, labels styled four ways (`latest issue`, `lead`, section names, descriptors), an eyebrow at 12px, mono meta at 12px, nav links with no states, an item chip that shouted, and a top zone that put 237px between the nav and the headline. v1.2 fixes the system, not the instances: every fix below is a token or a utility, never a one-off in a component.
+
+### 11.1 What changed, and why
+
+| area | v1.1 | v1.2 | why |
+|---|---|---|---|
+| headline `h1` | 30/36 | **36/42** (26/32 under 30rem) | the lead title is now 28, the headline must clear it by more than a step |
+| lead title | 24/31 | **28/34** (22/28 under 30rem), kicker `lead` above | the lead is a title, not a body: it outranks the items, it does not outrank the headline |
+| lead body | 18/28 | **16.5/27, same as every body** | a body that is bigger and brighter than the intro made the intro read as a footnote |
+| issue intro | 15/24 | **16.5/27** in `--fg-preface` (one ink tier dimmer than `--fg-reading`) | same size as every body, dimmer to say "preface" |
+| eyebrow | 12px, three styles | **13px, one style** (see 11.4) | readable (13px, 11.9:1 on `--bg`) and identical everywhere |
+| mono meta | 12px | **13px floor** (`--fs-micro`) | the date line, provenance and strip stay legible |
+| text measure | `34em` per element (408 / 510 / 561 / 612px in practice) | **`--measure: 35rem`, one cap for every running paragraph** | see 11.3 |
+| spacing | 4/8/12/16/24/32/40/48/64 mixed | **8 / 16 / 24 / 48 / 72** roles (see 11.5) | one rhythm |
+| top zone, desktop 1280 | 237px nav → headline on `/` | **167px** (-70) | the content starts where the eye lands |
+| top zone, mobile 390 | 189px | **148px** (-41) | same |
+| nav | all links `fg-3`, no states | others `fg-2`, current `fg-1` + quiet underline + `aria-current`, hover and keyboard focus `fg-1` + underline | states without the accent (the accent stays reserved) |
+| item number chip | `fg-1`, bright border, accessible name "item 3, link to this item" | `fg-3`, `--line` border, `title` and `aria-label` **`cite as #3`**, hover `fg-1` | it is a citation handle, not a headline |
+| font sizes | px | **rem** | root font-size and browser text size now scale the page (200% at 390 tested) |
+| prompt `<pre>` | `break-words` | `wrap-anywhere` | `break-word` kept the 50-character URL as min-content and pushed the whole column past 320px |
+| reduced motion | `.btn` kept its `transform` transition | **no transform transition remains**; colour and opacity feedback stays | movement dropped, feedback kept |
+
+### 11.2 Token changes (all in `src/styles/tokens.css`)
+Changed: `--fs-subject 36/42`, `--fs-lead 28/34`, `--fs-lead-sm 22/28`, `--fs-subject-sm 26/32`, `--fs-micro 13/20`, `--fs-kicker 13/20` (was 12/18), `--fs-preface` and `--lh-preface` now alias `--fs-body-r` / `--lh-body-r`, `--fg-3 #8e8e97` (4.5:1 on every surface), `--tr-title -0.02em`, `--measure 35rem`, `--col-gap 48` in both scopes, every `--fs-*` / `--lh-*` in **rem**.
+Added: `--sp-18 72px`, `--gap-top`, `--gap-lede`, `--gap-footer`, `--pad-top`, `--pad-bottom` (mobile values in `:root`, desktop values in one `min-width: 48rem` block), the font faces and their metric-matched fallbacks, `--fs-wordmark`, `--fs-small`, `--fs-cta`, `--fs-input`, `--fg-preface`, `--tr-meta`, `--tap 44px`, `--ease-out`, `--dur-hover 140ms`, `--dur-press 160ms`, `--press 0.97`.
+Removed: `--fs-lead-why` / `--lh-lead-why` (the lead body is a body), `--sp-8`, `--sp-10`, `--sp-16` (the scale below replaces them).
+New utilities (`global.css`): `eyebrow`, `eyebrow-note`, `nav-link`, `nav-gap`, `footer-air`, `lede-gap`, plus the v1.2 `btn`, `cta`, `tap`, `tap-box`, `num-chip`, `link-quiet`.
+
+### 11.3 The one-measure rule
+Every running paragraph (intro, lead body, item bodies, fleet note, signoff, footer lines) has the same `max-width: var(--measure)` = **35rem = 560px at the default root**, which is about 65 characters of Geist at 16.5px. It is a rem cap, not `ch` or `em`, so paragraphs of different font sizes still share one right edge. **Headings, dividers, the eyebrow row, the date line + CTA row, and blocks (`--surface` cards, the strip, `<pre>`) use the full 620px column.** Rule: a divider is a block `border-top`, never on a `<p>`, because `p` carries the measure (that is how the 408px divider happened). Measured on `/` at 1280: intro, lead body and item body all 560px.
+
+### 11.4 The scale and the label pattern
+Reader scale, desktop, in reading order: headline 36 > lead title 28 > item title 17 ≈ body 16.5 (intro in `--fg-preface`, bodies in `--fg-reading`, same size) > eyebrow and descriptor 13 > mono meta 13. The headline always outranks everything; the lead title outranks every item title; the intro never outranks a body.
+Label pattern: **eyebrow** = 13px, medium, uppercase via `--tt-kicker`, `--tr-kicker 0.1em`, `--fg-2`. `latest issue`, `lead` and every section name use it, through one component (`SectionHeader`). The **descriptor** is the same size, normal case, `--fg-3`, on the same baseline. A **rule above** exists only at a section boundary (`latest issue`, each section, `from the fleet`); `lead` sits inside the head zone and has none. A section whose only item is the lead renders no header and no section at all (the `.md` twin is untouched).
+
+### 11.5 Spacing roles (8 / 16 / 24 / 48 / 72)
+8 inside a component (title ↔ body ↔ meta, eyebrow ↔ lead title) · 16 between related parts (rule ↔ eyebrow, header ↔ first item, headline ↔ date line ↔ intro) · 24 between items in a section, and nav → first content on desktop · 48 between sections and zones, tagline → latest issue on desktop · 72 last block → footer on desktop. Mobile compresses the top zone only (`--gap-top 8`, `--gap-lede 24`, `--pad-top 8`, `--gap-footer 48`). 4 and 12 survive only inside a control.
+
+### 11.6 Copy keys
+New or changed in `copy.ts`: `hero.latestLabel` (`latest issue`), `item.leadKicker` (`lead`), `item.numberLabel` (`cite as #{n}`, used for both `title` and `aria-label`), `nav.label` (`site`), `issueHeader.micro` (no trailing separator; the CTA is its own control). `positioning.long` and `about.pipelineRows` already describe the real pipeline (see 11.7).
+
+### 11.7 Corrected: fleet size and fixed hours
+Earlier text said "a fleet of agents reads a couple of hundred sources overnight" and showed `assembled 05:40 utc`, `sources 214`. Reality: the **veille rail polls the lab and vendor sources every day; an agent reads the pages and drafts; the curator approves.** There is no fleet size and no fixed hour in the spec any more: §4 positioning, §2 about (`the pipeline` = stages, not clock times) and the strip example now use placeholders and per-issue facts. **Open, not changed here (product copy, Kevin's call):** `copy.ts` still promises "around 06:00 utc" in six strings (`hero.notToday`, `subscribe.compactPromise`, `subscribe.promise`, `subscribe.confirmedBody`, `empty.home`, and §4's mirror of them), and `about.citingBody` states a 12:00 utc edit cutoff. If issues land when the curator approves, those strings should say so.
+
+### 11.8 Acceptance checks added or tightened
+1. `document.documentElement.scrollWidth <= innerWidth` on `/`, `/{date}`, `/archive`, `/about`, `/subscribe`, `/privacy` at 1280, 390, 320 and 390 with a 200% root font size.
+2. Every distinct text colour over its real background ≥ 4.5:1 (text under 18px), from computed styles.
+3. Tap targets ≥ 44px at mobile (nav, CTA, footer links; inline links and chips through the `tap` hit-area extension).
+4. Under `prefers-reduced-motion: reduce` no element has a `transform` (or `all`) transition.
+5. The home page makes same-origin requests only.
+6. No divider narrower than the column; no section header without content.

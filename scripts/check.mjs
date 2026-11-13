@@ -384,9 +384,10 @@ console.log('\n[14] v1.1: >= 3 distinct type sizes above the strip on the reader
 {
   const bad = [];
   const tokens = read(path.join(SRC, 'styles/tokens.css'));
+  // v1.2: font sizes are rem in tokens.css; compare them in px at the default 16px root
   const px = (name) => {
-    const m = new RegExp(`--${name}:\\s*([0-9.]+)px`).exec(tokens);
-    return m ? m[1] : null;
+    const m = new RegExp(`--${name}:\\s*([0-9.]+)(px|rem)`).exec(tokens);
+    return m ? String(+(Number(m[1]) * (m[2] === 'rem' ? 16 : 1)).toFixed(2)) : null;
   };
   const subject = px('fs-subject');
   const item = px('fs-item') ?? px('fs-lead');
@@ -446,7 +447,8 @@ console.log('\n[16] v1.1: the agent view keeps the v1 tokens and mono treatment 
   const tokens = read(path.join(SRC, 'styles/tokens.css'));
   if (tokens.includes("[data-view='agent']"))
     bad.push('tokens.css defines an agent scope; the agent view must ride the untouched :root');
-  if (!/--fs-body:\s*14px/.test(tokens) || !/--fs-title-1:\s*20px/.test(tokens))
+  // v1.2: 14px and 20px, written as rem
+  if (!/--fs-body:\s*(14px|0\.875rem)/.test(tokens) || !/--fs-title-1:\s*(20px|1\.25rem)/.test(tokens))
     bad.push('tokens.css: :root no longer carries the v1 agent values (--fs-body 14px, --fs-title-1 20px)');
   for (const d of issueDates) {
     const agent = read(path.join(DIST, d, 'agent', 'index.html'));

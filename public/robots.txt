@@ -1,0 +1,6 @@
+# yaan is built to be read by agents: crawlers and AI assistants are welcome.
+# machine-readable map of the site: /llms.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://yetanotherainewsletter.org/sitemap.xml

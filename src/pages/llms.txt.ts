@@ -27,6 +27,7 @@ export const GET: APIRoute = () => {
     `- ${copy.site.origin}/latest.md — the latest issue as plain markdown`,
     `- ${copy.site.origin}/feed.json — json feed, one entry per issue`,
     `- ${copy.site.origin}/rss.xml — rss`,
+    `- ${copy.site.origin}/sitemap.xml — every public page`,
     '',
   ].join('\n');
   return new Response(text, {

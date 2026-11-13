@@ -16,7 +16,8 @@ if [ -f "$DRAFT" ]; then
   mv "$DRAFT" "$ISSUE"
 fi
 node scripts/validate-issue.mjs "$ISSUE"
-git add "$ISSUE"
+python3 scripts/fill-skipped.py
+git add "$ISSUE" src/data-live/skipped.json
 git commit -m "yaan: publish issue for $D" -q || true
 CONFIRM_DEPLOY=1 scripts/publish-live.sh
 git push -q origin HEAD:main

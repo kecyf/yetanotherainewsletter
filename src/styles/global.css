@@ -13,6 +13,7 @@
   --text-t1: var(--fs-title-1); --text-t1--line-height: var(--lh-title-1);
   --text-t2: var(--fs-title-2); --text-t2--line-height: var(--lh-title-2);
   --radius-1: var(--r-1); --radius-2: var(--r-2);
+  --spacing-tap: var(--tap);
 }
 
 /* utilities defined once — arbitrary values are banned in markup (DESIGN.md §1) */
@@ -21,7 +22,7 @@
   max-width: var(--w-read);
   display: flex;
   flex-direction: column;
-  gap: var(--col-gap); /* v1.1: 48 agent / 64 reader */
+  gap: var(--col-gap); /* v1.2: 48 agent / 40 reader mobile / 64 reader desktop */
 }
 /* v1.1 reader utilities — every size/colour resolves through tokens.css */
 @utility fs-lead {
@@ -44,10 +45,6 @@
   text-transform: var(--tt-kicker); /* none in data, caps on reader (DESIGN.md §10.3) */
   letter-spacing: var(--tr-kicker);
 }
-@utility lead {
-  /* --sp-12 of air above and below the lead (§10.3.2), inside the wider --col-gap */
-  margin-block: calc(var(--sp-12) - var(--col-gap));
-}
 @utility strip {
   border-top: var(--strip-bw) solid var(--strip-sep);
   border-bottom: var(--strip-bw) solid var(--strip-sep);
@@ -65,42 +62,201 @@
   align-items: baseline;
 }
 
+/* --- v1.2 (DESIGN.md §11) --- */
+@utility fs-small {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+@utility fs-preface {
+  font-size: var(--fs-preface);
+  line-height: var(--lh-preface);
+  color: var(--fg-preface);
+}
+@utility tr-meta {
+  letter-spacing: var(--tr-meta);
+}
+@utility wordmark {
+  font-family: var(--font-sans);
+  font-size: var(--fs-wordmark);
+  line-height: var(--lh-wordmark);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tr-wordmark);
+  color: var(--fg-1);
+  text-decoration: none;
+}
+/* a real box at least --tap high: nav links, footer links */
+@utility tap-box {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  padding-inline: var(--sp-2);
+}
+/* extends the hit area to --tap without touching layout (inline links, number chips) */
+@utility tap {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: max(100%, var(--tap));
+    height: max(100%, var(--tap));
+    transform: translate(-50%, -50%);
+  }
+}
+/* the item number: a visible anchor chip. the "#" is drawn by css so the text stays "3" in the html and the .md twin */
+@utility num-chip {
+  display: inline-block;
+  min-width: 2.2em;
+  padding: 0 var(--sp-1);
+  border: var(--bw) solid var(--line-strong);
+  border-radius: var(--r-1);
+  color: var(--fg-1);
+  text-align: center;
+  text-decoration: none;
+  &::before {
+    content: "#";
+    color: var(--fg-3);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: var(--accent);
+    }
+  }
+}
+/* titles and nav: no underline at rest, underline + accent on hover and keyboard focus */
+@utility link-quiet {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: var(--bw);
+  text-underline-offset: 0.24em;
+  &:focus-visible {
+    text-decoration-color: currentColor;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--link-hover);
+      text-decoration-color: currentColor;
+    }
+  }
+}
+/* the shared box of every button-like control: size, no wrapping, press feedback */
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: var(--tap);
+  padding-inline: var(--sp-4);
+  border-radius: var(--r-1);
+  font-family: var(--font-sans);
+  font-size: var(--fs-cta);
+  line-height: var(--lh-cta);
+  font-weight: var(--fw-medium);
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    color var(--dur-hover) var(--ease-out),
+    background-color var(--dur-hover) var(--ease-out),
+    border-color var(--dur-hover) var(--ease-out),
+    opacity var(--dur-hover) var(--ease-out),
+    transform var(--dur-press) var(--ease-out);
+  &:active {
+    transform: scale(var(--press));
+    opacity: 1;
+  }
+}
+/* the "give it to your agent" jump link in the issue header: the accent's call to action */
+@utility cta {
+  border: var(--bw) solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background: var(--accent);
+      color: var(--accent-ink);
+    }
+  }
+}
+
 @layer base {
   *, *::before, *::after { box-sizing: border-box; }
+  html {
+    color-scheme: dark;
+    scrollbar-color: var(--scrollbar-thumb) var(--bg);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    background: var(--bg);
+  }
   body {
     background: var(--bg);
     color: var(--fg-2);
     font: 400 var(--fs-body)/var(--lh-body) var(--font-sans);
     -webkit-font-smoothing: antialiased;
-    padding: var(--sp-8) var(--gutter);
+    -webkit-tap-highlight-color: transparent;
+    overflow-wrap: anywhere; /* long urls, hashes and identifiers wrap instead of scrolling */
+    /* safe-area aware gutters (viewport-fit=cover) */
+    padding-top: max(var(--sp-2), env(safe-area-inset-top));
+    padding-right: max(var(--gutter), env(safe-area-inset-right));
+    padding-bottom: max(var(--sp-8), env(safe-area-inset-bottom));
+    padding-left: max(var(--gutter), env(safe-area-inset-left));
   }
   /* 48rem is tailwind's md: breakpoint, expressed without a raw px literal */
   @media (min-width: 48rem) {
-    body { padding-top: var(--sp-12); padding-inline: var(--gutter-md); }
+    body {
+      padding-top: max(var(--sp-8), env(safe-area-inset-top));
+      padding-right: max(var(--gutter-md), env(safe-area-inset-right));
+      padding-left: max(var(--gutter-md), env(safe-area-inset-left));
+    }
   }
+  ::selection { background: var(--selection); color: var(--fg-1); }
+  h1, h2, h3 { text-wrap: balance; }
+  p, li, dd { text-wrap: pretty; }
+  p { max-width: var(--measure); }
+  /* prose links keep a quiet underline; the affordance is the underline, not colour */
   a {
     color: var(--link);
     text-decoration: underline;
     text-decoration-color: var(--link-line);
     text-decoration-thickness: var(--bw);
-    text-underline-offset: var(--sp-1);
+    text-underline-offset: 0.24em;
+    touch-action: manipulation;
+    transition:
+      color var(--dur-hover) var(--ease-out),
+      text-decoration-color var(--dur-hover) var(--ease-out),
+      opacity var(--dur-hover) var(--ease-out);
   }
-  a:hover { color: var(--link-hover); text-decoration-color: var(--link-hover); }
+  a:active { opacity: 0.7; }
+  @media (hover: hover) and (pointer: fine) {
+    a:hover { color: var(--link-hover); text-decoration-color: var(--link-hover); }
+  }
   :focus-visible {
     outline: var(--bw-rule) solid var(--accent);
     outline-offset: var(--bw-rule);
     border-radius: var(--r-1);
   }
+  input, button { font: inherit; }
+  input { font-size: var(--fs-input); }
+  button { touch-action: manipulation; }
   details summary { list-style: none; cursor: pointer; }
   details summary::-webkit-details-marker { display: none; }
   main code {
     background: var(--code-bg);
     color: var(--code-fg);
     border-radius: var(--r-1);
-    padding: var(--sp-1);
+    padding: var(--code-inline-pad);
     font-family: var(--font-mono);
-    font-size: var(--fs-micro);
+    font-size: var(--code-inline-fs);
+    overflow-wrap: anywhere;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
   details summary .mark::before { content: "+"; }
   details[open] summary .mark::before { content: "−"; }
+  /* reduced motion keeps colour and opacity transitions, drops movement */
+  @media (prefers-reduced-motion: reduce) {
+    .btn:active { transform: none; }
+  }
 }

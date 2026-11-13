@@ -1,3 +1,39 @@
+/* --- v1.2 (DESIGN.md §11): self-hosted Geist + Geist Mono, latin subset, variable 400-500.
+       OFL 1.1, licence text next to the files. no third-party request. --- */
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/Geist-latin.woff2") format("woff2");
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/GeistMono-latin.woff2") format("woff2");
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+/* metric-matched fallbacks: the system face is resized to Geist's advance widths and
+   vertical metrics so the swap moves nothing. (sans 105.9% = frequency-weighted
+   English advance of Geist / Arial; mono is 0.6em in both.) */
+@font-face {
+  font-family: "Geist Fallback";
+  src: local("Arial"), local("Helvetica Neue"), local("Helvetica"), local("Liberation Sans"), local("Arimo");
+  size-adjust: 105.9%;
+  ascent-override: 94.9%;
+  descent-override: 27.9%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Geist Mono Fallback";
+  src: local("Menlo"), local("Consolas"), local("Liberation Mono"), local("Courier New");
+  size-adjust: 100%;
+  ascent-override: 100.5%;
+  descent-override: 29.5%;
+  line-gap-override: 0%;
+}
+
 :root {
   color-scheme: dark;
 
@@ -11,13 +47,13 @@
   /* colour: text levels */
   --fg-1: #ececee;  /* titles, item titles, link text, emphasis */
   --fg-2: #b4b4ba;  /* body, intro, why-it-matters */
-  --fg-3: #7c7c84;  /* micro: dates, labels, provenance, metadata keys (4.9:1 on --bg) */
+  --fg-3: #8e8e97;  /* micro: dates, labels, provenance, metadata keys. v1.2: raised from #7c7c84 so it clears 4.5:1 on --surface and --surface-2 too (scripts/contrast.mjs) */
 
   /* colour: accent + semantic */
   --accent:     #b8e986;     /* reserved for the agent cta, focus ring, link hover. nothing else */
   --accent-ink: #0c0c0d;     /* text on an --accent fill (copy button) */
   --link:       var(--fg-1); /* links read as text, underline carries the affordance */
-  --link-line:  #4a4a52;     /* underline colour at rest */
+  --link-line:  #4a4a52;     /* underline colour at rest (prose links), ::selection fill */
   --link-hover: var(--accent);
   --success:    #8fd19e;     /* subscribe confirmed, "copied" */
   --warning:    #e6c27a;     /* subscribe pending, skipped-day marker */
@@ -25,13 +61,13 @@
   --muted:      var(--fg-3); /* alias used by prose: "less important than body" */
 
   /* type */
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; /* human text */
-  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;   /* machine text: dates, section names, strip, prompt, urls */
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; /* human text */
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, "SF Mono", Menlo, Consolas, monospace;           /* machine text: dates, strip, prompt, urls, provenance */
   --fs-title-1: 20px; --lh-title-1: 28px; /* h1 only: issue subject, page title */
   --fs-title-2: 14px; --lh-title-2: 22px; /* h2: section names (mono), block titles */
   --fs-body:    14px; --lh-body:    22px; /* all running text */
   --fs-micro:   12px; --lh-micro:   18px; /* everything secondary, <pre>, strip */
-  --tr-title: -0.01em;  /* h1 only */
+  --tr-title: -0.02em;  /* h1, lead and item titles (v1.2: was -0.01em, h1 only) */
   --tr-mono:  0;        /* mono is never tracked */
   --fw-regular: 400; --fw-medium: 500; /* no bold. medium is the ceiling */
 
@@ -69,18 +105,42 @@
 
   /* --- v1.1 (DESIGN.md §10.2): reader scale, reading ink, air --- */
   --fg-reading: #c9c9cf;        /* body + why-it-matters on the reader view */
-  --fs-subject: 26px;  --lh-subject: 34px;   /* page h1, the day's subject (was 20/28) */
-  --fs-lead:    20px;  --lh-lead:    28px;   /* the lead item's title */
-  --fs-lead-why: 17px; --lh-lead-why: 26px;  /* the lead item's why-it-matters */
+  --fs-subject: 30px;  --lh-subject: 36px;   /* page h1, the day's subject (v1.1 26/34, v1.2 30/36; 25/31 under 30rem) */
+  --fs-lead:    24px;  --lh-lead:    31px;   /* the lead item's title (v1.2: was 20/28; 22/29 under 30rem) */
+  --fs-lead-why: 18px; --lh-lead-why: 28px;  /* the lead item's why-it-matters (v1.2: was 17/26) */
   --fs-item:    17px;  --lh-item:    25px;   /* every other item title */
-  --fs-body-r:  16.5px;--lh-body-r:  27px;   /* reader running text (was 14/22) */
-  --fs-kicker:  13px;  --lh-kicker:  20px;   /* section names, rendered uppercase */
-  --tr-kicker:  0.08em;
+  --fs-body-r:  16.5px;--lh-body-r:  27px;   /* reader running text (was 14/22). never under 16px */
+  --fs-kicker:  12px;  --lh-kicker:  18px;   /* section names, rendered uppercase (v1.2: 12px, medium, fg-2) */
+  --tr-kicker:  0.1em;
   --sp-16: 64px;                 /* between reader sections (was 48) */
 
   /* v1.1 scope plumbing: the view scope overrides token values, not markup */
-  --col-gap: var(--sp-12);      /* the .col column gap; reader widens it to --sp-16 */
+  --col-gap: var(--sp-12);      /* the .col column gap; reader: --sp-10 under 48rem, --sp-16 above */
   --tt-kicker: none;            /* display transform for section names; reader uppercases */
+}
+
+/* --- v1.2 (DESIGN.md §11): wordmark, tiers, tap size, motion, details --- */
+:root {
+  --fs-wordmark: 24px; --lh-wordmark: 28px; --tr-wordmark: -0.045em; /* "yaan" in the nav: a logotype, not a link */
+  --fs-small: 14px;    --lh-small: 21px;    /* persistent site copy (tagline), section descriptors */
+  --fs-cta: 14px;      --lh-cta: 20px;
+  --fs-input: 16px;                          /* inputs never below 16px (no iOS zoom) */
+  --fs-lead-sm: 22px;  --lh-lead-sm: 29px;  /* lead title under 30rem */
+  --fs-subject-sm: 25px; --lh-subject-sm: 31px; /* subject under 30rem */
+  --fg-preface: #a3a3ab;        /* the issue intro: a preface tier between --fg-reading and --fg-3 */
+  --fs-preface: 15px;  --lh-preface: 24px;
+  --tr-meta: -0.02em;           /* the one tracked mono line (date · weekday · issue · read time): fits 320px with "wednesday" */
+  --sp-10: 40px;                /* between reader sections under 48rem */
+  --measure: 34em;              /* running-text line cap, about 70 characters in Geist at reader size */
+  --tap: 44px;                  /* minimum touch target, height and width */
+  --selection: var(--link-line);
+  --scrollbar-thumb: var(--line-strong);
+  --code-inline-fs: 0.875em;    /* backticked tokens in running text */
+  --code-inline-pad: 0.1em 0.35em;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --dur-hover: 140ms;           /* colour / opacity */
+  --dur-press: 160ms;           /* press feedback, scale(0.97) */
+  --press: 0.97;
 }
 
 /* --- v1.1 reader scope (DESIGN.md §10.1): one record, two token scopes.
@@ -91,8 +151,19 @@
   --lh-title-1: var(--lh-subject);
   --fs-body: var(--fs-body-r);
   --lh-body: var(--lh-body-r);
-  --col-gap: var(--sp-16);        /* between reader sections */
+  --col-gap: var(--sp-10);        /* between reader sections (v1.2: 40 on mobile) */
   --tt-kicker: uppercase;         /* section names; the data stays lowercase */
   --strip-val: var(--fg-3);       /* the strip is a whisper on the reader view */
   --strip-bw: 0px;                /* no rules around the demoted strip */
+}
+@media (max-width: 30rem) {
+  [data-view='reader'] {
+    --fs-title-1: var(--fs-subject-sm);
+    --lh-title-1: var(--lh-subject-sm);
+    --fs-lead: var(--fs-lead-sm);
+    --lh-lead: var(--lh-lead-sm);
+  }
+}
+@media (min-width: 48rem) {
+  [data-view='reader'] { --col-gap: var(--sp-16); } /* 64 between reader sections */
 }

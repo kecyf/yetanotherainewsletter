@@ -15,7 +15,7 @@ if (prompt.includes('latest')) throw new Error('the prompt must always point at 
 <section id="agent" class="bg-surface border border-line rounded-2 p-4 flex flex-col gap-3">
   <Title level={2}>give it to your agent</Title>
   <p class="text-micro text-fg-3">{copy.agentBlock.instruction}</p>
-  <pre id="prompt" class="bg-surface-2 border border-line rounded-1 p-3 px-4 font-mono text-micro text-fg-2 whitespace-pre-wrap break-words">{prompt}</pre>
+  <pre id="prompt" class="bg-surface-2 border border-line rounded-1 p-3 px-4 font-mono text-micro text-fg-2 whitespace-pre-wrap wrap-anywhere">{prompt}</pre>
   <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
     <button
       class="btn bg-accent text-accent-ink"

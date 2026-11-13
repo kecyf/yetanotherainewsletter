@@ -22,6 +22,6 @@ CONFIRM_DEPLOY=1 scripts/publish-live.sh
 git push -q origin HEAD:main
 SITE="https://yetanotherainewsletter.org"
 sleep 6
-code=$(curl -4 -s -o /dev/null -w '%{http_code}' "$SITE/$D")
+code=$(curl -4 -sL -o /dev/null -w '%{http_code}' "$SITE/$D")
 echo "live check: $SITE/$D -> $code"
 [ "$code" = "200" ] || { echo "live check FAILED" >&2; exit 2; }

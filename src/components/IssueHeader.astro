@@ -19,10 +19,11 @@ const micro = copy.issueHeader.micro
   .replace('{m}', String(readMinutes(bodyText)));
 ---
 
-<header class="flex flex-col gap-3">
+<header class="flex flex-col gap-4">
   <Title level={1}>{subject}</Title>
-  <p class="font-mono text-micro text-fg-3">
-    {micro}<a class="text-fg-3" href="#agent">{copy.issueHeader.agentCta}</a>
-  </p>
-  <p class="text-fg-2">{intro}</p>
+  <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+    <p class="font-mono text-micro text-fg-3 tr-meta whitespace-nowrap">{micro}</p>
+    <a class="btn cta" href="#agent">{copy.issueHeader.agentCta}</a>
+  </div>
+  <p class="fs-preface">{intro}</p>
 </header>

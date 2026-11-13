@@ -20,12 +20,14 @@ export const positioning = {
 
 export const hero = {
   line: 'yet another ai newsletter. assembled by agents, curated by a human, readable by your agent in one fetch.',
+  // v1.2: the frame around the newest issue on the home page
+  latestLabel: 'latest issue',
   notToday: 'today\'s issue lands around 06:00 utc. this is the latest one.',
 };
 
 export const issueHeader = {
   // placeholders: {date} {weekday} {n} {m}
-  micro: '{date} · {weekday} · issue {n} · {m} min · ',
+  micro: '{date} · {weekday} · issue {n} · {m} min',
   agentCta: 'give it to your agent ↓',
   title: '{subject} · yaan {n}',
 };
@@ -54,6 +56,10 @@ export const sections = {
 
 export const item = {
   addedByHand: 'added by hand',
+  // v1.2: the kicker above the lead item, the accessible name of the item number
+  leadKicker: 'lead',
+  // {n}
+  numberLabel: 'item {n}, link to this item',
 };
 
 export const agentBlock = {
@@ -141,6 +147,7 @@ export const empty = {
 export const fixtureNote = 'this issue is fixture data — a labelled stand-in for a brain record, not a real issue.';
 
 export const nav = {
+  label: 'site',
   archive: 'archive',
   about: 'about',
   subscribe: 'subscribe',

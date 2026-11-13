@@ -144,7 +144,8 @@ function parseHtmlIssue(html) {
   for (const m of main.matchAll(/<article id="(\d+)"[^>]*>([\s\S]*?)<\/article>/g)) {
     const body = m[2];
     const a = /<a[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/.exec(body);
-    const why = norm(/<p class="text-fg-2[^"]*">([\s\S]*?)<\/p>/.exec(body)[1]);
+    // v1.2: inline <code> (backtick pairs in `why`) is markup around the same text the twin prints
+    const why = norm(/<p class="text-fg-2[^"]*">([\s\S]*?)<\/p>/.exec(body)[1].replace(/<\/?code>/g, ''));
     const provRaw = /<p class="font-mono[^"]*">([\s\S]*?)<\/p>/.exec(body)[1];
     const prov = norm(provRaw.replace(/<[^>]+>/g, ''));
     out.items.push({ n: Number(m[1]), title: norm(a[2]), href: a[1], why, prov });

@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import tokensCss from '../styles/tokens.css?raw';
+import { copy } from '../content/copy';
 
 interface Props {
   title: string;
@@ -12,14 +14,38 @@ interface Props {
 }
 const { title, description, current, view = 'reader' } = Astro.props;
 const desc = description ?? '';
+// one theme-color, read from the tokens (the page background); no colour literal lives here
+const themeColor = /--bg:\s*(#[0-9a-fA-F]{6})/.exec(tokensCss)?.[1] ?? '';
+// canonical + share image are absolute on the production origin; they are metadata, not requests
+const path = Astro.url.pathname.length > 1 ? Astro.url.pathname.replace(/\/$/, '') : '/';
+const canonical = `${copy.site.origin}${path}`;
+const ogImage = `${copy.site.origin}/og.png`;
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content={themeColor} />
     <title>{title}</title>
     {desc && <meta name="description" content={desc} />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/fonts/Geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/GeistMono-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={copy.site.brand} />
+    <meta property="og:title" content={title} />
+    {desc && <meta property="og:description" content={desc} />}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={copy.positioning.short} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    {desc && <meta name="twitter:description" content={desc} />}
+    <meta name="twitter:image" content={ogImage} />
     <meta name="generator" content={Astro.generator} />
   </head>
   <body class="bg-bg text-fg-2 text-body font-sans" data-view={view}>

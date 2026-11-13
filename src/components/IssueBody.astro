@@ -19,8 +19,10 @@ import type { IssueEntry } from '../content/schema';
 
 interface Props {
   entry: IssueEntry;
+  /** v1.2: the home page frames the newest issue with this label (copy.hero.latestLabel). */
+  label?: string;
 }
-const { entry } = Astro.props;
+const { entry, label } = Astro.props;
 const bodyText = [
   entry.intro,
   ...entry.sections.flatMap((s) => s.items.map((i) => `${i.title} ${i.why}`)),
@@ -41,29 +43,40 @@ const leadSection = leadItem
   : undefined;
 const isLead = (sectionName: string, n: number) =>
   leadItem !== undefined && sectionName === leadSection?.name && n === leadItem.n;
+// v1.2: a section whose only item is the lead has nothing left to show, so it renders
+// no header at all (the lead lives in the issue head). the .md twin is untouched.
+const visibleSections = entry.sections
+  .map((s) => ({ ...s, items: s.items.filter((it) => !isLead(s.name, it.n)) }))
+  .filter((s) => s.items.length > 0);
 ---
 
 <main class="col">
   <slot name="before" />
   {entry.fixture && <FixtureNote />}
-  <IssueHeader date={entry.date} issue={entry.issue} subject={entry.subject} intro={entry.intro} bodyText={bodyText} />
-  {leadItem && (
-    <div class="lead">
-      <ItemRow n={leadItem.n} title={leadItem.title} url={leadItem.url} why={leadItem.why} agent={leadItem.agent} hand={leadItem.hand} lead />
-    </div>
-  )}
-  {entry.sections.map((s) => (
-    <section class="flex flex-col gap-4" aria-labelledby={`s-${s.name}`}>
+  <div class="flex flex-col gap-8">
+    {label && (
+      <p class="kicker fs-kicker font-medium text-fg-2 border-t border-line pt-4">{label}</p>
+    )}
+    <IssueHeader date={entry.date} issue={entry.issue} subject={entry.subject} intro={entry.intro} bodyText={bodyText} />
+    {leadItem && (
+      <div class="flex flex-col gap-3 pt-4">
+        <p class="kicker fs-kicker font-medium text-fg-3">{copy.item.leadKicker}</p>
+        <ItemRow n={leadItem.n} title={leadItem.title} url={leadItem.url} why={leadItem.why} agent={leadItem.agent} hand={leadItem.hand} lead />
+      </div>
+    )}
+  </div>
+  {visibleSections.map((s) => (
+    <section class="flex flex-col gap-6" aria-labelledby={`s-${s.name}`}>
       <SectionHeader name={copy.sections[s.name].name} descriptor={copy.sections[s.name].descriptor} id={`s-${s.name}`} />
-      <div class="flex flex-col gap-6">
-        {s.items.filter((it) => !isLead(s.name, it.n)).map((it) => (
+      <div class="flex flex-col gap-8">
+        {s.items.map((it) => (
           <ItemRow n={it.n} title={it.title} url={it.url} why={it.why} agent={it.agent} hand={it.hand} />
         ))}
       </div>
     </section>
   ))}
   {entry.signal && (
-    <section class="flex flex-col gap-4" aria-labelledby="s-signal">
+    <section class="flex flex-col gap-6" aria-labelledby="s-signal">
       <SectionHeader name={copy.sections.signal.name} descriptor={copy.sections.signal.descriptor} id="s-signal" />
       <Signal text={entry.signal.text} curator={entry.curator} />
     </section>

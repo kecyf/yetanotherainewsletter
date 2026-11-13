@@ -8,18 +8,15 @@ const links = [
 ];
 ---
 
-<nav class="flex justify-between items-baseline" aria-label="site">
-  <a class="font-mono text-fg-1 no-underline" href="/">{copy.site.brand}</a>
-  <div class="flex items-baseline gap-2 text-micro text-fg-3">
-    {links.map((l, i) => (
-      <>
-        {i > 0 && <span class="text-fg-3">·</span>}
-        <a
-          class={current === l.key ? 'text-fg-1' : 'text-fg-3'}
-          href={l.href}
-          aria-current={current === l.key ? 'page' : undefined}
-        >{l.label}</a>
-      </>
+<nav class="flex flex-wrap items-center justify-between gap-x-4" aria-label={copy.nav.label}>
+  <a class="wordmark tap-box -ml-2" href="/">{copy.site.brand}</a>
+  <div class="flex items-center -mr-2">
+    {links.map((l) => (
+      <a
+        class={`tap-box link-quiet fs-small ${current === l.key ? 'text-fg-1 font-medium' : 'text-fg-3'}`}
+        href={l.href}
+        aria-current={current === l.key ? 'page' : undefined}
+      >{l.label}</a>
     ))}
   </div>
 </nav>

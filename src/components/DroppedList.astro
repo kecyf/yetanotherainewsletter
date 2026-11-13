@@ -14,7 +14,7 @@ const summary = copy.droppedList.summary.replace('{count}', String(items.length)
   <ul class="flex flex-col gap-3 pt-3">
     {items.map((it) => (
       <li class="flex flex-col gap-1">
-        <a class="text-fg-1" href={it.url}>{it.title}</a>
+        <a class="link-quiet tap text-fg-1" href={it.url}>{it.title}</a>
         <span class="font-mono text-micro text-fg-3">{it.agent} · {it.reason}</span>
       </li>
     ))}

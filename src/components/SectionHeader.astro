@@ -1,6 +1,7 @@
 ---
-// v1.1 (DESIGN.md §10.3.3): the section name is a kicker — the caps are a
-// display transform via the --tt-kicker token; the authored name stays as written in copy.ts.
+// v1.1 (DESIGN.md §10.3.3) + v1.2: a scan anchor. a thin rule, the section name as a
+// kicker (caps via the --tt-kicker token; the authored name stays as written in
+// copy.ts), and the descriptor one tier below it in normal case.
 interface Props {
   name: string;
   descriptor: string;
@@ -9,7 +10,7 @@ interface Props {
 const { name, descriptor, id } = Astro.props;
 ---
 
-<div class="flex items-baseline gap-2 flex-wrap">
-  <h2 class="kicker fs-kicker font-medium text-fg-3" id={id}>{name}</h2>
-  <span class="fs-kicker text-fg-3">{descriptor}</span>
+<div class="flex items-baseline gap-x-3 gap-y-1 flex-wrap border-t border-line pt-4">
+  <h2 class="kicker fs-kicker font-medium text-fg-2" id={id}>{name}</h2>
+  <span class="fs-small text-fg-3">{descriptor}</span>
 </div>

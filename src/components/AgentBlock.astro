@@ -16,9 +16,9 @@ if (prompt.includes('latest')) throw new Error('the prompt must always point at 
   <Title level={2}>give it to your agent</Title>
   <p class="text-micro text-fg-3">{copy.agentBlock.instruction}</p>
   <pre id="prompt" class="bg-surface-2 border border-line rounded-1 p-3 px-4 font-mono text-micro text-fg-2 whitespace-pre-wrap break-words">{prompt}</pre>
-  <div class="flex flex-wrap items-baseline gap-3">
+  <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
     <button
-      class="bg-accent text-accent-ink rounded-1 px-4 py-2 font-mono text-micro font-medium"
+      class="btn bg-accent text-accent-ink"
       type="button"
       hidden
       data-copy
@@ -26,8 +26,8 @@ if (prompt.includes('latest')) throw new Error('the prompt must always point at 
       data-copy-failed={copy.agentBlock.copyFailed}
     >{copy.agentBlock.copyButton}</button>
     <span class="text-micro text-success" role="status" data-status></span>
-    <a class="text-micro" href={`/${date}/agent`}>{copy.agentBlock.viewAsMarkdown}</a>
-    <a class="font-mono text-micro" href={`/${date}.md`}>{date}.md</a>
+    <a class="tap-box -ml-2 text-micro" href={`/${date}/agent`}>{copy.agentBlock.viewAsMarkdown}</a>
+    <a class="tap-box font-mono text-micro" href={`/${date}.md`}>{date}.md</a>
   </div>
 </section>
 

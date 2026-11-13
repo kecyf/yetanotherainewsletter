@@ -19,7 +19,7 @@ const todayHasIssue = latest !== null && latest.date === todayUtc();
     title={copy.issueHeader.title.replace('{subject}', latest.subject).replace('{n}', String(latest.issue))}
     description={copy.positioning.short}
   >
-    <IssueBody entry={latest}>
+    <IssueBody entry={latest} label={copy.hero.latestLabel}>
       <Hero slot="before" todayHasIssue={todayHasIssue} />
     </IssueBody>
   </Base>

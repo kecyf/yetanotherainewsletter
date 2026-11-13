@@ -88,6 +88,8 @@ export const droppedList = {
 };
 
 export const subscribe = {
+  // live build while no sending relay is wired: the form is replaced by this notice.
+  closed: 'email delivery is not open yet. there is no list to join and no address is collected. follow by rss or feed.json, or point your agent at llms.txt.',
   nav: 'subscribe',
   compactPromise: 'one email on days with an issue, around 06:00 utc. no tracking.',
   hiddenLabel: 'email address',
@@ -129,6 +131,9 @@ export const skippedPage = {
 };
 
 export const empty = {
+  // live build, no issue yet and no sender: no date promised, no email promised.
+  homeLive: 'no issue yet. the first one is being assembled. email delivery is not open yet; follow by rss, feed.json or llms.txt.',
+  archiveLive: 'nothing here yet. the first issue has not been published.',
   home: 'no issue yet. the first one lands around 06:00 utc on {launch_date}. subscribe and it\'ll be the first email you get.',
   archive: 'nothing here yet. the first issue lands on {launch_date}.',
 };

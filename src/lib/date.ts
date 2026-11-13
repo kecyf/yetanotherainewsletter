@@ -26,6 +26,8 @@ export function formatUtcTime(iso: string): string {
 
 /** today's date (yyyy-mm-dd) in utc. */
 export function todayUtc(): string {
+  // YAAN_TODAY pins the clock so the fixture calendar (which ends 2026-10-27) stays checkable.
+  if (process.env.YAAN_TODAY) return process.env.YAAN_TODAY;
   const d = new Date();
   return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, '0')}-${String(d.getUTCDate()).padStart(2, '0')}`;
 }

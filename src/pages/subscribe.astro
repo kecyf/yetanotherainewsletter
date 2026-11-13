@@ -8,7 +8,7 @@ import { copy } from '../content/copy';
 <Base title={`${copy.subscribe.h1} · yaan`} description={copy.positioning.short} current="subscribe">
   <main class="col">
     <Title level={1}>{copy.subscribe.h1}</Title>
-    <p class="text-fg-2">{copy.subscribe.promise}</p>
+    {!(process.env.YAAN_LIVE === '1' && process.env.YAAN_SUBSCRIBE_OPEN !== '1') && <p class="text-fg-2">{copy.subscribe.promise}</p>}
     <SubscribeForm variant="full" />
   </main>
 </Base>

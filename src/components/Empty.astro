@@ -6,7 +6,8 @@ interface Props {
   which: 'home' | 'archive';
 }
 const { which } = Astro.props;
-const text = which === 'home' ? copy.empty.home : copy.empty.archive;
+const live = process.env.YAAN_LIVE === '1';
+const text = which === 'home' ? (live ? copy.empty.homeLive : copy.empty.home) : live ? copy.empty.archiveLive : copy.empty.archive;
 ---
 
 <p class="text-fg-2">{text.replace('{launch_date}', copy.site.launchDate)}</p>

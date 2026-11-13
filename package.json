@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "check": "astro check && astro build && node scripts/check.mjs",
+    "build:live": "YAAN_LIVE=1 YAAN_DATA_DIR=src/data-live astro build",
+    "check": "export YAAN_TODAY=2026-10-27 && astro check && astro build && node scripts/check.mjs",
     "preview": "astro preview"
   },
   "dependencies": {

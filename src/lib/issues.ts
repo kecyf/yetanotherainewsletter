@@ -9,7 +9,9 @@ import { site } from '../content/copy';
 
 // astro 7 copies page modules into dist/.prerender at build time, so this module
 // cannot trust import.meta.dirname; resolve from the project root instead.
-const DATA_DIR = path.resolve(process.cwd(), 'src/data');
+// YAAN_DATA_DIR selects the data root: default `src/data` = labelled fixtures (dev + `check`),
+// `src/data-live` = real issues only (production build, `bun run build:live`).
+const DATA_DIR = path.resolve(process.cwd(), process.env.YAAN_DATA_DIR ?? 'src/data');
 const ISSUES_DIR = path.join(DATA_DIR, 'issues');
 
 export type SkippedDay = { reason?: string; proposed?: number; kept?: number };
@@ -37,6 +39,7 @@ export function getSkipped(): Map<string, SkippedDay> {
 /** launch date = the first date the calendar must cover. */
 export function launchDate(issues: IssueEntry[]): string {
   const skipped = getSkipped();
+  if (issues.length === 0) return todayUtc();
   const firstIssue = issues[0].date;
   const firstSkipped = [...skipped.keys()].sort()[0] ?? firstIssue;
   return firstIssue < firstSkipped ? firstIssue : firstSkipped;
@@ -44,6 +47,7 @@ export function launchDate(issues: IssueEntry[]): string {
 
 /** every date from launch to today is an issue or a skipped day. never both, never neither. */
 export function assertCalendarComplete(issues: IssueEntry[]): void {
+  if (issues.length === 0) return; // empty-state build: nothing to cover yet
   const issueDates = new Set(issues.map((i) => i.date));
   const skipped = getSkipped();
   for (const d of dateRange(launchDate(issues), todayUtc())) {
@@ -57,6 +61,10 @@ export function assertCalendarComplete(issues: IssueEntry[]): void {
       if (s?.kept !== undefined && s.kept >= 3) throw new Error(`${d} is skipped but claims ${s.kept} kept items`);
     }
   }
+}
+
+export function getLatestOrNull(issues: IssueEntry[]): IssueEntry | null {
+  return issues.length ? issues[issues.length - 1] : null;
 }
 
 export function getLatest(issues: IssueEntry[]): IssueEntry {

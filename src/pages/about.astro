@@ -3,12 +3,12 @@ import Base from '../layouts/Base.astro';
 import Title from '../components/Title.astro';
 import Prose from '../components/Prose.astro';
 import DatedRow from '../components/DatedRow.astro';
-import { getIssues, getLatest, fleetRows } from '../lib/issues';
+import { getIssues, getLatestOrNull, fleetRows } from '../lib/issues';
 import { copy } from '../content/copy';
 
-const latest = getLatest(getIssues());
-const fleet = fleetRows(latest);
-const changelog = latest.models.map((m) => ({ key: latest.date, value: m }));
+const latest = getLatestOrNull(getIssues());
+const fleet = latest ? fleetRows(latest) : [];
+const changelog = latest ? latest.models.map((m) => ({ key: latest.date, value: m })) : [];
 
 const blocks = [
   { id: 'what-this-is', heading: copy.about.whatThisIs, paragraphs: [copy.positioning.long] },

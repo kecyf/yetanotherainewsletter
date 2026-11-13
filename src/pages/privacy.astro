@@ -3,10 +3,10 @@ import Base from '../layouts/Base.astro';
 import Title from '../components/Title.astro';
 import Prose from '../components/Prose.astro';
 import { copy } from '../content/copy';
-import { getLatest, getIssues } from '../lib/issues';
+import { getLatestOrNull, getIssues } from '../lib/issues';
 
 // privacy blocks come from the copy deck verbatim (DESIGN.md §4).
-const curator = getLatest(getIssues()).curator;
+const curator = getLatestOrNull(getIssues())?.curator ?? 'kevin';
 const blocks = [
   { id: 'who-runs-it', heading: copy.privacy.whoRunsIt, paragraphs: [copy.privacy.whoRunsItBody.replace('{curator}', curator).replace('{country}', 'france')] },
   { id: 'whats-stored', heading: copy.privacy.whatsStored, paragraphs: [copy.privacy.whatsStoredBody] },

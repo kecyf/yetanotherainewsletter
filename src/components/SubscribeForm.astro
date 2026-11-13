@@ -8,8 +8,13 @@ interface Props {
   variant: 'full' | 'compact';
 }
 const { variant } = Astro.props;
+// live build with no sender wired: render an honest notice instead of a form that posts nowhere.
+const closed = process.env.YAAN_LIVE === '1' && process.env.YAAN_SUBSCRIBE_OPEN !== '1';
 ---
 
+{closed ? (
+  <p class="text-fg-2" role="note">{copy.subscribe.closed}</p>
+) : (
 <form method="post" class="flex flex-col gap-2">
   {variant === 'compact' && <p class="text-micro text-fg-3">{copy.subscribe.compactPromise}</p>}
   <div class="flex flex-wrap gap-2">
@@ -29,3 +34,4 @@ const { variant } = Astro.props;
     >{copy.subscribe.button}</button>
   </div>
 </form>
+)}

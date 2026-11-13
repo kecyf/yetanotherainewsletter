@@ -311,7 +311,7 @@ console.log('\n[10] calendar completeness: every date from launch to today is is
 {
   const bad = [];
   const dstr = (d) => d.toISOString().slice(0, 10);
-  const today = new Date();
+  const today = process.env.YAAN_TODAY ? new Date(`${process.env.YAAN_TODAY}T00:00:00Z`) : new Date();
   const launch = [issueDates[0], ...skippedDates].sort()[0];
   for (let d = new Date(`${launch}T00:00:00Z`); d <= today; d.setUTCDate(d.getUTCDate() + 1)) {
     const s = dstr(d);

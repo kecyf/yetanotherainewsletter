@@ -24,6 +24,10 @@ export function getIssues(): IssueEntry[] {
     if (!parsed.success) {
       throw new Error(`issue fixture ${f} fails the schema:\n${parsed.error.issues.map((i) => `  - ${i.path.join('.') || '(root)'}: ${i.message}`).join('\n')}`);
     }
+    // production builds never ship a labelled stand-in as a real issue.
+    if (process.env.YAAN_LIVE === '1' && parsed.data.fixture) {
+      throw new Error(`issue ${f} is a fixture (fixture: true) and cannot be part of a live build`);
+    }
     return parsed.data;
   });
   if (issues.length === 0) console.warn('no issues found under src/data/issues (empty-state build)');
@@ -87,12 +91,13 @@ export function fleetRows(e: IssueEntry): { key: string; value: string }[] {
   const proposedBy = new Map<string, number>();
   for (const s of e.sections) for (const it of s.items) proposedBy.set(it.agent, (proposedBy.get(it.agent) ?? 0) + 1);
   for (const d of e.dropped) proposedBy.set(d.agent, (proposedBy.get(d.agent) ?? 0) + 1);
-  const scoutModel = e.models.find((m) => m.includes('(scouts)')) ?? e.models[0];
+  // only a model explicitly tagged (scouts) is attributed to the scouts; never guess from models[0].
+  const scoutModel = e.models.find((m) => m.includes('(scouts)'));
   const dedupeModel = e.models.find((m) => m.includes('(dedupe)'));
   const draftModel = e.models.find((m) => m.includes('(draft)'));
   const rows = [...proposedBy.entries()].map(([agent, n]) => ({
     key: agent,
-    value: `veille · ${scoutModel.split(' (')[0]} · ${n} item${n === 1 ? '' : 's'} proposed`,
+    value: `veille · ${scoutModel ? `${scoutModel.split(' (')[0]} · ` : ''}${n} item${n === 1 ? '' : 's'} proposed`,
   }));
   if (dedupeModel) rows.push({ key: 'dedupe', value: `dedupe · ${dedupeModel.split(' (')[0]} · ${e.stats.proposed} proposals seen` });
   if (draftModel) rows.push({ key: 'draft', value: `draft · ${draftModel.split(' (')[0]} · ${e.stats.kept} items assembled` });

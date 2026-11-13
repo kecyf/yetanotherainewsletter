@@ -1,5 +1,7 @@
 // the issue entry schema with every invariant as a refinement (DESIGN.md §6).
-// fixture files under src/data/issues are validated against this at build time.
+// issues under the data root (src/data fixtures, src/data-live real issues) are
+// validated against this at build time. `fixture: true` marks a labelled stand-in
+// and is the only thing that makes the fixture notice render.
 
 import { z } from 'zod';
 
@@ -10,6 +12,7 @@ const itemSchema = z.object({
   title: z.string().min(1),
   url: z.url(),
   why: z.string().min(1).refine((s) => s.length <= 220, { message: 'why must stay within 220 chars (warning threshold)' }),
+  // free-form on purpose: a real agent/rail slug such as 'veille-labs-rail' (no enum).
   agent: z.string().min(1),
   hand: z.boolean().optional().default(false),
   // v1.1 (DESIGN.md §10.3.2): optional flag on exactly one item; the first
@@ -19,7 +22,7 @@ const itemSchema = z.object({
 
 export const issueSchema = z
   .object({
-    fixture: z.literal(true),
+    fixture: z.boolean(),
     date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     issue: z.number().int().positive(),
     subject: z
@@ -40,6 +43,7 @@ export const issueSchema = z
       hand: z.number().int().nonnegative(),
       kept: z.number().int().min(3),
     }),
+    // free-form on purpose: exactly the model ids the compose run used (no enum, no role tag required).
     models: z.array(z.string().min(1)).min(1),
     sections: z.array(
       z.object({

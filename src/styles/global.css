@@ -110,7 +110,7 @@
   display: inline-flex;
   align-items: center;
   min-height: var(--tap);
-  padding-inline: var(--sp-2);
+  padding-inline: calc(var(--spacing) * 2); /* same unit as the -ml-2 / -mx-2 that cancels it, so they stay aligned when the root font size changes */
 }
 /* extends the hit area to --tap without touching layout (inline links, number chips) */
 @utility tap {

@@ -59,7 +59,7 @@ export const item = {
   // v1.2: the kicker above the lead item, the accessible name of the item number
   leadKicker: 'lead',
   // {n}
-  numberLabel: 'item {n}, link to this item',
+  numberLabel: 'cite as #{n}',
 };
 
 export const agentBlock = {

@@ -14,6 +14,7 @@ interface Props {
   lead?: boolean;
 }
 const { n, title, url, why, agent, hand, lead } = Astro.props;
+const cite = copy.item.numberLabel.replace('{n}', String(n));
 if (why.length > 220) console.warn(`item ${n}: why is ${why.length} chars (warning above 220)`);
 ---
 
@@ -21,9 +22,9 @@ if (why.length > 220) console.warn(`item ${n}: why is ${why.length} chars (warni
   <h3 class={`text-fg-1 font-medium tr-title ${lead ? 'fs-lead' : 'fs-item'}`}>
     <a class="link-quiet tap" href={url}>{title}</a>
   </h3>
-  <p class={`text-fg-2${lead ? ' fs-lead-why' : ''}`} set:html={renderInline(why)} />
+  <p class="text-fg-2" set:html={renderInline(why)} />
   <p class="font-mono text-micro text-fg-3">
-    <a class="num-chip tap" href={`#${n}`} aria-label={copy.item.numberLabel.replace('{n}', String(n))}>{n}</a> · <span class="text-fg-2">{domainOf(url)}</span> · <span>{agent}</span>
+    <a class="num-chip tap" href={`#${n}`} title={cite} aria-label={cite}>{n}</a> · <span class="text-fg-2">{domainOf(url)}</span> · <span>{agent}</span>
     {hand && ` · ${copy.item.addedByHand}`}
   </p>
 </article>

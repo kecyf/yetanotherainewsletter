@@ -8,12 +8,12 @@ const links = [
 ];
 ---
 
-<nav class="flex flex-wrap items-center justify-between gap-x-4" aria-label={copy.nav.label}>
+<nav class="nav-gap flex flex-wrap items-center justify-between gap-x-4" aria-label={copy.nav.label}>
   <a class="wordmark tap-box -ml-2" href="/">{copy.site.brand}</a>
   <div class="flex items-center -mr-2">
     {links.map((l) => (
       <a
-        class={`tap-box link-quiet fs-small ${current === l.key ? 'text-fg-1 font-medium' : 'text-fg-3'}`}
+        class="tap-box nav-link fs-small"
         href={l.href}
         aria-current={current === l.key ? 'page' : undefined}
       >{l.label}</a>

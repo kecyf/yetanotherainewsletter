@@ -1,16 +1,20 @@
 ---
-// v1.1 (DESIGN.md §10.3.3) + v1.2: a scan anchor. a thin rule, the section name as a
-// kicker (caps via the --tt-kicker token; the authored name stays as written in
-// copy.ts), and the descriptor one tier below it in normal case.
+// the one label pattern (DESIGN.md §11.4). an eyebrow (latest issue / lead / a section name)
+// with an optional descriptor on the same tier. the rule above exists only at a section
+// boundary (rule = true); it is a block border, so it spans the full column. a heading tag
+// is used for section names, a plain div for the two framing eyebrows.
 interface Props {
   name: string;
-  descriptor: string;
+  descriptor?: string;
   id?: string;
+  rule?: boolean;
+  tag?: 'h2' | 'div';
 }
-const { name, descriptor, id } = Astro.props;
+const { name, descriptor, id, rule = true, tag = 'h2' } = Astro.props;
+const Tag = tag;
 ---
 
-<div class="flex items-baseline gap-x-3 gap-y-1 flex-wrap border-t border-line pt-4">
-  <h2 class="kicker fs-kicker font-medium text-fg-2" id={id}>{name}</h2>
-  <span class="fs-small text-fg-3">{descriptor}</span>
+<div class={`flex items-baseline gap-x-3 flex-wrap ${rule ? 'border-t border-line pt-4' : ''}`}>
+  <Tag class="eyebrow" id={id}>{name}</Tag>
+  {descriptor && <span class="eyebrow-note">{descriptor}</span>}
 </div>

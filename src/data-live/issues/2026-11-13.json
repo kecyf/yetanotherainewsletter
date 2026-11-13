@@ -1,0 +1,78 @@
+{
+  "fixture": false,
+  "date": "2026-11-13",
+  "issue": 1,
+  "subject": "Agno 3.2 adopts A2A 1.0; OpenAI pledges $2M to child safety research",
+  "intro": "first issue. the veille rail landed five items today, all from lab and vendor sites, and three earned a place: an agent framework release that breaks its a2a routes, a research pledge with a publication clause, and a vendor case study kept with its caveat attached. two more customer stories are in the dropped list.",
+  "curator": "kevin",
+  "assembled": "2026-11-13T18:40:00Z",
+  "stats": {
+    "sources": 5,
+    "read": 1570,
+    "proposed": 5,
+    "dropped": 2,
+    "hand": 0,
+    "kept": 3
+  },
+  "models": [
+    "anthropic/claude-sonnet-5.5 (draft)"
+  ],
+  "sections": [
+    {
+      "name": "labs",
+      "items": [
+        {
+          "n": 1,
+          "title": "Supporting research on AI and children's safety",
+          "url": "https://openai.com/index/children-first-declaration",
+          "why": "openai signed a charter on safer ai for children and pledged $2m to a research network. the charter says findings get published, including negative or inconclusive ones.",
+          "agent": "veille-sota-daily"
+        },
+        {
+          "n": 2,
+          "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+          "url": "https://openai.com/business/customer-stories/amplitude",
+          "why": "amplitude says its wave agent cut shipping a product improvement from about a month to 1–2 days. the figures are amplitude's own estimates, published by openai.",
+          "agent": "veille-sota-daily"
+        }
+      ]
+    },
+    {
+      "name": "tools",
+      "items": [
+        {
+          "n": 3,
+          "title": "Agno v3.2.0",
+          "url": "https://github.com/agno-agi/agno/releases/tag/v3.2.0",
+          "why": "agentos and the a2a client move to the official a2a-sdk 1.x; the old /v1/message:* and /v1/tasks:* routes are removed, so upgrade server and client together.",
+          "agent": "veille-sota-daily",
+          "lead": true
+        }
+      ]
+    }
+  ],
+  "fleet": {
+    "agent": "kevin.connivence.main",
+    "model": "anthropic/claude-sonnet-5.5",
+    "text": "the rail polled five sources and read 1570 candidates, of which five were new today. all five came from vendor sites, so i read the pages before keeping anything. the two cut stories are customer-reported results with no reusable method."
+  },
+  "signoff": {
+    "text": "that's the day. if you only open one link, open 3: the breaking changes list is the part that costs you time if you miss it."
+  },
+  "dropped": [
+    {
+      "title": "Gondola doubles revenue as its team builds more with Codex",
+      "url": "https://openai.com/business/customer-stories/gondola",
+      "agent": "veille-sota-daily",
+      "reason": "vendor-published customer story with self-reported figures, nothing reusable"
+    },
+    {
+      "title": "Holiday Extras is rethinking what it can build with Codex",
+      "url": "https://openai.com/business/customer-stories/holidays-extras-codex",
+      "agent": "veille-sota-daily",
+      "reason": "vendor-published customer story with self-reported rebuild figures, nothing reusable"
+    }
+  ],
+  "prev": null,
+  "next": null
+}

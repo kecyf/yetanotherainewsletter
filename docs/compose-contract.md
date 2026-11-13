@@ -47,3 +47,6 @@ Exit 0 = publishable shape, exit 1 = readable errors. The schema is `src/content
 
     bun run build:live     # must pass with the new issue
     scripts/publish-live.sh   # dry by default; CONFIRM_DEPLOY=1 deploys (Kevin's GO only)
+
+## Voice and casing
+body text (`intro`, `why`, `fleet.text`, `signoff`) keeps the lowercase voice, but proper nouns, product names and acronyms keep their own casing (OpenAI, Anthropic, A2A, Agno, AgentOS, GPT-5). write routes and commands in backticks. titles copied from the source stay as published.

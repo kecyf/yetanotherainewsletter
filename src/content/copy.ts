@@ -22,7 +22,7 @@ export const hero = {
   line: 'yet another ai newsletter. assembled by agents, curated by a human, readable by your agent in one fetch.',
   // v1.2: the frame around the newest issue on the home page
   latestLabel: 'latest issue',
-  notToday: 'today\'s issue lands around 06:00 utc. this is the latest one.',
+  notToday: 'there is no issue for today yet. this is the latest one.',
 };
 
 export const issueHeader = {
@@ -97,18 +97,18 @@ export const subscribe = {
   // live build while no sending relay is wired: the form is replaced by this notice.
   closed: 'email delivery is not open yet. there is no list to join and no address is collected. follow by rss or feed.json, or point your agent at llms.txt.',
   nav: 'subscribe',
-  compactPromise: 'one email on days with an issue, around 06:00 utc. no tracking.',
+  compactPromise: 'one email on days with an issue. no tracking.',
   hiddenLabel: 'email address',
   placeholder: 'you@example.com',
   button: 'subscribe',
   h1: 'subscribe',
-  promise: 'the issue in your inbox around 06:00 utc, only on days there is one. plain text-first email, no tracking pixels, no rewritten links, one-click unsubscribe. you can also follow by rss or feed.json without giving anyone an address.',
+  promise: 'the issue in your inbox, only on days there is one. plain text-first email, no tracking pixels, no rewritten links, one-click unsubscribe. you can also follow by rss or feed.json without giving anyone an address.',
   invalid: 'that doesn\'t look like an email address.',
   pendingH1: 'check your inbox',
   pendingBody: 'a confirmation link is on its way. nothing arrives until you click it. if it isn\'t there in five minutes, check spam.',
   pendingTag: 'pending',
   confirmedH1: 'you\'re in',
-  confirmedBody: 'the next issue lands around 06:00 utc.',
+  confirmedBody: 'the next issue lands on the day it ships.',
   confirmedReadLatest: 'read the latest',
   confirmedBrowseArchive: 'browse the archive',
   confirmedTag: 'confirmed',
@@ -140,7 +140,7 @@ export const empty = {
   // live build, no issue yet and no sender: no date promised, no email promised.
   homeLive: 'no issue yet. the first one is being assembled. email delivery is not open yet; follow by rss, feed.json or llms.txt.',
   archiveLive: 'nothing here yet. the first issue has not been published.',
-  home: 'no issue yet. the first one lands around 06:00 utc on {launch_date}. subscribe and it\'ll be the first email you get.',
+  home: 'no issue yet. the first one lands on {launch_date}. subscribe and it\'ll be the first email you get.',
   archive: 'nothing here yet. the first issue lands on {launch_date}.',
 };
 
@@ -181,7 +181,7 @@ export const about = {
     { key: 'last', value: 'the curator approves; the issue, its markdown twin, feed.json and rss ship together' },
   ],
   citing: 'citing yaan',
-  citingBody: 'cite an item as yetanotherainewsletter.org/{date}#{n}. those urls never change. issues are never edited after 12:00 utc on their day; corrections go in the next issue\'s intro.',
+  citingBody: 'cite an item as yetanotherainewsletter.org/{date}#{n}. those urls never change. a published issue is never edited; corrections go in the next issue\'s intro.',
   doesntDo: 'what yaan doesn\'t do',
   doesntDoBody: 'no hype, no summaries of summaries, no "top 10" lists, no paywall, no tracking. items link to their sources; yaan doesn\'t repost their text.',
   changelog: 'model changelog',

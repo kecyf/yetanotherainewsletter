@@ -4,6 +4,7 @@
 // applies the public-safe rule and the integrity rules on top.
 //
 //   node scripts/check-kb.mjs [dist]       validate dist (fixture builds are allowed: envelope carries fixture: true)
+//   node scripts/check-kb.mjs dist --prod  validate an existing dist with the production rules (publish-live.sh runs this before any deploy)
 //   node scripts/check-kb.mjs --build-live build the live data (YAAN_DATA_DIR=src/data-live) into
 //                                          node_modules/.cache/yaan-kb-live and validate it as production:
 //                                          no fixture flag anywhere, counts equal the committed snapshots
@@ -17,6 +18,7 @@ import { spawnSync } from 'node:child_process';
 const ROOT = path.resolve(import.meta.dirname, '..');
 const args = process.argv.slice(2);
 const buildLive = args.includes('--build-live');
+const prod = buildLive || args.includes('--prod'); // --prod: apply the production rules to an existing dist (publish-live.sh)
 const LIVE_OUT = path.join(ROOT, 'node_modules/.cache/yaan-kb-live');
 const DIST = buildLive ? LIVE_OUT : path.resolve(ROOT, args.find((a) => !a.startsWith('--')) ?? 'dist');
 const ORIGIN = 'https://yetanotherainewsletter.org';
@@ -57,7 +59,7 @@ if (!fs.existsSync(path.join(DIST, 'api/v1/index.json'))) {
   console.error(`no api in ${DIST}: build first`);
   process.exit(1);
 }
-console.log(`[kb] checking ${path.relative(ROOT, DIST) || '.'}${buildLive ? ' (production rules)' : ''}`);
+console.log(`[kb] checking ${path.relative(ROOT, DIST) || '.'}${prod ? ' (production rules)' : ''}`);
 
 // ---------------------------------------------------------------- a small JSON Schema validator (the subset the spec uses)
 function validate(schema, value, spec, at = '$') {
@@ -372,7 +374,7 @@ section('[kb 5] llms, mcp card, headers, functions');
 }
 
 // ---------------------------------------------------------------- [6] production only
-if (buildLive) {
+if (prod) {
   section('[kb 6] production: no fixture data, counts equal the committed snapshots');
   const errs = [];
   for (const [p, doc] of docs) if ('fixture' in doc) errs.push(`${p}: carries fixture flag`);

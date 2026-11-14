@@ -37,7 +37,8 @@ export function optionsResponse(): Response {
 export async function fetchAsset(ctx: Ctx, path: string): Promise<{ status: number; json: any | null }> {
   const url = new URL(path, ctx.request.url);
   const res = await ctx.env.ASSETS.fetch(new Request(url.toString(), { method: 'GET', headers: { accept: 'application/json' } }));
-  if (!res.ok) return { status: res.status, json: null };
+  // the site has no 404 page, so Pages answers unknown paths with 200 + index.html: only json counts as found
+  if (!res.ok || !(res.headers.get('content-type') ?? '').includes('json')) return { status: res.ok ? 404 : res.status, json: null };
   try {
     return { status: 200, json: await res.json() };
   } catch {

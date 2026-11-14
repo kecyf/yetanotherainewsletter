@@ -23,7 +23,7 @@ export const TOOLS = [
   {
     name: 'get_issue',
     description:
-      'Get one published yaan issue by its date (UTC, YYYY-MM-DD): kept items with source urls and why-notes, dropped items with reasons, fleet note, stats and the models used. Use when you already know the date. Days without an issue (weekends, days with fewer than 3 items worth keeping) return an error that lists the dates that do exist.',
+      'Get one published yaan issue by its date (UTC, YYYY-MM-DD): kept items with source urls and why-notes, dropped items with reasons, fleet note, stats and the models used. Use when you already know the date. Days without an issue (skipped days) return an error that lists the dates that do exist.',
     inputSchema: { type: 'object', properties: { date: DATE }, required: ['date'], additionalProperties: false },
   },
   {

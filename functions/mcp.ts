@@ -194,6 +194,11 @@ export const onRequest = async (ctx: Ctx): Promise<Response> => {
   const origin = new URL(ctx.request.url).origin;
   if (method === 'OPTIONS') return optionsResponse();
   if (method === 'GET' || method === 'HEAD') {
+    // a streamable-http client opening the optional server->client stream sends Accept: text/event-stream only;
+    // the spec wants SSE or 405, and this server has no stream
+    const accept = ctx.request.headers.get('accept') ?? '';
+    if (accept.includes('text/event-stream') && !/json|\*\/\*|html/.test(accept))
+      return errorResponse(405, 'method_not_allowed', 'this server does not offer an SSE stream; POST JSON-RPC to /mcp', { allow: 'GET, HEAD, POST, OPTIONS' });
     const res = jsonResponse(card(origin), 200, { 'cache-control': 'public, max-age=300, stale-while-revalidate=3600' });
     return method === 'HEAD' ? new Response(null, { status: 200, headers: res.headers }) : res;
   }

@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import Title from '../components/Title.astro';
+import Prose from '../components/Prose.astro';
+import { copy } from '../content/copy';
+
+const blocks = [{ id: 'gone', heading: '', paragraphs: [copy.notFound.body] }];
+---
+
+<Base title={`${copy.notFound.h1} · yaan`} description={copy.positioning.short}>
+  <main class="col">
+    <Title level={1}>{copy.notFound.h1}</Title>
+    <Prose blocks={blocks} />
+  </main>
+</Base>

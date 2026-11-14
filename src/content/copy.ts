@@ -169,6 +169,11 @@ export const footer = {
   privacy: 'privacy',
 };
 
+export const notFound = {
+  h1: 'not found',
+  body: 'no page and no api file lives at this address. the api index is at /api/v1/, the docs at /api.',
+};
+
 export const about = {
   h1: 'about',
   whatThisIs: 'what this is',
@@ -379,6 +384,7 @@ export const copy = {
   nav,
   footer,
   about,
+  notFound,
   privacy,
   band,
   api,

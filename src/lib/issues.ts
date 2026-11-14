@@ -58,6 +58,8 @@ export function assertCalendarComplete(issues: IssueEntry[]): void {
     const isIssue = issueDates.has(d);
     const isSkipped = skipped.has(d);
     if (isIssue && isSkipped) throw new Error(`${d} is both an issue and a skipped day`);
+    // dev server only: a gap day (e.g. the utc date just rolled over) must not blank the preview. builds still fail.
+    if (!isIssue && !isSkipped && import.meta.env.DEV) continue;
     if (!isIssue && !isSkipped) throw new Error(`${d} is neither an issue nor a skipped day (calendar completeness)`);
     if (isSkipped && !isIssue) {
       // a skipped day must not carry >= 3 kept items anywhere

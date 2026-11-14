@@ -1,0 +1,127 @@
+---
+// /api: the human-readable docs of the public kb api (docs/kb-api-v1.md). static html, no js beyond the
+// copy buttons. every string, path and command comes from copy.api; {origin} and {email} are filled here.
+import Base from '../layouts/Base.astro';
+import Title from '../components/Title.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import Snippet from '../components/Snippet.astro';
+import AgentBlock from '../components/AgentBlock.astro';
+import CopyScript from '../components/CopyScript.astro';
+import { copy } from '../content/copy';
+import { escapeHtml } from '../lib/inlineCode';
+
+const { api, site } = copy;
+const fill = (t: string) => t.replaceAll('{origin}', site.origin).replaceAll('{email}', site.email);
+// a path may break after a slash, never inside a segment
+const brk = (path: string) => {
+  const prefix = '/api/v1/';
+  const dim = path.startsWith(prefix) && path.length > prefix.length;
+  const segs = (dim ? path.slice(prefix.length) : path).split('/');
+  const html = segs.map((seg) => (seg ? `<span class="whitespace-nowrap">${escapeHtml(seg)}</span>` : '')).join('/<wbr>');
+  return dim ? `<span class="text-fg-3">${prefix}</span><wbr>${html}` : html;
+};
+const cp = { copyLabel: api.copyButton, copied: api.copied, copyFailed: api.copyFailed };
+const prompt = api.agent.lines.map((l, i) => `${i + 1}. ${fill(l)}`).join('\n');
+---
+
+<Base title={api.title} description={copy.positioning.short} current="api">
+  <main class="col">
+    <header class="flex flex-col gap-4">
+      <Title level={1}>{api.h1}</Title>
+      <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+        <p class="flex flex-wrap items-center gap-x-2 -ml-2 font-mono text-micro">
+          {api.entry.map((e) => <a class="tap-box" href={e.href}>{e.label}</a>)}
+        </p>
+        <a class="btn cta" href="#agent">{api.agentCta}</a>
+      </div>
+      <p class="fs-preface">{api.preface}</p>
+    </header>
+
+    <div class="flex flex-col gap-6">
+      <Snippet id="base-url" label={api.baseLabel} text={fill(api.baseUrl)} {...cp} />
+      <dl class="kv font-mono text-micro" aria-label={api.factsLabel}>
+        {api.facts.map((f) => (
+          <div class="kv-pair">
+            <dt class="text-fg-3">{f.key}</dt>
+            <dd class="text-strip-val">{f.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+
+    <section class="flex flex-col gap-4" aria-labelledby="s-start">
+      <SectionHeader name={api.start.name} descriptor={api.start.descriptor} id="s-start" />
+      <div class="flex flex-col gap-6">
+        <Snippet id="curl-latest" label={api.start.latest.label} text={fill(api.start.latest.text)} {...cp} />
+        <Snippet id="curl-search" label={api.start.search.label} text={fill(api.start.search.text)} {...cp} />
+        <Snippet id="mcp-config" label={api.start.mcp.label} text={fill(api.start.mcp.text)} {...cp} />
+      </div>
+    </section>
+
+    {[api.endpoints, api.files].map((group, gi) => (
+      <section class="flex flex-col gap-4" aria-labelledby={`s-group-${gi}`}>
+        <SectionHeader name={group.name} descriptor={group.descriptor} id={`s-group-${gi}`} />
+        <ul class="flex flex-col gap-4">
+          {group.rows.map((r) => (
+            <li class="defrow border-t border-line pt-4">
+              <div class="flex flex-col gap-1">
+                {r.example ? (
+                  <>
+                    <span class="path text-fg-1" set:html={brk(r.path)} />
+                    <a class="link-quiet tap path text-fg-2" href={r.example} set:html={brk(r.example)} />
+                  </>
+                ) : (
+                  <a class="link-quiet tap path text-fg-1" href={r.path} set:html={brk(r.path)} />
+                )}
+              </div>
+              <p class="fs-small text-fg-2">{r.what}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <section class="flex flex-col gap-4" aria-labelledby="s-mcp">
+      <SectionHeader name={api.mcp.name} descriptor={api.mcp.descriptor} id="s-mcp" />
+      <p class="text-fg-2">{api.mcp.body}</p>
+      <Snippet id="mcp-url" label={api.mcp.urlLabel} text={fill(api.mcp.url)} {...cp} />
+      <ul class="flex flex-col gap-4">
+        {api.mcp.tools.map((t) => (
+          <li class="defrow border-t border-line pt-4">
+            <span class="path text-fg-1">{t.path}</span>
+            <p class="fs-small text-fg-2">{t.what}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="flex flex-col gap-4" aria-labelledby="s-shapes">
+      <SectionHeader name={api.shapes.name} descriptor={api.shapes.descriptor} id="s-shapes" />
+      <p class="text-fg-2">{api.shapes.body}</p>
+      <Snippet id="envelope" label={api.shapes.envelopeLabel} text={fill(api.shapes.envelope)} />
+      <dl class="flex flex-col gap-2 font-mono text-micro">
+        {api.shapes.rows.map((r) => (
+          <div class="kv-pair">
+            <dt class="text-fg-3">{r.key}</dt>
+            <dd class="text-strip-val">{r.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <AgentBlock prompt={prompt} title={api.agent.title} instruction={api.agent.instruction} />
+
+    <section class="flex flex-col gap-4" aria-labelledby="s-terms">
+      <SectionHeader name={api.terms.name} descriptor={api.terms.descriptor} id="s-terms" />
+      <dl class="flex flex-col gap-2">
+        {api.terms.rows.map((r) => (
+          <div class="kv-pair items-start">
+            <dt class="font-mono text-micro text-fg-3">{r.key}</dt>
+            <dd class="fs-small text-fg-2">{r.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+    <CopyScript />
+  </main>
+</Base>

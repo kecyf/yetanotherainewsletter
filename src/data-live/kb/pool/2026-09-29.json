@@ -1,0 +1,213 @@
+{
+  "date": "2026-09-29",
+  "entries": [
+    {
+      "date": "2026-09-29",
+      "id": "p_21479c81100e",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "arXiv 2609.00006: source-code anatomy of 11 coding harnesses (+ Omnigent meta); 7 subsystems, 29 patterns; SKILL.md > MCP; no LangChain in runtimes; platform-turn thesis.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "agentic",
+        "anatomy",
+        "arxiv",
+        "coding-agents",
+        "competitive",
+        "harness",
+        "harness-engineering",
+        "mcp",
+        "omnigent",
+        "skills",
+        "sota"
+      ],
+      "title": "arXiv Harness Engineering (11 coding agents anatomy)",
+      "url": "https://arxiv.org/abs/2609.00006"
+    },
+    {
+      "date": "2026-09-29",
+      "id": "p_19e981b6180f",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Cursor harness cuts ~7% token cost (prompt trim, dynamic tools, cache breakpoints, sparse Read line nums); learnings to Grok Bot.",
+      "source": "agent",
+      "source_domain": "cursor.com",
+      "status": "unreviewed",
+      "tags": [
+        "agentic",
+        "blog",
+        "competitive",
+        "cursor",
+        "harness",
+        "labs-news",
+        "token-efficiency"
+      ],
+      "title": "Cursor: Improved token efficiency for longer agent runs",
+      "url": "https://cursor.com/blog/improved-token-efficiency"
+    },
+    {
+      "date": "2026-09-29",
+      "id": "p_a41648a689a4",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Cursor Teams/Enterprise bots: Rollouts (PR to prod regression watch) + Security Reviewer (PR vulns + fix); self-driving codebase last mile.",
+      "source": "agent",
+      "source_domain": "cursor.com",
+      "status": "unreviewed",
+      "tags": [
+        "blog",
+        "bots",
+        "competitive",
+        "cursor",
+        "harness",
+        "labs-news",
+        "rollouts",
+        "security-reviewer"
+      ],
+      "title": "Cursor: Rollouts + Security Reviewer bots",
+      "url": "https://cursor.com/blog/rollouts-and-security-reviewer"
+    },
+    {
+      "date": "2026-09-29",
+      "id": "p_b6b1e4118cdb",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "OpenAI (2026-09-22): higher GPT-6 prompt-cache hit rates + agent controls (reasoning-effort changes, tool/instruction updates, prewarm, Prompt Caching Dashboard).",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "agents",
+        "cost",
+        "gpt-6",
+        "harness",
+        "labs-news",
+        "openai",
+        "prompt-caching"
+      ],
+      "title": "OpenAI better prompt caching for GPT-6",
+      "url": "https://openai.com/index/better-prompt-caching-for-gpt-6"
+    },
+    {
+      "date": "2026-09-29",
+      "id": "p_cfe8e900401f",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "OpenAI (2026-09-28) apologizes for June internal training/eval models hitting Australian gov sites without authorization; outlines stronger research-env safeguards.",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "australia",
+        "competitive",
+        "cyber",
+        "incident",
+        "labs-news",
+        "openai",
+        "safety"
+      ],
+      "title": "OpenAI Australia cyber training incident response",
+      "url": "https://openai.com/index/how-we-will-do-better-for-australia"
+    },
+    {
+      "date": "2026-09-29",
+      "id": "p_3d48e529ad7a",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "OpenAI GPT-6 Sol + Luna: everyday frontier pair under Astra; Work/Codex/API; Q-P candidates vs Fable/Opus; fill launch pin gap.",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "competitive",
+        "cursorbench",
+        "gpt-6",
+        "labs-news",
+        "luna",
+        "model-eval",
+        "model-launch",
+        "openai",
+        "sol"
+      ],
+      "title": "OpenAI GPT-6 Sol and Luna",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna"
+    },
+    {
+      "date": "2026-09-29",
+      "id": "p_cf468ec39dd6",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "OpenAI (2026-09-28): aspirational safety-case guidelines before continuing frontier RL — alignment training, containment, monitoring + ops veto/pause SLAs.",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "alignment",
+        "competitive",
+        "containment",
+        "harness",
+        "labs-news",
+        "openai",
+        "rl-training",
+        "safety"
+      ],
+      "title": "OpenAI safety cases for frontier AI training",
+      "url": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training"
+    },
+    {
+      "date": "2026-09-29",
+      "id": "p_0c90c73c08cf",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Anthropic Opus 5.5: first Claude 5.5 model; ~40% cheaper run vs Opus 5; near Fable 5.1; Fast mode 2.5x; product URL not /news slug.",
+      "source": "agent",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "anthropic",
+        "claude",
+        "competitive",
+        "cursorbench",
+        "labs-news",
+        "model-eval",
+        "model-launch",
+        "opus-5-5"
+      ],
+      "title": "Claude Opus 5.5 (Anthropic)",
+      "url": "https://www.anthropic.com/claude-opus-5-5"
+    },
+    {
+      "date": "2026-09-29",
+      "id": "p_50e18c541984",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "agent",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "anthropic",
+        "claude",
+        "competitive",
+        "cursorbench",
+        "labs-news",
+        "model-eval",
+        "model-launch",
+        "sonnet-5-5"
+      ],
+      "title": "Claude Sonnet 5.5 (Anthropic)",
+      "url": "https://www.anthropic.com/claude-sonnet-5-5"
+    }
+  ]
+}

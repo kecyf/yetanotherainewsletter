@@ -80,6 +80,8 @@ console.log('\n[2] style guards: no raw colour / px / font name outside tokens.c
         const rel = path.relative(ROOT, p);
         const src = read(p);
         if (rel === 'src/styles/tokens.css') continue;
+        // kb snapshots are exported data (titles, descriptions: '#983', '12px' are text, not style); scripts/check-kb.mjs owns them
+        if (rel.startsWith('src/data-live/kb/') || rel.startsWith('src/data/kb/')) continue;
         const hex = src.match(/#[0-9a-fA-F]{3,8}\b/g);
         if (hex) offenders.push(`${rel}: raw colour ${[...new Set(hex)].join(', ')}`);
         const px = src.match(/\b\d+(\.\d+)?px\b/g);

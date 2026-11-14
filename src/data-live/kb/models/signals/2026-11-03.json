@@ -1,0 +1,231 @@
+{
+  "date": "2026-11-03",
+  "listed": {
+    "price": 11
+  },
+  "signals": [
+    {
+      "date": "2026-11-03",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.238,
+          "to": 0.3
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.119,
+          "to": 0.059
+        }
+      },
+      "id": "2026-11-03:price:deepseek/deepseek-v4-flash-0731",
+      "model_id": "deepseek/deepseek-v4-flash-0731",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek V4 Flash 0731",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-03",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.6,
+          "to": 1.2
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.15,
+          "to": 0.3
+        }
+      },
+      "id": "2026-11-03:price:deepseek/deepseek-v4.1-flash-1017",
+      "model_id": "deepseek/deepseek-v4.1-flash-1017",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-03",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.32,
+          "to": 0.52
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.1,
+          "to": 0.2
+        }
+      },
+      "id": "2026-11-03:price:meta-llama/llama-3.3-70b-instruct",
+      "model_id": "meta-llama/llama-3.3-70b-instruct",
+      "model_id_basis": "catalog",
+      "name": "Meta: Llama 3.3 70B Instruct",
+      "provider": "Meta",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-03",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.3,
+          "to": 0.6
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.075,
+          "to": 0.15
+        }
+      },
+      "id": "2026-11-03:price:minimax/minimax-m3.1-flash",
+      "model_id": "minimax/minimax-m3.1-flash",
+      "model_id_basis": "catalog",
+      "name": "MiniMax: MiniMax M3.1 Flash",
+      "provider": "MiniMax",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-03",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.55,
+          "to": 0.8
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.09,
+          "to": 0.14
+        }
+      },
+      "id": "2026-11-03:price:qwen/qwen3-235b-a22b-2507",
+      "model_id": "qwen/qwen3-235b-a22b-2507",
+      "model_id_basis": "catalog",
+      "name": "Qwen: Qwen3 235B A22B Instruct 2507",
+      "provider": "Qwen",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-03",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.28,
+          "to": 0.6
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.07,
+          "to": 0.15
+        }
+      },
+      "id": "2026-11-03:price:qwen/qwen3-coder-30b-a3b-instruct",
+      "model_id": "qwen/qwen3-coder-30b-a3b-instruct",
+      "model_id_basis": "catalog",
+      "name": "Qwen: Qwen3 Coder 30B A3B Instruct",
+      "provider": "Qwen",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-03",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 1.1,
+          "to": 1.1
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.09,
+          "to": 0.1
+        }
+      },
+      "id": "2026-11-03:price:qwen/qwen3-next-80b-a3b-instruct",
+      "model_id": "qwen/qwen3-next-80b-a3b-instruct",
+      "model_id_basis": "catalog",
+      "name": "Qwen: Qwen3 Next 80B A3B Instruct",
+      "provider": "Qwen",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-03",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.33,
+          "to": 0.528
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.0825,
+          "to": 0.132
+        }
+      },
+      "id": "2026-11-03:price:tencent/hy3",
+      "model_id": "tencent/hy3",
+      "model_id_basis": "catalog",
+      "name": "Tencent: Hy3",
+      "provider": "Tencent",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-03",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 2.2509,
+          "to": 2.501
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.7506,
+          "to": 0.834
+        }
+      },
+      "id": "2026-11-03:price:tencent/hy4-preview",
+      "model_id": "tencent/hy4-preview",
+      "model_id_basis": "catalog",
+      "name": "Tencent: Hy4 preview",
+      "provider": "Tencent",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-03",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.5,
+          "to": 0.315
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.035,
+          "to": 0.035
+        }
+      },
+      "id": "2026-11-03:price:~deepseek/deepseek-flash-latest",
+      "model_id": "~deepseek/deepseek-flash-latest",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek Flash Latest",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-03",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 7.15,
+          "to": 9.7471
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.1495,
+          "to": 0.1529
+        }
+      },
+      "id": "2026-11-03:price:~moonshotai/kimi-latest",
+      "model_id": "~moonshotai/kimi-latest",
+      "model_id_basis": "catalog",
+      "name": "MoonshotAI: Kimi Latest",
+      "provider": "MoonshotAI",
+      "source": "openrouter-catalog",
+      "type": "price"
+    }
+  ],
+  "totals": {
+    "price": 11
+  }
+}

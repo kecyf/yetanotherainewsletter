@@ -45,3 +45,12 @@ Dynamic (Cloudflare Pages Functions, in `functions/`, tiny, reading the static a
 
 ## Out of scope for v1
 Write endpoints, auth, API keys, per-user state, email, a database. A scheduled refresh (daily export -> build -> deploy without human approval) is armed only on Kevin's go.
+
+## As built: deviations from the contract above (2026-11-14)
+- **Section names**: items use `labs|sota|tools|timeline` (what `src/content/schema.ts` enforces), not `dates`. Items also carry `hand: bool` (curator-added) next to `lead`: additive.
+- **`/api/v1/`** is emitted as `api/v1/index.html` (a static host cannot hold both a file `v1` and a directory `v1/`); `_headers` pins `Content-Type: application/json` on `/api/*`. Same document as `index.json`.
+- **Caching**: `pool/*` and `models/signals/*` day files are `max-age=3600, stale-while-revalidate=86400`, not immutable: a pool entry's `status` follows later issues (a pin dropped on day D can be kept on day D+1) and a day can be re-exported. `issues/*` and `items/*` stay `immutable`.
+- **Extra envelope fields** where the contract was silent: `total` (signals.json, search), `query` (search), `truncated` (signals day: the watcher prints at most 12 lines per type, the header count is kept), `fixture: true` on fixture builds (the fixture build does produce `/api`, labelled; the live build never carries it, `check-kb.mjs --build-live` asserts that).
+- **Model signals**: the digests carry display names, not ids. `model_id_basis: "catalog"` when the name matched exactly one id of the OpenRouter catalog snapshot, `"derived"` when it is a stable `provider/slug` built from provider and name. Prices are numbers, USD per 1M tokens.
+- **Unknown paths**: the site has no 404 page, so Cloudflare Pages answers any unmatched path with `200 text/html` (the SPA fallback), `/api/v1/x.json` included. Adding `src/pages/404.astro` (design lane) makes Pages return a real 404. The functions treat a non-JSON answer as "not found".
+- **`GET /mcp`** answers the JSON card unless the client asks for `Accept: text/event-stream` only, which gets `405` (the transport spec wants SSE or 405; there is no stream).

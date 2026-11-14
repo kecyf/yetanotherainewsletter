@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-30",
+  "entries": [
+    {
+      "date": "2026-10-30",
+      "id": "p_d28967fce9c6",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "How we detect frontier model misalignment",
+      "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment"
+    },
+    {
+      "date": "2026-10-30",
+      "id": "p_2d9928289658",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "How Ropes & Gray is developing AI for transactional diligence",
+      "url": "https://openai.com/index/ropes-gray-ai-diligence"
+    },
+    {
+      "date": "2026-10-30",
+      "id": "p_7bf0065ceb16",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "An updated Model Spec for more capable and beneficial AI",
+      "url": "https://openai.com/index/updated-model-spec"
+    }
+  ]
+}

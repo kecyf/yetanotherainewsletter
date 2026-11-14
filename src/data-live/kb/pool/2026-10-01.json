@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-01",
+  "entries": [
+    {
+      "date": "2026-10-01",
+      "id": "p_14a16b244aeb",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "RefCon (2026-09-30): label-free memory extraction via sequential self-refine + parallel self-contrast; +21.6% ACE / +16.6% ReMe vs no-scaling; SWE-bench Verified Mini 60% beats some GT baselines; plugs into context-evolving agents.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "competitive",
+        "context-evolving",
+        "harness",
+        "memory",
+        "refcon",
+        "sota",
+        "test-time-scaling"
+      ],
+      "title": "arXiv RefCon: Contrastive Memory Extraction for Context-Evolving Agents (2609.39143)",
+      "url": "https://arxiv.org/abs/2609.39143"
+    },
+    {
+      "date": "2026-10-01",
+      "id": "p_b19aee07e992",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "ScholarEvolve (2026-09-30): literature-guided lifelong harness evolution around fixed backbone; 5 modules (tools/context/skills/memory/workflows) + topic modeling + crossover; AppWorld Challenge TGC 49.6→63.6 (Qwen3.5-27B); τ² Telecom pass@1 72.7→81.9 (GPT-5.4-mini); beats Meta…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "competitive",
+        "harness",
+        "harness-evolution",
+        "lifelong",
+        "memory",
+        "scholarevolve",
+        "skills",
+        "sota"
+      ],
+      "title": "arXiv ScholarEvolve: Lifelong Agent Harness Evolution (2609.40169)",
+      "url": "https://arxiv.org/abs/2609.40169"
+    },
+    {
+      "date": "2026-10-01",
+      "id": "p_c43f8bc22da4",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "OpenAI disrupted July 2026 adversarial distillation of protected reasoning (16k spike / 15k+ users); core cluster attributed to Moonshot AI (Kimi); closed encrypted-reasoning replay path; shared via Frontier Model Forum.",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "adversarial-distillation",
+        "competitive",
+        "containment",
+        "distillation",
+        "kimi",
+        "labs-news",
+        "moonshot",
+        "openai",
+        "protected-reasoning",
+        "safety",
+        "security"
+      ],
+      "title": "OpenAI disrupted coordinated model-distillation campaign",
+      "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/"
+    },
+    {
+      "date": "2026-10-01",
+      "id": "p_91b1f786ee50",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Barclays expands Claude across bank ops; Claude Code → 50% developers EOY 2026, majority engineers 2027; 16k knowledge assistant + 120k Markets emails/day.",
+      "source": "agent",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "adoption",
+        "anthropic",
+        "barclays",
+        "claude-code",
+        "competitive",
+        "enterprise",
+        "labs-news"
+      ],
+      "title": "Anthropic: Barclays scales Claude",
+      "url": "https://www.anthropic.com/news/barclays-scales-claude"
+    }
+  ]
+}

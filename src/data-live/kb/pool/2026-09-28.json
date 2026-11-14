@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-28",
+  "entries": [
+    {
+      "date": "2026-09-28",
+      "id": "p_aa450824d83d",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "AIM: privacy-aware interoperable memory for multi-agent multi-user LLMs; index-level private/public ACL; MUMBench (672 turns / 93 users).",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "acl",
+        "arxiv",
+        "competitive",
+        "memory",
+        "microsoft",
+        "multi-agent",
+        "multi-user",
+        "mumbench",
+        "privacy"
+      ],
+      "title": "AIM privacy-aware multi-user agent memory (arXiv 2609.12320)",
+      "url": "https://arxiv.org/abs/2609.12320"
+    },
+    {
+      "date": "2026-09-28",
+      "id": "p_e09691c053d0",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "xAI Team Bots public beta (Teams/Enterprise): shared Grok Bot + private per-user memory; Slack handle; Sales/EPD/Marketing/Data dogfood; Cursor Cloud Agents.",
+      "source": "agent",
+      "source_domain": "x.ai",
+      "status": "unreviewed",
+      "tags": [
+        "competitive",
+        "grokbot",
+        "harness",
+        "labs-news",
+        "news",
+        "xai"
+      ],
+      "title": "xAI Team Bots (Grok Bot news)",
+      "url": "https://x.ai/news/team-bots"
+    }
+  ]
+}

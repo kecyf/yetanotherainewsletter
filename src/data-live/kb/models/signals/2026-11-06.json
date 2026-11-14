@@ -1,0 +1,242 @@
+{
+  "date": "2026-11-06",
+  "listed": {
+    "expiring": 2,
+    "new": 3,
+    "price": 8
+  },
+  "signals": [
+    {
+      "date": "2026-11-06",
+      "details": {
+        "created": "2026-11-04"
+      },
+      "id": "2026-11-06:new:google/gemini-omni-1.1-flash",
+      "model_id": "google/gemini-omni-1.1-flash",
+      "model_id_basis": "catalog",
+      "name": "Google: Gemini Omni 1.1 Flash",
+      "provider": "Google",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-06",
+      "details": {
+        "created": "2026-11-05"
+      },
+      "id": "2026-11-06:new:google/gemini-omni-1.2-flash",
+      "model_id": "google/gemini-omni-1.2-flash",
+      "model_id_basis": "catalog",
+      "name": "Google: Gemini Omni 1.2 Flash",
+      "provider": "Google",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-06",
+      "details": {
+        "created": "2026-11-05"
+      },
+      "id": "2026-11-06:new:openrouter/auto-code",
+      "model_id": "openrouter/auto-code",
+      "model_id_basis": "catalog",
+      "name": "Auto Code",
+      "provider": null,
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-06",
+      "details": {
+        "days_left": 9,
+        "expires": "2026-11-15"
+      },
+      "id": "2026-11-06:expiring:meta-llama/llama-3.2-1b-instruct",
+      "model_id": "meta-llama/llama-3.2-1b-instruct",
+      "model_id_basis": "catalog",
+      "name": "Meta: Llama 3.2 1B Instruct",
+      "provider": "Meta",
+      "source": "openrouter-catalog",
+      "type": "expiring"
+    },
+    {
+      "date": "2026-11-06",
+      "details": {
+        "days_left": 9,
+        "expires": "2026-11-15"
+      },
+      "id": "2026-11-06:expiring:meta-llama/llama-3.2-3b-instruct",
+      "model_id": "meta-llama/llama-3.2-3b-instruct",
+      "model_id_basis": "catalog",
+      "name": "Meta: Llama 3.2 3B Instruct",
+      "provider": "Meta",
+      "source": "openrouter-catalog",
+      "type": "expiring"
+    },
+    {
+      "date": "2026-11-06",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 1.0287,
+          "to": 0.89
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.2574,
+          "to": 0.32
+        }
+      },
+      "id": "2026-11-06:price:deepseek/deepseek-chat",
+      "model_id": "deepseek/deepseek-chat",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek V3",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-06",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.6468,
+          "to": 1.32
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.2156,
+          "to": 0.44
+        }
+      },
+      "id": "2026-11-06:price:deepseek/deepseek-v4-flash-vision-exp",
+      "model_id": "deepseek/deepseek-v4-flash-vision-exp",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek V4 Flash Vision Exp",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-06",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.5,
+          "to": 0.567
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.045,
+          "to": 0.051
+        }
+      },
+      "id": "2026-11-06:price:deepseek/deepseek-v4.1-flash",
+      "model_id": "deepseek/deepseek-v4.1-flash",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek V4.1 Flash",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-06",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.096,
+          "to": 0.3
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.032,
+          "to": 0.09
+        }
+      },
+      "id": "2026-11-06:price:google/gemma-4-26b-a4b-it",
+      "model_id": "google/gemma-4-26b-a4b-it",
+      "model_id_basis": "catalog",
+      "name": "Google: Gemma 4 26B A4B ",
+      "provider": "Google",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-06",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.52,
+          "to": 0.79
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.2,
+          "to": 0.59
+        }
+      },
+      "id": "2026-11-06:price:meta-llama/llama-3.3-70b-instruct",
+      "model_id": "meta-llama/llama-3.3-70b-instruct",
+      "model_id_basis": "catalog",
+      "name": "Meta: Llama 3.3 70B Instruct",
+      "provider": "Meta",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-06",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 1.2,
+          "to": 0.84
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.3,
+          "to": 0.21
+        }
+      },
+      "id": "2026-11-06:price:minimax/minimax-m2.7",
+      "model_id": "minimax/minimax-m2.7",
+      "model_id_basis": "catalog",
+      "name": "MiniMax: MiniMax M2.7",
+      "provider": "MiniMax",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-06",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 1,
+          "to": 1
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.25,
+          "to": 0.3
+        }
+      },
+      "id": "2026-11-06:price:reflection/beam-1.0-501b-a23b",
+      "model_id": "reflection/beam-1.0-501b-a23b",
+      "model_id_basis": "catalog",
+      "name": "Reflection: Beam 1.0 501B A23B",
+      "provider": "Reflection",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-06",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 9.3388,
+          "to": 10.5572
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.1539,
+          "to": 0.1824
+        }
+      },
+      "id": "2026-11-06:price:~moonshotai/kimi-latest",
+      "model_id": "~moonshotai/kimi-latest",
+      "model_id_basis": "catalog",
+      "name": "MoonshotAI: Kimi Latest",
+      "provider": "MoonshotAI",
+      "source": "openrouter-catalog",
+      "type": "price"
+    }
+  ],
+  "totals": {
+    "expiring": 2,
+    "new": 3,
+    "price": 8
+  }
+}

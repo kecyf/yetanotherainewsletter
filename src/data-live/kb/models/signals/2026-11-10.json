@@ -1,0 +1,390 @@
+{
+  "date": "2026-11-10",
+  "listed": {
+    "context": 5,
+    "new": 5,
+    "price": 12
+  },
+  "signals": [
+    {
+      "date": "2026-11-10",
+      "details": {
+        "created": "2026-11-09"
+      },
+      "id": "2026-11-10:new:anthropic/claude-fable-5.2",
+      "model_id": "anthropic/claude-fable-5.2",
+      "model_id_basis": "catalog",
+      "name": "Anthropic: Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "created": "2026-11-09"
+      },
+      "id": "2026-11-10:new:anthropic/claude-fable-5.2:batch",
+      "model_id": "anthropic/claude-fable-5.2:batch",
+      "model_id_basis": "catalog",
+      "name": "Anthropic: Claude Fable 5.2 (batch)",
+      "provider": "Anthropic",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "created": "2026-11-09"
+      },
+      "id": "2026-11-10:new:meta/muse-ember",
+      "model_id": "meta/muse-ember",
+      "model_id_basis": "catalog",
+      "name": "Meta: Muse Ember",
+      "provider": "Meta",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "created": "2026-11-10"
+      },
+      "id": "2026-11-10:new:nex-agi/nex-n2.6",
+      "model_id": "nex-agi/nex-n2.6",
+      "model_id_basis": "catalog",
+      "name": "Nex AGI: Nex-N2.6",
+      "provider": "Nex AGI",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "created": "2026-11-09"
+      },
+      "id": "2026-11-10:new:thinkingmachines/inkling-2-small:free",
+      "model_id": "thinkingmachines/inkling-2-small:free",
+      "model_id_basis": "catalog",
+      "name": "Thinking Machines: Inkling 2 Small (free)",
+      "provider": "Thinking Machines",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.2,
+          "to": 0.336
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.011,
+          "to": 0.112
+        }
+      },
+      "id": "2026-11-10:price:deepseek/deepseek-v4.1-flash:batch",
+      "model_id": "deepseek/deepseek-v4.1-flash:batch",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek V4.1 Flash (batch)",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.3,
+          "to": 0.1
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.09,
+          "to": 0.08
+        }
+      },
+      "id": "2026-11-10:price:google/gemma-4-26b-a4b-it",
+      "model_id": "google/gemma-4-26b-a4b-it",
+      "model_id_basis": "catalog",
+      "name": "Google: Gemma 4 26B A4B ",
+      "provider": "Google",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.79,
+          "to": 0.71
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.59,
+          "to": 0.71
+        }
+      },
+      "id": "2026-11-10:price:meta-llama/llama-3.3-70b-instruct",
+      "model_id": "meta-llama/llama-3.3-70b-instruct",
+      "model_id_basis": "catalog",
+      "name": "Meta: Llama 3.3 70B Instruct",
+      "provider": "Meta",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.2,
+          "to": 0.3
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.075,
+          "to": 0.1
+        }
+      },
+      "id": "2026-11-10:price:mistralai/mistral-small-3.2-24b-instruct",
+      "model_id": "mistralai/mistral-small-3.2-24b-instruct",
+      "model_id_basis": "catalog",
+      "name": "Mistral: Mistral Small 3.2 24B",
+      "provider": "Mistral",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 6,
+          "to": 11.4
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.917,
+          "to": 2.28
+        }
+      },
+      "id": "2026-11-10:price:moonshotai/kimi-k3:batch",
+      "model_id": "moonshotai/kimi-k3:batch",
+      "model_id_basis": "catalog",
+      "name": "MoonshotAI: Kimi K3 (batch)",
+      "provider": "MoonshotAI",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.24,
+          "to": 0.22
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.12,
+          "to": 0.1
+        }
+      },
+      "id": "2026-11-10:price:qwen/qwen3-14b",
+      "model_id": "qwen/qwen3-14b",
+      "model_id_basis": "catalog",
+      "name": "Qwen: Qwen3 14B",
+      "provider": "Qwen",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.85,
+          "to": 1.1
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.13,
+          "to": 0.2
+        }
+      },
+      "id": "2026-11-10:price:z-ai/glm-4.5-air",
+      "model_id": "z-ai/glm-4.5-air",
+      "model_id_basis": "catalog",
+      "name": "Z.ai: GLM 4.5 Air",
+      "provider": "Z.ai",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 1.271,
+          "to": 1.075
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.623,
+          "to": 0.527
+        }
+      },
+      "id": "2026-11-10:price:z-ai/glm-5.2:batch",
+      "model_id": "z-ai/glm-5.2:batch",
+      "model_id_basis": "catalog",
+      "name": "Z.ai: GLM 5.2 (batch)",
+      "provider": "Z.ai",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.083,
+          "to": 0.5
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.0335,
+          "to": 0.15
+        }
+      },
+      "id": "2026-11-10:price:z-ai/glm-5.3-flash",
+      "model_id": "z-ai/glm-5.3-flash",
+      "model_id_basis": "catalog",
+      "name": "Z.ai: GLM 5.3 Flash",
+      "provider": "Z.ai",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.18,
+          "to": 0.061
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.05,
+          "to": 0.03
+        }
+      },
+      "id": "2026-11-10:price:z-ai/glm-5.3-flash:batch",
+      "model_id": "z-ai/glm-5.3-flash:batch",
+      "model_id_basis": "catalog",
+      "name": "Z.ai: GLM 5.3 Flash (batch)",
+      "provider": "Z.ai",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 50,
+          "to": 40
+        },
+        "prompt_usd_per_mtok": {
+          "from": 10,
+          "to": 8
+        }
+      },
+      "id": "2026-11-10:price:~anthropic/claude-fable-latest",
+      "model_id": "~anthropic/claude-fable-latest",
+      "model_id_basis": "catalog",
+      "name": "Anthropic: Claude Fable Latest",
+      "provider": "Anthropic",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 9.3388,
+          "to": 9.3388
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.1824,
+          "to": 0.152
+        }
+      },
+      "id": "2026-11-10:price:~moonshotai/kimi-latest",
+      "model_id": "~moonshotai/kimi-latest",
+      "model_id_basis": "catalog",
+      "name": "MoonshotAI: Kimi Latest",
+      "provider": "MoonshotAI",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "from": 204800,
+        "to": 200000
+      },
+      "id": "2026-11-10:context:minimax/minimax-m2.5",
+      "model_id": "minimax/minimax-m2.5",
+      "model_id_basis": "catalog",
+      "name": "MiniMax: MiniMax M2.5",
+      "provider": "MiniMax",
+      "source": "openrouter-catalog",
+      "type": "context"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "from": 204800,
+        "to": 196608
+      },
+      "id": "2026-11-10:context:minimax/minimax-m2.7",
+      "model_id": "minimax/minimax-m2.7",
+      "model_id_basis": "catalog",
+      "name": "MiniMax: MiniMax M2.7",
+      "provider": "MiniMax",
+      "source": "openrouter-catalog",
+      "type": "context"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "from": 1024000,
+        "to": 1048575
+      },
+      "id": "2026-11-10:context:qwen/qwen3.8-27b",
+      "model_id": "qwen/qwen3.8-27b",
+      "model_id_basis": "catalog",
+      "name": "Qwen: Qwen3.8 27B",
+      "provider": "Qwen",
+      "source": "openrouter-catalog",
+      "type": "context"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "from": 1048576,
+        "to": 1000000
+      },
+      "id": "2026-11-10:context:stepfun/step-5-preview",
+      "model_id": "stepfun/step-5-preview",
+      "model_id_basis": "catalog",
+      "name": "StepFun: Step 5 Preview",
+      "provider": "StepFun",
+      "source": "openrouter-catalog",
+      "type": "context"
+    },
+    {
+      "date": "2026-11-10",
+      "details": {
+        "from": 1050000,
+        "to": 1024000
+      },
+      "id": "2026-11-10:context:xiaomi/mimo-v2.5-pro",
+      "model_id": "xiaomi/mimo-v2.5-pro",
+      "model_id_basis": "catalog",
+      "name": "Xiaomi: MiMo-V2.5-Pro",
+      "provider": "Xiaomi",
+      "source": "openrouter-catalog",
+      "type": "context"
+    }
+  ],
+  "totals": {
+    "context": 5,
+    "new": 5,
+    "price": 12
+  }
+}

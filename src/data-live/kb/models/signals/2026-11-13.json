@@ -1,0 +1,362 @@
+{
+  "date": "2026-11-13",
+  "listed": {
+    "expiring": 3,
+    "new": 5,
+    "price": 12
+  },
+  "signals": [
+    {
+      "date": "2026-11-13",
+      "details": {
+        "created": "2026-10-01"
+      },
+      "id": "2026-11-13:new:apodex/apodex-1.1-mini:free",
+      "model_id": "apodex/apodex-1.1-mini:free",
+      "model_id_basis": "catalog",
+      "name": "Apodex: Apodex 1.1 Mini (free)",
+      "provider": "Apodex",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "created": "2026-11-12"
+      },
+      "id": "2026-11-13:new:google/gemini-4-hydrogen",
+      "model_id": "google/gemini-4-hydrogen",
+      "model_id_basis": "catalog",
+      "name": "Google: Gemini 4 Hydrogen",
+      "provider": "Google",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "created": "2026-11-12"
+      },
+      "id": "2026-11-13:new:google/gemini-4-hydrogen:batch",
+      "model_id": "google/gemini-4-hydrogen:batch",
+      "model_id_basis": "catalog",
+      "name": "Google: Gemini 4 Hydrogen (batch)",
+      "provider": "Google",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "created": "2026-10-28"
+      },
+      "id": "2026-11-13:new:particle-ai/particle-1:free",
+      "model_id": "particle-ai/particle-1:free",
+      "model_id_basis": "catalog",
+      "name": "Particle AI: Particle-1 (free)",
+      "provider": "Particle AI",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "created": "2026-11-09"
+      },
+      "id": "2026-11-13:new:thinkingmachines/inkling-2-small",
+      "model_id": "thinkingmachines/inkling-2-small",
+      "model_id_basis": "catalog",
+      "name": "Thinking Machines: Inkling 2 Small",
+      "provider": "Thinking Machines",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "days_left": 2,
+        "expires": "2026-11-15"
+      },
+      "id": "2026-11-13:expiring:qwen/qwen3-vl-30b-a3b-thinking",
+      "model_id": "qwen/qwen3-vl-30b-a3b-thinking",
+      "model_id_basis": "catalog",
+      "name": "Qwen: Qwen3 VL 30B A3B Thinking",
+      "provider": "Qwen",
+      "source": "openrouter-catalog",
+      "type": "expiring"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "days_left": 2,
+        "expires": "2026-11-15"
+      },
+      "id": "2026-11-13:expiring:stepfun/step-3.5-flash",
+      "model_id": "stepfun/step-3.5-flash",
+      "model_id_basis": "catalog",
+      "name": "StepFun: Step 3.5 Flash",
+      "provider": "StepFun",
+      "source": "openrouter-catalog",
+      "type": "expiring"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "days_left": 2,
+        "expires": "2026-11-15"
+      },
+      "id": "2026-11-13:expiring:tencent/hunyuan-a13b-instruct",
+      "model_id": "tencent/hunyuan-a13b-instruct",
+      "model_id_basis": "catalog",
+      "name": "Tencent: Hunyuan A13B Instruct",
+      "provider": "Tencent",
+      "source": "openrouter-catalog",
+      "type": "expiring"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 1.91052,
+          "to": 1.5
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.95526,
+          "to": 0.9
+        }
+      },
+      "id": "2026-11-13:price:deepseek/deepseek-v4-pro",
+      "model_id": "deepseek/deepseek-v4-pro",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek V4 Pro 0423",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.4,
+          "to": 1.2
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.022,
+          "to": 0.3
+        }
+      },
+      "id": "2026-11-13:price:deepseek/deepseek-v4.1-flash",
+      "model_id": "deepseek/deepseek-v4.1-flash",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek V4.1 Flash",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.2,
+          "to": 0.15
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.011,
+          "to": 0.05
+        }
+      },
+      "id": "2026-11-13:price:deepseek/deepseek-v4.1-flash-1017:batch",
+      "model_id": "deepseek/deepseek-v4.1-flash-1017:batch",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek V4.1 Flash 1017 (batch)",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.1,
+          "to": 0.3
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.08,
+          "to": 0.09
+        }
+      },
+      "id": "2026-11-13:price:google/gemma-4-26b-a4b-it",
+      "model_id": "google/gemma-4-26b-a4b-it",
+      "model_id_basis": "catalog",
+      "name": "Google: Gemma 4 26B A4B ",
+      "provider": "Google",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 8.4085,
+          "to": 10
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.2375,
+          "to": 2
+        }
+      },
+      "id": "2026-11-13:price:moonshotai/kimi-k3.1-pro",
+      "model_id": "moonshotai/kimi-k3.1-pro",
+      "model_id_basis": "catalog",
+      "name": "MoonshotAI: Kimi K3.1 Pro",
+      "provider": "MoonshotAI",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.036,
+          "to": 0.123
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.024,
+          "to": 0.083
+        }
+      },
+      "id": "2026-11-13:price:qwen/qwen3.5-9b",
+      "model_id": "qwen/qwen3.5-9b",
+      "model_id_basis": "catalog",
+      "name": "Qwen: Qwen3.5-9B",
+      "provider": "Qwen",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.6,
+          "to": 0.3
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.2,
+          "to": 0.1
+        }
+      },
+      "id": "2026-11-13:price:ricursiveai/ripple-65b-preview",
+      "model_id": "ricursiveai/ripple-65b-preview",
+      "model_id_basis": "catalog",
+      "name": "Ricursive: Ripple 65B Preview",
+      "provider": "Ricursive",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 1.8,
+          "to": 0.87
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.48,
+          "to": 0.435
+        }
+      },
+      "id": "2026-11-13:price:xiaomi/mimo-v2.5-pro",
+      "model_id": "xiaomi/mimo-v2.5-pro",
+      "model_id_basis": "catalog",
+      "name": "Xiaomi: MiMo-V2.5-Pro",
+      "provider": "Xiaomi",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 1.4,
+          "to": 3.6
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.0699,
+          "to": 0.084
+        }
+      },
+      "id": "2026-11-13:price:z-ai/glm-5.3",
+      "model_id": "z-ai/glm-5.3",
+      "model_id_basis": "catalog",
+      "name": "Z.ai: GLM 5.3",
+      "provider": "Z.ai",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 1.075,
+          "to": 2
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.35,
+          "to": 0.45
+        }
+      },
+      "id": "2026-11-13:price:z-ai/glm-5.3:batch",
+      "model_id": "z-ai/glm-5.3:batch",
+      "model_id_basis": "catalog",
+      "name": "Z.ai: GLM 5.3 (batch)",
+      "provider": "Z.ai",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.4,
+          "to": 0.5
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.022,
+          "to": 0.038
+        }
+      },
+      "id": "2026-11-13:price:~deepseek/deepseek-flash-latest",
+      "model_id": "~deepseek/deepseek-flash-latest",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek Flash Latest",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-13",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 3.75,
+          "to": 7.5
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.75,
+          "to": 1.5
+        }
+      },
+      "id": "2026-11-13:price:~google/gemini-flash-latest",
+      "model_id": "~google/gemini-flash-latest",
+      "model_id_basis": "catalog",
+      "name": "Google: Gemini Flash Latest",
+      "provider": "Google",
+      "source": "openrouter-catalog",
+      "type": "price"
+    }
+  ],
+  "totals": {
+    "expiring": 3,
+    "new": 5,
+    "price": 14
+  }
+}

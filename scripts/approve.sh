@@ -17,6 +17,8 @@ if [ -f "$DRAFT" ]; then
 fi
 node scripts/validate-issue.mjs "$ISSUE"
 python3 scripts/fill-skipped.py
+# optional (off by default): refresh the kb snapshots of the day so the api ships fresh pool + model signals
+if [ "${YAAN_EXPORT_KB:-0}" = "1" ]; then python3 scripts/export-kb.py --date "$D"; git add src/data-live/kb; fi
 git add "$ISSUE" src/data-live/skipped.json
 git commit -m "yaan: publish issue for $D" -q || true
 CONFIRM_DEPLOY=1 scripts/publish-live.sh

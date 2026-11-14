@@ -1,0 +1,342 @@
+{
+  "date": "2026-11-04",
+  "listed": {
+    "context": 1,
+    "expiring": 8,
+    "new": 3,
+    "price": 8
+  },
+  "signals": [
+    {
+      "date": "2026-11-04",
+      "details": {
+        "created": "2026-11-03"
+      },
+      "id": "2026-11-04:new:crouton-alpha",
+      "model_id": "crouton-alpha",
+      "model_id_basis": "derived",
+      "name": "Crouton Alpha",
+      "provider": null,
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "created": "2026-11-04"
+      },
+      "id": "2026-11-04:new:tencent/hy4",
+      "model_id": "tencent/hy4",
+      "model_id_basis": "catalog",
+      "name": "Tencent: Hy4",
+      "provider": "Tencent",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "created": "2026-09-21"
+      },
+      "id": "2026-11-04:new:x-ai/grok-4.7:batch",
+      "model_id": "x-ai/grok-4.7:batch",
+      "model_id_basis": "catalog",
+      "name": "SpaceXAI: Grok 4.7 (batch)",
+      "provider": "SpaceXAI",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "days_left": 4,
+        "expires": "2026-11-08"
+      },
+      "id": "2026-11-04:expiring:inception/mercury-2",
+      "model_id": "inception/mercury-2",
+      "model_id_basis": "derived",
+      "name": "Inception: Mercury 2",
+      "provider": "Inception",
+      "source": "openrouter-catalog",
+      "type": "expiring"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "days_left": 4,
+        "expires": "2026-11-08"
+      },
+      "id": "2026-11-04:expiring:inception/mercury-2.5",
+      "model_id": "inception/mercury-2.5",
+      "model_id_basis": "derived",
+      "name": "Inception: Mercury 2.5",
+      "provider": "Inception",
+      "source": "openrouter-catalog",
+      "type": "expiring"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "days_left": 4,
+        "expires": "2026-11-08"
+      },
+      "id": "2026-11-04:expiring:inception/mercury-3",
+      "model_id": "inception/mercury-3",
+      "model_id_basis": "derived",
+      "name": "Inception: Mercury 3",
+      "provider": "Inception",
+      "source": "openrouter-catalog",
+      "type": "expiring"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "days_left": 1,
+        "expires": "2026-11-05"
+      },
+      "id": "2026-11-04:expiring:minimax/minimax-01",
+      "model_id": "minimax/minimax-01",
+      "model_id_basis": "derived",
+      "name": "MiniMax: MiniMax-01",
+      "provider": "MiniMax",
+      "source": "openrouter-catalog",
+      "type": "expiring"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "days_left": 1,
+        "expires": "2026-11-05"
+      },
+      "id": "2026-11-04:expiring:minimax/minimax-m2",
+      "model_id": "minimax/minimax-m2",
+      "model_id_basis": "derived",
+      "name": "MiniMax: MiniMax M2",
+      "provider": "MiniMax",
+      "source": "openrouter-catalog",
+      "type": "expiring"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "days_left": 1,
+        "expires": "2026-11-05"
+      },
+      "id": "2026-11-04:expiring:minimax/minimax-m2-her",
+      "model_id": "minimax/minimax-m2-her",
+      "model_id_basis": "derived",
+      "name": "MiniMax: MiniMax M2-her",
+      "provider": "MiniMax",
+      "source": "openrouter-catalog",
+      "type": "expiring"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "days_left": 1,
+        "expires": "2026-11-05"
+      },
+      "id": "2026-11-04:expiring:minimax/minimax-m2.1",
+      "model_id": "minimax/minimax-m2.1",
+      "model_id_basis": "derived",
+      "name": "MiniMax: MiniMax M2.1",
+      "provider": "MiniMax",
+      "source": "openrouter-catalog",
+      "type": "expiring"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "days_left": 1,
+        "expires": "2026-11-05"
+      },
+      "id": "2026-11-04:expiring:minimax/minimax-m2.7",
+      "model_id": "minimax/minimax-m2.7",
+      "model_id_basis": "catalog",
+      "name": "MiniMax: MiniMax M2.7",
+      "provider": "MiniMax",
+      "source": "openrouter-catalog",
+      "type": "expiring"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 4,
+          "to": 4.6
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.115,
+          "to": 0.115
+        }
+      },
+      "id": "2026-11-04:price:deepseek/deepseek-v4-pro-0813",
+      "model_id": "deepseek/deepseek-v4-pro-0813",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek V4 Pro 0813",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.246,
+          "to": 0.209
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.082,
+          "to": 0.07
+        }
+      },
+      "id": "2026-11-04:price:google/gemma-4-26b-a4b-it",
+      "model_id": "google/gemma-4-26b-a4b-it",
+      "model_id_basis": "catalog",
+      "name": "Google: Gemma 4 26B A4B ",
+      "provider": "Google",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.15,
+          "to": 0.25
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.06,
+          "to": 0.06
+        }
+      },
+      "id": "2026-11-04:price:ibm-granite/granite-4.2-8b",
+      "model_id": "ibm-granite/granite-4.2-8b",
+      "model_id_basis": "catalog",
+      "name": "IBM: Granite 4.2 8B",
+      "provider": "IBM",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.4,
+          "to": 0.72
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.4,
+          "to": 0.72
+        }
+      },
+      "id": "2026-11-04:price:meta-llama/llama-3.1-70b-instruct",
+      "model_id": "meta-llama/llama-3.1-70b-instruct",
+      "model_id_basis": "catalog",
+      "name": "Meta: Llama 3.1 70B Instruct",
+      "provider": "Meta",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.52,
+          "to": 0.32
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.2,
+          "to": 0.1
+        }
+      },
+      "id": "2026-11-04:price:meta-llama/llama-3.3-70b-instruct",
+      "model_id": "meta-llama/llama-3.3-70b-instruct",
+      "model_id_basis": "catalog",
+      "name": "Meta: Llama 3.3 70B Instruct",
+      "provider": "Meta",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.6,
+          "to": 0.067
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.15,
+          "to": 0.018
+        }
+      },
+      "id": "2026-11-04:price:openai/gpt-oss-120b",
+      "model_id": "openai/gpt-oss-120b",
+      "model_id_basis": "catalog",
+      "name": "OpenAI: gpt-oss-120b",
+      "provider": "OpenAI",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.315,
+          "to": 0.475
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.035,
+          "to": 0.0333
+        }
+      },
+      "id": "2026-11-04:price:~deepseek/deepseek-flash-latest",
+      "model_id": "~deepseek/deepseek-flash-latest",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek Flash Latest",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 9.7471,
+          "to": 8.94
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.1529,
+          "to": 0.19
+        }
+      },
+      "id": "2026-11-04:price:~moonshotai/kimi-latest",
+      "model_id": "~moonshotai/kimi-latest",
+      "model_id_basis": "catalog",
+      "name": "MoonshotAI: Kimi Latest",
+      "provider": "MoonshotAI",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-04",
+      "details": {
+        "from": 1050000,
+        "to": 1000000
+      },
+      "id": "2026-11-04:context:xiaomi/mimo-v2.5",
+      "model_id": "xiaomi/mimo-v2.5",
+      "model_id_basis": "catalog",
+      "name": "Xiaomi: MiMo-V2.5",
+      "provider": "Xiaomi",
+      "source": "openrouter-catalog",
+      "type": "context"
+    }
+  ],
+  "totals": {
+    "context": 1,
+    "expiring": 8,
+    "new": 3,
+    "price": 8
+  }
+}

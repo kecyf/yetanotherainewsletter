@@ -1,0 +1,208 @@
+{
+  "date": "2026-10-20",
+  "entries": [
+    {
+      "date": "2026-10-20",
+      "id": "p_4e8eccc5249e",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "SWE-Bench Pro V2 public split: agentic audits + 23 contracted engineers (404 h) repaired/retired 480 of 731 tasks; network restricted to model endpoint and patches regraded in clean containers so agents can't fetch upstream fixes or score outside their patch. 642 V2 tasks…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "benchmark",
+        "coding-agent",
+        "eval-integrity",
+        "model-eval",
+        "sota",
+        "swe-bench-pro"
+      ],
+      "title": "arXiv 2610.24206 SWE-Bench Pro V2: 480/731 tasks repaired or retired, hardened protocol (model-endpoint-only network, clean-container regrade); frontier agents up to 99.4%, 51-task Hard split 52.9–98.0%",
+      "url": "https://arxiv.org/abs/2610.24206"
+    },
+    {
+      "date": "2026-10-20",
+      "id": "p_a2fe05f40269",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "SkillClash (16 same-job skill pairs, 7 models 4B→Qwen3-235B/GPT-4.1): rules followed 93–99% when a skill is alone, 61–62% when a same-job skill sits beside it; outputs show 'takeover' driven by worked examples. Ending each skill with one example that satisfies both cuts takeover…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agent",
+        "harness",
+        "instruction-layers",
+        "skills",
+        "sota"
+      ],
+      "title": "arXiv 2610.25064 SkillClash: two same-job Agent Skills in context → one 'takes over' (rule adherence 93–99% alone → 61–62% paired); one merged worked example fixes it",
+      "url": "https://arxiv.org/abs/2610.25064"
+    },
+    {
+      "date": "2026-10-20",
+      "id": "p_9dac8af97e4e",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Three-stage audit (exposure → behavior → state) in AppWorld: a mixed store of 763 logins retrieves another user's credential for 84.7% of required apps; when memory lacks the user's own credential and presents a foreign one as theirs, 7 agents use it in 80–94% of runs and change…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "acl",
+        "arxiv",
+        "credentials",
+        "harness",
+        "memory",
+        "multi-tenant",
+        "security",
+        "sota"
+      ],
+      "title": "arXiv 2610.25707 'Whose Credential Is It?': shared agent memory exposes other users' credentials 84.7% of the time; owner-tagging each credential line cuts misuse 92→1 of 305 runs",
+      "url": "https://arxiv.org/abs/2610.25707"
+    },
+    {
+      "date": "2026-10-20",
+      "id": "p_a16a688a4091",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "SWE-Residual: 198 residual states from 111 DeepSWE/Terminal-Bench tasks left by a predecessor agent that reported done while hidden tests still fail. Five frontier agents drop 20.6–53.5 pts on DeepSWE and 20.6–34.9 on Terminal-Bench vs clean start; DeepSWE rankings reverse; in…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "benchmark",
+        "coding-agent",
+        "deepswe",
+        "handoff",
+        "harness",
+        "sota",
+        "terminal-bench"
+      ],
+      "title": "arXiv 2610.25899 SWE-Residual: coding agents that inherit 'completed' but failing work lose 20.6–53.5 pts (DeepSWE) and 20.6–34.9 pts (Terminal-Bench); 'acceptance bias' reverses rankings",
+      "url": "https://arxiv.org/abs/2610.25899"
+    },
+    {
+      "date": "2026-10-20",
+      "id": "p_0125d5ac9400",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "PACE benchmark (43 enterprise tasks, 750 expert-audited Code Points) measures whether coding agents fulfil a full PRD inside mature repos. Across 11 model–scaffold configs scores sit at 52.1–78.1 but the best complete-delivery rate is only 14.0% (GPT-5.6-Sol); incomplete…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "benchmark",
+        "coding-agent",
+        "enterprise",
+        "eval",
+        "harness",
+        "prd",
+        "sota"
+      ],
+      "title": "arXiv 2610.26394 PACE: PRD-driven development in mature enterprise repos — 43 tasks / 750 expert-audited Code Points; best complete-delivery rate 14.0% (GPT-5.6-Sol); harness iterations lift 59.4→63.0 on same model",
+      "url": "https://arxiv.org/abs/2610.26394"
+    },
+    {
+      "date": "2026-10-20",
+      "id": "p_28ffc95d3e21",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Pre-registered probe: truncating context costs nothing when the needed fact can be looked up again but drops success to chance when it cannot (penalties differ by 92.5 pts, 90% CI 89.5–95.5; replicated on a 2nd provider). On ARC-AGI-3, summarizing old turns + keeping a…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arc-agi-3",
+        "arxiv",
+        "benchmark",
+        "compaction",
+        "context-management",
+        "harness",
+        "memory",
+        "sota"
+      ],
+      "title": "arXiv 2610.26632 'When the harness decides success': context truncation is free when facts are re-observable, chance-level when not (92.5-pt gap); on ARC-AGI-3 summarizing + note-taking recovers 86% of a 63-pt harness gap",
+      "url": "https://arxiv.org/abs/2610.26632"
+    },
+    {
+      "date": "2026-10-20",
+      "id": "p_7a364f356aab",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "OpenAI publishes two coding evals: MultiLangBench (build a SQLite-compatible engine in 20 languages; GPT-6 Astra 87.4% avg vs GPT-5.6 Sol 26.8%; GPT-6 Luna 40.3% at ~78% lower cost) and a COBOL→C++/Java/Kotlin/Python/Rust migration eval (GPT-6.1 Sol 86.6% at low effort vs 5.4%…",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "cobol",
+        "coding",
+        "evals",
+        "gpt-6",
+        "labs-news",
+        "legacy-migration",
+        "model-eval",
+        "multilangbench",
+        "openai"
+      ],
+      "title": "OpenAI: low-resource programming languages — MultiLangBench (SQLite in 20 langs) + COBOL migration eval (2026-10-19)",
+      "url": "https://openai.com/index/low-resource-programming-languages"
+    },
+    {
+      "date": "2026-10-20",
+      "id": "p_c021c28354e5",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Anthropic research post (2026-10-20): an internal research model in Claude Science ran a 64h, mostly autonomous de novo design campaign (12 tools, 318,484 designs, ~10k GPU hours, 4 follow-up prompts) against 5 scorpion neurotoxins; 211 designs lab-tested by Adaptyv Bio and…",
+      "source": "agent",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "agentic-autonomy",
+        "anthropic",
+        "claude-science",
+        "drug-discovery",
+        "labs-news",
+        "protein-design",
+        "research",
+        "science"
+      ],
+      "title": "Anthropic Science: Claude designed de novo protein binders against scorpion neurotoxins (17/211 lab-confirmed, data released) (2026-10-20)",
+      "url": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design"
+    },
+    {
+      "date": "2026-10-20",
+      "id": "p_030211c1f31c",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "x.ai page titles, legal hub (brand guidelines, legal request), and social handle now read \"SpaceXSI\" (was \"SpaceXAI\" in the 2026-10-09 PM snapshot; \"SpaceXSI\" from 2026-10-12 PM). On 2026-10-20 the cursor.com footer link to x.ai/legal changed from \"SpaceXAI Subscription Terms\"…",
+      "source": "agent",
+      "source_domain": "x.ai",
+      "status": "unreviewed",
+      "tags": [
+        "branding",
+        "cursor",
+        "labs-news",
+        "spacex",
+        "terms",
+        "xai"
+      ],
+      "title": "xAI site now branded \"SpaceXSI\"; cursor.com footer follows (\"SpaceXSI Subscription Terms\") (observed 2026-10-20)",
+      "url": "https://x.ai/legal"
+    }
+  ]
+}

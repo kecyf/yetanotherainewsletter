@@ -1,0 +1,124 @@
+{
+  "date": "2026-11-11",
+  "entries": [
+    {
+      "date": "2026-11-11",
+      "id": "p_2cb4f31b0883",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "cursor.com",
+      "status": "unreviewed",
+      "tags": [
+        "cursor",
+        "labs-news"
+      ],
+      "title": "Nov 10, 2026 · product Cursor Projects is now multiplayer Aryaman Khandelwal 4m Aryaman Khandelwal · 4m",
+      "url": "https://cursor.com/blog/projects-multiplayer"
+    },
+    {
+      "date": "2026-11-11",
+      "id": "p_80b38ea7da37",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "ChatGPT Plus for veterans and servicemembers",
+      "url": "https://openai.com/index/chatgpt-plus-for-veterans"
+    },
+    {
+      "date": "2026-11-11",
+      "id": "p_01a8528fa117",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "Closing the AI guidance gap in education",
+      "url": "https://openai.com/index/closing-ai-guidance-gap-education"
+    },
+    {
+      "date": "2026-11-11",
+      "id": "p_f28f90d2895a",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "Gilbert + Tobin rethinks the business of law with AI",
+      "url": "https://openai.com/index/gilbert-tobin-sam-nickless"
+    },
+    {
+      "date": "2026-11-11",
+      "id": "p_46ecb159c153",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "Helping caregivers use AI in everyday life",
+      "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life"
+    },
+    {
+      "date": "2026-11-11",
+      "id": "p_5ca4dc7b6d88",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "Introducing Businesses in ChatGPT",
+      "url": "https://openai.com/index/introducing-businesses-chatgpt"
+    },
+    {
+      "date": "2026-11-11",
+      "id": "p_85a32fe1244f",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "anthropic",
+        "labs-news"
+      ],
+      "title": "Anthropic launches roadshow for proposed initial public offering",
+      "url": "https://www.anthropic.com/news/roadshow-launch"
+    }
+  ]
+}

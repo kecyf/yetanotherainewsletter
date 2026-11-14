@@ -1,0 +1,264 @@
+{
+  "date": "2026-10-26",
+  "entries": [
+    {
+      "date": "2026-10-26",
+      "id": "p_4795f7082ab7",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Pairs full-history vs summary-only continuations from the same repo state (35 SWE-bench repairs, 146 agentic sessions, 106 production chains, 14 summarizer backbones). Stable damage 5–64% of 22 full-history successes; Claude Opus 4.8 preserves most repairs, DeepSeek-Flash…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agent",
+        "compaction",
+        "context",
+        "harness",
+        "memory",
+        "sota"
+      ],
+      "title": "arXiv 2610.31710 Compact-Bench: context compaction damages 5–64% of long-horizon coding-agent successes depending on the summarizer; LLM summaries keep at most 16% of recurring details vs 79.1% for mechanical extraction",
+      "url": "https://arxiv.org/abs/2610.31710"
+    },
+    {
+      "date": "2026-10-26",
+      "id": "p_64c7ed325a39",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "ImpasseBench injects 12 realistic environment blockers into solvable repair tasks and marks the step where evidence becomes sufficient. 8 frontier models, 19,371 trajectories: nearly every run needing outside help collects sufficient evidence, a third still exhaust budget, and…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agent",
+        "escalation",
+        "eval",
+        "harness",
+        "safety",
+        "sota"
+      ],
+      "title": "arXiv 2610.31895 Knowing When to Stop (ImpasseBench): coding agents gather enough evidence that only outside help can unblock them, yet a third still exhaust their budget; an escalation tool cuts budget exhaustion from 34.0% to 6.7%, but handoff tickets often omit progress and verification status",
+      "url": "https://arxiv.org/abs/2610.31895"
+    },
+    {
+      "date": "2026-10-26",
+      "id": "p_7c4ecc392ed1",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Observed in a production RAG research system (Pilsudski Institute, New York): each tool computed correctly but its printed output omitted search limits, result caps or identifier namespaces, leading the agent to wrong or incomplete answers. Swapping only the formatter (omissions…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "eval",
+        "harness",
+        "rag",
+        "sota",
+        "tool-use",
+        "verifier"
+      ],
+      "title": "arXiv 2610.32110 Who Verifies the Tools? Tool output formatters that omit search limits, result caps or ID namespaces mislead both agents and LLM verifiers; fixing only the wording flipped verifiers from accepting wrong answers 90/90 to rejecting them 90/90",
+      "url": "https://arxiv.org/abs/2610.32110"
+    },
+    {
+      "date": "2026-10-26",
+      "id": "p_d6271ea16694",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Compositional skill risk: an agent passes an upstream skill's output to a downstream skill's input, so benign skills form safety-violation chains that per-skill malicious-skill scanners miss. KnotScryer abstracts each skill into a capability summary, builds a Skill…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "agent-skills",
+        "arxiv",
+        "harness",
+        "security",
+        "skills",
+        "sota",
+        "supply-chain"
+      ],
+      "title": "arXiv 2610.32155 KnotScryer: individually clean agent skills compose into exploitable chains; capability-flow graph analysis of 13,598 ClawHub skills finds 612 insecure compositions, validated across three agent frameworks and three LLMs",
+      "url": "https://arxiv.org/abs/2610.32155"
+    },
+    {
+      "date": "2026-10-26",
+      "id": "p_9b3e9172c1c4",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "120 scenarios × 12 change families × 9 intervention positions: from the same saved history, a Clean continuation vs a Shifted one that receives a task-relevant update (code, dependencies, runtime state, requirements). Success needs finishing the task, preserving still-valid work…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "benchmark",
+        "coding-agent",
+        "eval",
+        "gpt-6",
+        "sota",
+        "stale-evidence"
+      ],
+      "title": "arXiv 2610.32196 SWE-Shift: all 17 coding-agent systems drop when the workspace changes mid-task; GPT-6 Astra falls from 67.35% (clean) to 24.79% (shifted); tool/session changes and stale evidence give zero paired success across every system",
+      "url": "https://arxiv.org/abs/2610.32196"
+    },
+    {
+      "date": "2026-10-26",
+      "id": "p_f028d80ce08d",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Framework of five measures: Valid Completion Rate, Model-Harness Fit, Cross-Model Fit, Interaction Residuals, Token Load (incl. failed attempts). 4 general harnesses (OpenCode, Codex CLI, Pi CLI, DeepAgents) × 4 core models + 2 native model-harness systems, 6 benchmarks, 111…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "codex",
+        "eval",
+        "harness",
+        "model-mix",
+        "opencode",
+        "pi",
+        "sota"
+      ],
+      "title": "arXiv 2610.32483 When Agents Fail: Model or Harness? 52,168 trajectories across OpenCode, Codex CLI, Pi CLI and DeepAgents × 4 models: harness rankings flip by model and benchmark; OpenCode ranks first cross-model, DeepSeek V4 Flash Preview keeps the highest valid-completion rate",
+      "url": "https://arxiv.org/abs/2610.32483"
+    },
+    {
+      "date": "2026-10-26",
+      "id": "p_1d91af75da46",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "MCP-Injector: protocol-aware fault-injection middleware on the MCP tool-call path (permanent/transient/intermittent, seedable), fault model calibrated on 57,240 issue/PR threads from 1,774 open-source MCP repos. 1,350-cell experiment: gpt-oss 20B vs 120B × 3 agent stacks (custom…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "eval",
+        "harness",
+        "mcp",
+        "reliability",
+        "sota",
+        "tool-use"
+      ],
+      "title": "arXiv 2610.32555 Tool-calling agents under realistic MCP faults: calibrated fault injection (mined from 57,240 issues/PRs in 1,774 MCP repos) cuts task completion 60% (8.08 → 3.23/10); a 120B model is no more fault-tolerant than 20B; agent-stack error handling matters more than scale",
+      "url": "https://arxiv.org/abs/2610.32555"
+    },
+    {
+      "date": "2026-10-26",
+      "id": "p_adbfbf932ae8",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Single-author case study: plain-markdown system of record edited daily by three agent tools under one rule set. 118 failures logged; drift 48/118. Monthly LLM doc audit found ~50% of 47 known stale statements (Claude Sonnet 5.5), ≥93% of findings correct. Replaying 5 past…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "agents-md",
+        "arxiv",
+        "drift",
+        "harness",
+        "rules",
+        "sota"
+      ],
+      "title": "arXiv 2610.32578 Lessons Outlive Their Failures: 6-week ledger of 118 coding-agent failures under one shared rule set; stale docs (drift) are the largest class (48/118), an LLM audit finds ~half of known drift, and most written rules no longer change behaviour on current models while mechanical checks keep working",
+      "url": "https://arxiv.org/abs/2610.32578"
+    },
+    {
+      "date": "2026-10-26",
+      "id": "p_a5bfc138dcd8",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Harness Minus Minus: a controller at the model-tool boundary stores Executable Decision Graphs (exact actions, literal arguments, causal deps, guards) and replaces later reasoning callbacks when an earlier call already fixed the next action; recursive self-improvement tunes…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "codex",
+        "cost",
+        "deepseek",
+        "harness",
+        "sota",
+        "token-efficiency"
+      ],
+      "title": "arXiv 2610.32813 HarnessMM: guarded reuse of already-resolved tool decisions cuts harness tokens per task 29.5% for Codex at equal HumanEval success, and 87.9% for DeepSeek Harness while success rises from 71.43% to 85.71%",
+      "url": "https://arxiv.org/abs/2610.32813"
+    },
+    {
+      "date": "2026-10-26",
+      "id": "p_38017706669c",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Agno v3.1.8 (2026-10-21) switches the Claude() default model to claude-sonnet-5-5 ahead of the claude-sonnet-4-5 retirement (2026-11-30, see 150cc1fb), drops non-default temperature/top_p/top_k with a warning on newer Claude models, keeps only 3 sandbox checkpoints per session…",
+      "source": "agent",
+      "source_domain": "github.com",
+      "status": "unreviewed",
+      "tags": [
+        "agno",
+        "anthropic",
+        "breaking-change",
+        "labs-news",
+        "model-deprecation",
+        "release"
+      ],
+      "title": "Agno v3.1.8: Claude() now defaults to claude-sonnet-5-5 (was deprecated claude-sonnet-4-5-20250929), plus sandbox checkpoint behavior changes (2026-10-21)",
+      "url": "https://github.com/agno-agi/agno/releases/tag/v3.1.8"
+    },
+    {
+      "date": "2026-10-26",
+      "id": "p_73c5f3544f1d",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "First Agno watch pass: the agno-agi/agno repo has 3 published security advisories, all patched long ago: GHSA-m4w4-3r8h-jw98 / CVE-2026-35002 (critical, arbitrary code execution via eval() on field_type in FunctionCall, fixed 2.3.24), GHSA-w9j5-7p53-pvr3 / CVE-2026-10105 (high…",
+      "source": "agent",
+      "source_domain": "github.com",
+      "status": "unreviewed",
+      "tags": [
+        "advisory",
+        "agno",
+        "labs-news",
+        "security"
+      ],
+      "title": "Agno security advisories baseline: 3 published GHSAs (critical eval() RCE <2.3.24, high SQL injection <2.8.5, high cross-session state overwrite 2.x <2.2.2) (checked 2026-10-26)",
+      "url": "https://github.com/agno-agi/agno/security/advisories"
+    },
+    {
+      "date": "2026-10-26",
+      "id": "p_75a9879eb1b1",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Agno blog (2026-10-23): CompanyOS is a new part of AgentOS, enabled with company=CompanyConfig(). Work is organized as Products (ongoing responsibilities with Sources), Projects and Tasks; scheduled Routines read Sources and propose Projects/Tasks that a human approves; finished…",
+      "source": "agent",
+      "source_domain": "agno.com",
+      "status": "unreviewed",
+      "tags": [
+        "agent-orchestration",
+        "agentos",
+        "agno",
+        "human-in-the-loop",
+        "labs-news",
+        "product-launch"
+      ],
+      "title": "Agno launches CompanyOS in AgentOS: Products, Projects, Tasks and Routines so agents propose and execute work with human approval (2026-10-23)",
+      "url": "https://www.agno.com/blog/introducing-companyos"
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "date": "2026-11-08",
+  "listed": {
+    "expiring": 1,
+    "new": 1,
+    "price": 12
+  },
+  "signals": [
+    {
+      "date": "2026-11-08",
+      "details": {
+        "created": "2026-10-17"
+      },
+      "id": "2026-11-08:new:deepseek/deepseek-v4.1-flash-1017:batch",
+      "model_id": "deepseek/deepseek-v4.1-flash-1017:batch",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek V4.1 Flash 1017 (batch)",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-08",
+      "details": {
+        "days_left": 10,
+        "expires": "2026-11-18"
+      },
+      "id": "2026-11-08:expiring:moonshotai/kimi-k2.5",
+      "model_id": "moonshotai/kimi-k2.5",
+      "model_id_basis": "catalog",
+      "name": "MoonshotAI: Kimi K2.5",
+      "provider": "MoonshotAI",
+      "source": "openrouter-catalog",
+      "type": "expiring"
+    },
+    {
+      "date": "2026-11-08",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.3,
+          "to": 0.3
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.054,
+          "to": 0.0434
+        }
+      },
+      "id": "2026-11-08:price:deepseek/deepseek-v4-flash-0731",
+      "model_id": "deepseek/deepseek-v4-flash-0731",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek V4 Flash 0731",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-08",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 1.638732,
+          "to": 0.726276
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.819366,
+          "to": 0.363138
+        }
+      },
+      "id": "2026-11-08:price:deepseek/deepseek-v4-pro",
+      "model_id": "deepseek/deepseek-v4-pro",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek V4 Pro 0423",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-08",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.6,
+          "to": 0.5
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.15,
+          "to": 0.006
+        }
+      },
+      "id": "2026-11-08:price:deepseek/deepseek-v4.1-flash-1017",
+      "model_id": "deepseek/deepseek-v4.1-flash-1017",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-08",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.336,
+          "to": 0.2
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.112,
+          "to": 0.011
+        }
+      },
+      "id": "2026-11-08:price:deepseek/deepseek-v4.1-flash:batch",
+      "model_id": "deepseek/deepseek-v4.1-flash:batch",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek V4.1 Flash (batch)",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-08",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 2.5,
+          "to": 3.325
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.5,
+          "to": 0.532
+        }
+      },
+      "id": "2026-11-08:price:moonshotai/kimi-k2.5",
+      "model_id": "moonshotai/kimi-k2.5",
+      "model_id_basis": "catalog",
+      "name": "MoonshotAI: Kimi K2.5",
+      "provider": "MoonshotAI",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-08",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 11.4,
+          "to": 6
+        },
+        "prompt_usd_per_mtok": {
+          "from": 2.28,
+          "to": 1.084
+        }
+      },
+      "id": "2026-11-08:price:moonshotai/kimi-k3:batch",
+      "model_id": "moonshotai/kimi-k3:batch",
+      "model_id_basis": "catalog",
+      "name": "MoonshotAI: Kimi K3 (batch)",
+      "provider": "MoonshotAI",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-08",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 2.7,
+          "to": 3.2
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.45,
+          "to": 0.32
+        }
+      },
+      "id": "2026-11-08:price:qwen/qwen3.6-27b",
+      "model_id": "qwen/qwen3.6-27b",
+      "model_id_basis": "catalog",
+      "name": "Qwen: Qwen3.6 27B",
+      "provider": "Qwen",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-08",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.5,
+          "to": 0.083
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.15,
+          "to": 0.0335
+        }
+      },
+      "id": "2026-11-08:price:z-ai/glm-5.3-flash",
+      "model_id": "z-ai/glm-5.3-flash",
+      "model_id_basis": "catalog",
+      "name": "Z.ai: GLM 5.3 Flash",
+      "provider": "Z.ai",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-08",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 2,
+          "to": 1.5
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.45,
+          "to": 0.37
+        }
+      },
+      "id": "2026-11-08:price:z-ai/glm-5.3:batch",
+      "model_id": "z-ai/glm-5.3:batch",
+      "model_id_basis": "catalog",
+      "name": "Z.ai: GLM 5.3 (batch)",
+      "provider": "Z.ai",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-08",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.3,
+          "to": 0.3
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.054,
+          "to": 0.0434
+        }
+      },
+      "id": "2026-11-08:price:~deepseek/deepseek-v4-flash-latest",
+      "model_id": "~deepseek/deepseek-v4-flash-latest",
+      "model_id_basis": "catalog",
+      "name": "DeepSeek: DeepSeek V4 Flash Latest",
+      "provider": "DeepSeek",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-08",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 9.3388,
+          "to": 9.3388
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.1824,
+          "to": 0.1577
+        }
+      },
+      "id": "2026-11-08:price:~moonshotai/kimi-latest",
+      "model_id": "~moonshotai/kimi-latest",
+      "model_id_basis": "catalog",
+      "name": "MoonshotAI: Kimi Latest",
+      "provider": "MoonshotAI",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-08",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.0923,
+          "to": 0.083
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.0285,
+          "to": 0.0335
+        }
+      },
+      "id": "2026-11-08:price:~z-ai/glm-flash-latest",
+      "model_id": "~z-ai/glm-flash-latest",
+      "model_id_basis": "catalog",
+      "name": "Z.ai: GLM Flash Latest",
+      "provider": "Z.ai",
+      "source": "openrouter-catalog",
+      "type": "price"
+    }
+  ],
+  "totals": {
+    "expiring": 1,
+    "new": 1,
+    "price": 13
+  }
+}

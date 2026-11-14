@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "build:live": "YAAN_LIVE=1 YAAN_DATA_DIR=src/data-live astro build",
-    "check": "export YAAN_TODAY=2026-10-27 && astro check && astro build && node scripts/check.mjs",
+    "check": "export YAAN_TODAY=2026-10-27 && astro check && tsc -p functions/tsconfig.json && astro build && node scripts/check.mjs && node scripts/check-kb.mjs dist && node scripts/check-kb.mjs --build-live",
     "preview": "astro preview"
   },
   "dependencies": {

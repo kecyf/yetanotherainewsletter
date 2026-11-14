@@ -5,6 +5,8 @@
 
 /llms.txt
   Content-Type: text/plain; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
 
 /feed.json
   Content-Type: application/json; charset=utf-8
@@ -14,3 +16,71 @@
 
 /sitemap.xml
   Content-Type: application/xml; charset=utf-8
+
+# ---- yaan KB API v1 (docs/kb-api-v1.md). CORS * everywhere it is public.
+# every /api/* file is json (the trailing-slash entry point is emitted as index.html).
+# cache rules are disjoint on purpose: Pages joins duplicate header values from overlapping rules.
+# /api/v1/search and /mcp are Pages Functions: this file does not reach them, they set their own headers.
+/api/*
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  X-Content-Type-Options: nosniff
+
+# published issues and items never change
+/api/v1/issues/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/api/v1/items/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# day snapshots are exported from the brain and statuses follow the issues: cached, not immutable
+/api/v1/pool/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/api/v1/models/signals/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+# listings
+/api/v1/
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+/api/v1/index.json
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+/api/v1/issues.json
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+/api/v1/items.json
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+/api/v1/models/signals.json
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+/api/v1/models/pareto.json
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+/api/v1/tags.json
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+/api/v1/search-index.json
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+/openapi.json
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+/.well-known/mcp.json
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+# the function sets these itself; kept here so the policy reads in one place
+/mcp
+  Access-Control-Allow-Origin: *

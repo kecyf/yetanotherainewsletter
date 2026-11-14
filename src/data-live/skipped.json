@@ -1,1 +1,8 @@
-{"fixture":false,"days":{}}
+{
+  "fixture": false,
+  "days": {
+    "2026-11-14": {
+      "reason": "weekend: the veille rail polls on weekdays only, so there is no issue."
+    }
+  }
+}

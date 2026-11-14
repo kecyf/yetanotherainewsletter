@@ -13,6 +13,10 @@ export const GET: APIRoute = () => {
     { loc: `${o}/privacy` },
     { loc: `${o}/subscribe` },
     { loc: `${o}/llms.txt` },
+    { loc: `${o}/llms-full.txt` },
+    { loc: `${o}/openapi.json` },
+    { loc: `${o}/api/v1/` },
+    { loc: `${o}/.well-known/mcp.json` },
     ...issues.flatMap((e) => [
       { loc: `${o}/${e.date}`, lastmod: e.date },
       { loc: `${o}/${e.date}.md`, lastmod: e.date },

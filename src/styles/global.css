@@ -19,6 +19,7 @@
 /* utilities defined once — arbitrary values are banned in markup (DESIGN.md §1) */
 @utility col {
   margin-inline: auto;
+  width: 100%; /* v1.3: auto margins make a flex item shrink-to-fit, so a long unbroken line (a code block) would widen the column */
   max-width: var(--w-read);
   display: flex;
   flex-direction: column;
@@ -110,6 +111,7 @@
   display: inline-flex;
   align-items: center;
   min-height: var(--tap);
+  min-width: var(--tap); /* v1.3: short words (api, rss) are 44 wide too */
   padding-inline: calc(var(--spacing) * 2); /* same unit as the -ml-2 / -mx-2 that cancels it, so they stay aligned when the root font size changes */
 }
 /* extends the hit area to --tap without touching layout (inline links, number chips) */
@@ -166,6 +168,7 @@
 }
 /* nav: others fg-2, current fg-1 with a quiet permanent underline, hover and keyboard focus fg-1 + underline. never the accent. */
 @utility nav-link {
+  justify-content: center; /* a tap-wide box centres a short word (api) */
   color: var(--fg-2);
   text-decoration-line: underline;
   text-decoration-color: transparent;
@@ -234,6 +237,94 @@
   }
 }
 
+/* --- v1.3 (DESIGN.md §12) --- */
+/* a code block: surface-2 inset, mono, never wraps (a command or a json line stays whole and the block scrolls sideways;
+   it is focusable, see the tabindex in markup). a soft edge shows only on the side that has more to scroll to (css-only scroll shadows). */
+@utility codeblock {
+  display: block;
+  max-width: 100%;
+  background:
+    linear-gradient(to right, var(--code-bg), transparent) left center / var(--sp-4) 100% no-repeat local,
+    linear-gradient(to left, var(--code-bg), transparent) right center / var(--sp-4) 100% no-repeat local,
+    linear-gradient(to right, var(--line-strong), transparent) left center / var(--sp-2) 100% no-repeat scroll,
+    linear-gradient(to left, var(--line-strong), transparent) right center / var(--sp-2) 100% no-repeat scroll,
+    var(--code-bg);
+  color: var(--code-fg);
+  border: var(--bw) solid var(--line);
+  border-radius: var(--r-1);
+  padding: var(--code-pad);
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  line-height: var(--lh-micro);
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  tab-size: 2;
+}
+/* prose inside a code block (the agent prompt): wraps at spaces only, so a url stays whole and scrolls */
+@utility codeblock-wrap {
+  white-space: pre-wrap;
+}
+/* a numbered line inside a code block: the number hangs, wrapped lines sit under the text. the span carries its own trailing newline so the text stays byte-identical */
+@utility hang {
+  display: block;
+  padding-left: var(--hang);
+  text-indent: calc(-1 * var(--hang));
+  text-wrap: pretty;
+}
+/* the quiet button: a text-only copy control that is not the agent cta. tap-high, no box */
+@utility btn-quiet {
+  background: transparent;
+  color: var(--fg-2);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--fg-1);
+    }
+  }
+}
+/* the accent fill: the one solid agent control (the prompt's copy button) */
+@utility cta-fill {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: var(--bw) solid var(--accent);
+}
+/* key/value grid: one pair per row under 30rem, two pairs per row from 30rem. a pair is dt + dd side by side */
+@utility kv {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--sp-2) var(--sp-6);
+  @media (min-width: 30rem) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@utility kv-pair {
+  display: grid;
+  grid-template-columns: var(--w-key) minmax(0, 1fr);
+  gap: var(--sp-2);
+  align-items: baseline;
+}
+@utility kv-wide {
+  grid-column: 1 / -1;
+}
+/* definition row: label (path, mono) and its description. stacked on mobile, side by side from 48rem */
+@utility defrow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--sp-2) var(--sp-4);
+  @media (min-width: 48rem) {
+    grid-template-columns: minmax(0, var(--w-def)) minmax(0, 1fr);
+  }
+}
+/* a path that may break after a slash (a <wbr> in the markup), never inside a segment unless nothing else fits */
+@utility path {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  line-height: var(--lh-micro);
+  overflow-wrap: anywhere;
+}
+
 @layer base {
   *, *::before, *::after { box-sizing: border-box; }
   html {
@@ -292,7 +383,10 @@
   input, button { font: inherit; }
   input { font-size: var(--fs-input); }
   button { touch-action: manipulation; }
-  details summary { list-style: none; cursor: pointer; }
+  details summary { list-style: none; cursor: pointer; transition: color var(--dur-hover) var(--ease-out); }
+  @media (hover: hover) and (pointer: fine) {
+    details summary:hover { color: var(--fg-1); }
+  }
   details summary::-webkit-details-marker { display: none; }
   main code {
     background: var(--code-bg);

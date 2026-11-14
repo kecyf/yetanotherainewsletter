@@ -106,7 +106,7 @@
   --fg-reading: #c9c9cf;        /* body + why-it-matters on the reader view */
   --fs-subject: 2.25rem;  --lh-subject: 2.625rem;    /* page h1, the day's subject (v1.1 26/34, v1.2 36/42; 26/32 under 30rem) */
   --fs-lead: 1.75rem;  --lh-lead: 2.125rem;   /* the lead item's title (v1.2: 28/34; 22/29 under 30rem). its body is plain --fs-body-r */
-  --fs-item: 1.0625rem;  --lh-item: 1.5625rem;   /* every other item title */
+  --fs-item: 1.1875rem;  --lh-item: 1.625rem;   /* every other item title (v1.3: 19/26, was 17/25: the middle tier between the 28px lead and the 16.5px body) */
   --fs-body-r: 1.03125rem;--lh-body-r: 1.6875rem;   /* reader running text (was 14/22). never under 16px */
   --fs-kicker: 0.8125rem;  --lh-kicker: 1.25rem;   /* the eyebrow: latest issue / lead / section names, rendered uppercase; its descriptor shares this size (v1.2: 13px, medium) */
   --tr-kicker:  0.1em;
@@ -124,7 +124,7 @@
   --fs-input: 1rem;                          /* inputs never below 16px (no iOS zoom) */
   --fs-lead-sm: 1.375rem;  --lh-lead-sm: 1.75rem;    /* lead title under 30rem */
   --fs-subject-sm: 1.625rem; --lh-subject-sm: 2rem;   /* subject under 30rem */
-  --fg-preface: #a3a3ab;        /* the issue intro: one ink tier dimmer than item bodies (--fg-reading) */
+  --fg-preface: #b0b0b8;        /* the issue intro: one ink tier dimmer than item bodies (--fg-reading). v1.3: 9.1:1 on --bg (was #a3a3ab, 7.8:1, read as disabled) */
   --fs-preface: var(--fs-body-r);  --lh-preface: var(--lh-body-r); /* v1.2: the intro and every body share one size */
   --tr-meta: -0.02em;           /* the one tracked mono line (date · weekday · issue · read time); it wraps between its dot-separated parts */
   /* v1.2 spacing scale for the reader layout: 8 / 16 / 24 / 48 / 72 (--sp-2, -4, -6, -12, -18).
@@ -156,7 +156,7 @@
   --fs-body: var(--fs-body-r);
   --lh-body: var(--lh-body-r);
   --tt-kicker: uppercase;         /* section names; the data stays lowercase */
-  --strip-val: var(--fg-3);       /* the strip is a whisper on the reader view */
+  --strip-val: var(--fg-preface); /* the stats grid is quiet on the reader view: keys --fg-3, values one tier below the body (v1.3: was --fg-3) */
   --strip-bw: 0px;                /* no rules around the demoted strip */
 }
 @media (max-width: 30rem) {
@@ -175,4 +175,11 @@
     --pad-top: var(--sp-6);
     --pad-bottom: var(--sp-12);
   }
+}
+
+/* --- v1.3 (DESIGN.md §12): the api docs page, key/value grids, hanging prompt, quiet colophon --- */
+:root {
+  --w-key: 6.5rem;              /* key column of a key/value pair (stats, api facts): fits "assembled" in mono */
+  --w-def: 17rem;               /* path column of a definition row from 48rem: fits the longest endpoint path in mono at 13px */
+  --hang: 3ch;                  /* hanging indent of a numbered line in a code block: "1. " in mono */
 }

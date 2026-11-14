@@ -1,0 +1,30 @@
+---
+// v1.3: the quiet agent band on the home page, under the latest issue.
+// no box: a rule, an eyebrow, three links and the one-line mcp url. nothing here uses the cta.
+import SectionHeader from './SectionHeader.astro';
+import Snippet from './Snippet.astro';
+import { copy } from '../content/copy';
+
+const { band, site } = copy;
+---
+
+<section class="flex flex-col gap-4" aria-labelledby="s-agents">
+  <SectionHeader name={band.title} descriptor={band.descriptor} id="s-agents" />
+  <p class="text-fg-2">{band.body}</p>
+  <ul class="flex flex-col gap-4">
+    {band.rows.map((r) => (
+      <li class="defrow items-baseline gap-y-1">
+        <a class="link-quiet tap path justify-self-start text-fg-1" href={r.href}>{r.label}</a>
+        <span class="fs-small text-fg-3">{r.note}</span>
+      </li>
+    ))}
+  </ul>
+  <Snippet
+    id="mcp-url"
+    label={band.mcpLabel}
+    text={band.mcpUrl.replace('{origin}', site.origin)}
+    copyLabel={band.copyButton}
+    copied={band.copied}
+    copyFailed={band.copyFailed}
+  />
+</section>

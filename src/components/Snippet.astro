@@ -1,0 +1,28 @@
+---
+// a code card: a caption bar (label, optional quiet copy button) joined to a code block. the solid
+// copy button belongs to AgentBlock. the block is focusable so a keyboard user can scroll a long line.
+import { codeHtml } from '../lib/codeHtml';
+
+interface Props {
+  id: string;
+  label: string;
+  text: string;
+  copyLabel?: string;
+  copied?: string;
+  copyFailed?: string;
+}
+const { id, label, text, copyLabel, copied = '', copyFailed = '' } = Astro.props;
+---
+
+<figure class="flex flex-col">
+  <figcaption class={`flex flex-wrap items-center justify-between gap-x-4 bg-surface-2 border border-line border-b-0 rounded-t-1 pl-4 ${copyLabel ? 'min-h-tap' : 'py-2'}`}>
+    <span class="font-mono text-micro text-fg-3">{label}</span>
+    {copyLabel && (
+      <span class="flex flex-wrap items-center justify-end gap-x-2">
+        <span class="text-micro text-success" role="status" data-status></span>
+        <button class="btn btn-quiet" type="button" hidden data-copy={id} data-copied={copied} data-copy-failed={copyFailed}>{copyLabel}</button>
+      </span>
+    )}
+  </figcaption>
+  <pre id={id} class="codeblock rounded-t-none" tabindex="0" role="region" aria-label={label} set:html={codeHtml(text)} />
+</figure>

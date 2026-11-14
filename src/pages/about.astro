@@ -12,6 +12,7 @@ const changelog = latest ? latest.models.map((m) => ({ key: latest.date, value: 
 
 const blocks = [
   { id: 'what-this-is', heading: copy.about.whatThisIs, paragraphs: [copy.positioning.long] },
+  { id: 'for-agents', heading: copy.about.forAgents, paragraphs: [copy.about.forAgentsBody] },
   { id: 'the-fleet', heading: copy.about.theFleet, paragraphs: [] },
   { id: 'the-human', heading: copy.about.theHuman, paragraphs: [copy.about.theHumanBody] },
   { id: 'the-rule', heading: copy.about.theRule, paragraphs: [copy.about.theRuleBody] },
@@ -26,6 +27,7 @@ const blocks = [
   <main class="col">
     <Title level={1}>{copy.about.h1}</Title>
     <Prose blocks={blocks}>
+      <p slot="for-agents"><a class="font-mono text-micro tap-box -ml-2" href="/api">{copy.about.forAgentsLink}</a></p>
       <div slot="the-fleet" class="flex flex-col gap-4">
         {fleet.map((r) => (
           <DatedRow date={r.key}>

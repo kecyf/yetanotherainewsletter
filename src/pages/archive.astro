@@ -3,7 +3,6 @@ import Base from '../layouts/Base.astro';
 import Title from '../components/Title.astro';
 import DatedRow from '../components/DatedRow.astro';
 import StateTag from '../components/StateTag.astro';
-import SubscribeForm from '../components/SubscribeForm.astro';
 import Empty from '../components/Empty.astro';
 import { getIssues, getSkipped, launchDate } from '../lib/issues';
 import { copy } from '../content/copy';
@@ -44,7 +43,7 @@ const count = copy.archive.count
                 <DatedRow date={r.date}>
                   {r.issue ? (
                     <>
-                      <a class="text-fg-1" href={`/${r.date}`}>{r.issue.subject}</a>
+                      <a class="tap text-fg-1" href={`/${r.date}`}>{r.issue.subject}</a>
                       <span class="font-mono text-micro text-fg-3">{copy.archive.rowMicro.replace('{kept}', String(r.issue.stats.kept))}</span>
                     </>
                   ) : (
@@ -58,7 +57,6 @@ const count = copy.archive.count
             </div>
           </section>
         ))}
-        <SubscribeForm variant="compact" />
       </>
     )}
   </main>

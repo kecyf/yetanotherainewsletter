@@ -2,7 +2,8 @@
 import Base from '../layouts/Base.astro';
 import IssueBody from '../components/IssueBody.astro';
 import Hero from '../components/Hero.astro';
-import SubscribeForm from '../components/SubscribeForm.astro';
+import AgentBand from '../components/AgentBand.astro';
+import CopyScript from '../components/CopyScript.astro';
 import Empty from '../components/Empty.astro';
 import { getIssues, getLatest, assertCalendarComplete } from '../lib/issues';
 import { todayUtc } from '../lib/date';
@@ -21,6 +22,7 @@ const todayHasIssue = latest !== null && latest.date === todayUtc();
   >
     <IssueBody entry={latest} label={copy.hero.latestLabel}>
       <Hero slot="before" todayHasIssue={todayHasIssue} />
+      <AgentBand slot="after" />
     </IssueBody>
   </Base>
 ) : (
@@ -28,7 +30,8 @@ const todayHasIssue = latest !== null && latest.date === todayUtc();
     <main class="col">
       <Hero todayHasIssue={todayHasIssue} />
       <Empty which="home" />
-      <SubscribeForm variant="compact" />
+      <AgentBand />
+      <CopyScript />
     </main>
   </Base>
 )}

@@ -1,0 +1,17 @@
+---
+// the one inline script of a page that has copy buttons (check: <= 1 kb, one block, data-copy).
+// every [data-copy] button is hidden until the clipboard api exists; its value is the id of the
+// element whose text it copies. without js the text is still selectable and nothing is lost.
+---
+
+<script is:inline>
+  if (navigator.clipboard) document.querySelectorAll('[data-copy]').forEach(function (b) {
+    var s = b.parentNode.querySelector('[data-status]');
+    b.hidden = false;
+    b.addEventListener('click', function () {
+      navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent.trim())
+        .then(function () { s.textContent = b.dataset.copied; s.className = 'text-micro text-success'; })
+        .catch(function () { s.textContent = b.dataset.copyFailed; s.className = 'text-micro text-danger'; });
+    });
+  });
+</script>

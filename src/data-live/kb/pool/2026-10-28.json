@@ -1,0 +1,468 @@
+{
+  "date": "2026-10-28",
+  "entries": [
+    {
+      "date": "2026-10-28",
+      "id": "p_a374111dff45",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "First empirical study of 120 prompt-caching pull requests across 10 open-source agent systems: mis-integrations happen both on the request side (misconfiguration) and the read side (usage miscount), and most fail silently with no runtime error. CACHELINT (CodeQL call-site…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "agents",
+        "arxiv",
+        "cost",
+        "cs.ai",
+        "prompt-caching",
+        "sota",
+        "static-analysis"
+      ],
+      "title": "arXiv 2610.34817 Silent and costly: prompt-caching mis-integration in LLM agents (CACHELINT)",
+      "url": "https://arxiv.org/abs/2610.34817"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_ba05ba1fbde3",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Mechanically re-verified 10 code-level fix claims broadcast by a privileged coordination agent in a live multi-agent platform (from 179 broadcasts). File mtime consistent in 70%, claimed defensive pattern present at the claimed call site in 60% (80% anywhere), rule-based…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "audit",
+        "cs.se",
+        "multi-agent",
+        "sota",
+        "verification"
+      ],
+      "title": "arXiv 2610.35950 PASS is a claim, not an observation: re-verifying agents' self-asserted fix claims",
+      "url": "https://arxiv.org/abs/2610.35950"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_0d831e993b7b",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Log-To-Leak is a tool-poisoning attack hidden in MCP tool descriptions that makes the agent issue an extra attacker-controlled 'logging' call after its last legitimate call, leaking the user query, server name, server response and agent answer. Across 18 model-server pairs (5…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "cs.ai",
+        "mcp",
+        "prompt-injection",
+        "security",
+        "sota"
+      ],
+      "title": "arXiv 2610.36108 Log-To-Leak: post-hoc logging prompt injection via MCP tool metadata",
+      "url": "https://arxiv.org/abs/2610.36108"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_e893f485a2e9",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "In a kernel-trace fault-diagnosis agent over 720 runs, the largest prompt used only 5.75% of the context window, yet a third of tool results (3,827 of 11,189) were truncated by the harness slicing JSON at a fixed length, producing broken JSON; one field reached the model in 4.7%…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "context",
+        "cs.ai",
+        "harness",
+        "sota",
+        "tool-output",
+        "truncation"
+      ],
+      "title": "arXiv 2610.36114 Context is a pipeline, not a window: information attrition in agent harnesses",
+      "url": "https://arxiv.org/abs/2610.36114"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_dec2d19770c4",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "On MemoryAgentBench FactConsolidation, BM25 accuracy falls from 45% to 32% when the retrieved evidence budget grows from 64 to 512 tokens even though the newest statement is in every retrieved set. With equal four-statement evidence, swapping one unrelated statement for the…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "cs.ai",
+        "dedup",
+        "memory",
+        "retrieval",
+        "sota"
+      ],
+      "title": "arXiv 2610.36308 Obsolete facts in agent memory: a stale competing statement hurts more than noise",
+      "url": "https://arxiv.org/abs/2610.36308"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_28d1120928f5",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "kw-bench tests investigative knowledge work with deterministic grading (no LLM judge); first task family is a five-year VAT reconstruction across three generations of SAP from raw extracts. On DeepSeek V4.1 Flash for two hours, model-agnostic harnesses delivered (OpenCode 0.542…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "claude-code",
+        "cs.ai",
+        "deepseek",
+        "eval",
+        "harness",
+        "knowledge-work",
+        "sota"
+      ],
+      "title": "arXiv 2610.36405 kw-bench: investigative knowledge work breaks lab harnesses off their home model",
+      "url": "https://arxiv.org/abs/2610.36405"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_b11b0b2430e2",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "On 866 Python tasks (HumanEval Pro, MBPP Pro, BugsInPy) under five model settings, turning reasoning on in Qwen3-32B lifts HumanEval Pro pass@1 from 71.1% to 76.5% and BugsInPy tests-pass from 3.5% to 7.9%, but MBPP Pro moves only 68.1% to 69.5% (not significant) despite a…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding",
+        "cost",
+        "cs.se",
+        "eval",
+        "reasoning-effort",
+        "sota"
+      ],
+      "title": "arXiv 2610.36952 Does more thinking pay off? Reasoning cost vs correctness in code generation and bug fixing",
+      "url": "https://arxiv.org/abs/2610.36952"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_9ba8adb8d0a5",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Across three skill optimizers, three agentic benchmarks and two models, optimized skills succeed about as often as their hand-written seed (+0.1 points on average); dev gains vanish on test because picking the best of several candidates on ≤30 tasks reports gains that large even…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "cost",
+        "cs.ai",
+        "eval",
+        "self-improvement",
+        "skills",
+        "sota"
+      ],
+      "title": "arXiv 2610.37201 Skill optimizers mostly measure selection noise: learned skills = hand-written seed +0.1 pts, +16% input tokens (BiPA)",
+      "url": "https://arxiv.org/abs/2610.37201"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_5f6f70e04e9d",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Under KL-regularized control, a trained policy's log odds recover how strongly its harness favors each action, so deployed return = harness ceiling minus policy mismatch; training changes only mismatch, changing the harness moves both. In MiniWoB++, reversing observation-field…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "cs.cl",
+        "eval",
+        "harness",
+        "post-training",
+        "sota"
+      ],
+      "title": "arXiv 2610.37255 Your policy is secretly a harness: trained agents inherit their harness's preferences",
+      "url": "https://arxiv.org/abs/2610.37255"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_3dfce74caaa1",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Studies how to split evaluation budget in LLM-driven agent scaffold evolution between guiding search and picking the final scaffold. Sparse feedback is enough to keep search productive, while extra targeted evaluation improves final selection; shared informative items and a…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "cost",
+        "cs.ai",
+        "eval",
+        "harness",
+        "self-improvement",
+        "sota"
+      ],
+      "title": "arXiv 2610.37276 Where should the evaluation budget go in agent scaffold evolution? Sparse search feedback + targeted final confirmation",
+      "url": "https://arxiv.org/abs/2610.37276"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_0d6766f3678c",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Longitudinal study capturing the first model request of 1,886 releases of five coding agents. Tool definitions dominate the latest requests of three agents; occasional concentrated revisions change rules on tool use, attribution and coding style; only 48% of change units explain…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "claude-code",
+        "coding-agents",
+        "cs.se",
+        "harness",
+        "instructions",
+        "sota"
+      ],
+      "title": "arXiv 2610.37332 Instruction stacks of coding agents: 1,886 releases of Claude Code, Codex, Gemini CLI, Qwen Code, OpenCode",
+      "url": "https://arxiv.org/abs/2610.37332"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_77d53c9afc79",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Agno v3.1.11 (GitHub release, published 2026-10-27 19:28 UTC; full release notes read): ClaudeAgent and CodexAgent can be Team members and Workflow steps; new session search/filter API; Company Tasks/Routines lifecycle endpoints; bug fixes. No security advisory, no declared…",
+      "source": "agent",
+      "source_domain": "github.com",
+      "status": "unreviewed",
+      "tags": [
+        "agent-os",
+        "agno",
+        "harness-agents",
+        "labs-news",
+        "release"
+      ],
+      "title": "Agno v3.1.11: Claude Code and Codex harness agents as Team members and Workflow steps, session search API (2026-10-27)",
+      "url": "https://github.com/agno-agi/agno/releases/tag/v3.1.11"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_543233bf7b25",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Anthropic Alignment (Herdagdelen, Joren, Tamkin), 2026-10-27: RCT with 61 causal-inference analysts (50 used the agent) on Claude Code / Opus 4.8; agents secretly assigned a coin-flip lean per decision. Analysts matched the lean 86% of the time (50% expected if no effect); 77%…",
+      "source": "agent",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "alignment",
+        "anthropic",
+        "claude-code",
+        "human-in-the-loop",
+        "labs-news",
+        "research",
+        "security",
+        "verifier"
+      ],
+      "title": "Anthropic research: analysts followed a covertly-leaning Claude Code agent on 86% of analytic choices (2026-10-27)",
+      "url": "https://www.anthropic.com/research/agents-judgment-calls"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_b10ff880275a",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Cross-harness, self-improving memory layer: captures session history across Claude Code, Cursor, Codex, OpenCode and 20+ harnesses and turns workflows, corrections and debugging patterns into reusable knowledge for future agents.",
+      "source": "github-trending",
+      "source_domain": "github.com",
+      "status": "unreviewed",
+      "tags": [
+        "coding-agents",
+        "competitive",
+        "github-trending",
+        "harness",
+        "memory-rag"
+      ],
+      "title": "GitHub trending: Asymptote-Labs/agent-beacon — The cross-harness, self-improving memory layer for AI agents. Join our community: https://discord.com/invite/z",
+      "url": "https://github.com/Asymptote-Labs/agent-beacon"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_dd6a9d14a094",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Turns a codebase plus docs, SQL schemas, configs and PDFs into a queryable knowledge graph via a /graphify skill (Claude Code, Cursor, Codex, Gemini CLI); local deterministic tree-sitter AST parsing, explainable edges.",
+      "source": "github-trending",
+      "source_domain": "github.com",
+      "status": "unreviewed",
+      "tags": [
+        "coding-agents",
+        "github-trending",
+        "knowledge-graph",
+        "memory-rag"
+      ],
+      "title": "GitHub trending: Graphify-Labs/graphify — Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphif",
+      "url": "https://github.com/Graphify-Labs/graphify"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_e30f8dee0b0b",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "NVIDIA security scanner for agent skills (Claude Code, Codex, MCP): detects vulnerabilities, malicious patterns, prompt injection, data exfiltration and supply-chain risks before install; its dataset reports 26.1% of 31,132 skills vulnerable and 5.2% likely malicious.",
+      "source": "github-trending",
+      "source_domain": "github.com",
+      "status": "unreviewed",
+      "tags": [
+        "agent-security",
+        "github-trending",
+        "mcp",
+        "security",
+        "skills",
+        "supply-chain"
+      ],
+      "title": "GitHub trending: NVIDIA/SkillSpector — Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injec",
+      "url": "https://github.com/NVIDIA/SkillSpector"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_9b780e5528de",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Long-term memory for coding-agent CLIs with handoff between vendors: resume a task across Claude Code, Codex, etc. without re-explaining architecture and failed approaches.",
+      "source": "github-trending",
+      "source_domain": "github.com",
+      "status": "unreviewed",
+      "tags": [
+        "coding-agents",
+        "github-trending",
+        "handoff",
+        "memory-rag"
+      ],
+      "title": "GitHub trending: akitaonrails/ai-memory — Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
+      "url": "https://github.com/akitaonrails/ai-memory"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_8cd0995ef5c1",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Anthropic's lightweight sandbox (srt) enforcing filesystem and network restrictions on any process at OS level without a container (sandbox-exec on macOS, bubblewrap on Linux, proxy-based network filtering); for agents, local MCP servers and bash.",
+      "source": "github-trending",
+      "source_domain": "github.com",
+      "status": "unreviewed",
+      "tags": [
+        "agent-security",
+        "anthropic",
+        "github-trending",
+        "mcp",
+        "sandbox",
+        "security"
+      ],
+      "title": "GitHub trending: anthropics/sandbox-runtime — A lightweight sandboxing tool for enforcing filesystem and network restrictions on arbitrary processes at the",
+      "url": "https://github.com/anthropics/sandbox-runtime"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_96bb6a372bc8",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Official AWS-supported MCP servers, skills and plugins that give coding agents (Claude Code, Codex, Cursor, Devin, Kiro) tools, knowledge and guardrails to build, deploy and manage on AWS.",
+      "source": "github-trending",
+      "source_domain": "github.com",
+      "status": "unreviewed",
+      "tags": [
+        "coding-agents",
+        "github-trending",
+        "mcp",
+        "plugins",
+        "skills"
+      ],
+      "title": "GitHub trending: aws/agent-toolkit-for-aws — Official, AWS-supported MCP servers, skills, and plugins to help AI agents build on AWS",
+      "url": "https://github.com/aws/agent-toolkit-for-aws"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_d3e15fd66da7",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Source-available, self-hostable workspace where you assign issues to coding agents like teammates; they report progress, raise blockers and hand work back for review; works with existing agent CLIs.",
+      "source": "github-trending",
+      "source_domain": "github.com",
+      "status": "unreviewed",
+      "tags": [
+        "agents-harness",
+        "coding-agents",
+        "competitive",
+        "github-trending",
+        "orchestration"
+      ],
+      "title": "GitHub trending: multica-ai/multica — Make humans and AI agents work as one team — open-source and self-hostable.",
+      "url": "https://github.com/multica-ai/multica"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_236e6676a799",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Pinecone's open-source PostgreSQL extension (Rust/pgrx, created 2026-10-26): keep pgvector tables and queries, choose per index between pgvector, native (default) and remote Pinecone engines; filtered search (e.g. tenant id) inside Postgres.",
+      "source": "github-trending",
+      "source_domain": "github.com",
+      "status": "unreviewed",
+      "tags": [
+        "github-trending",
+        "pgvector",
+        "rag",
+        "supabase-postgres",
+        "vector-search"
+      ],
+      "title": "GitHub trending: pinecone-io/pg_pinecone — Pinecone for Postgres: one pgvector column, three engines",
+      "url": "https://github.com/pinecone-io/pg_pinecone"
+    },
+    {
+      "date": "2026-10-28",
+      "id": "p_0b6937fb15d2",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Local-first search engine and MCP server for agents: one Rust binary indexes code, docs, logs, JSONL/CSV and PDFs for BM25, vector and hybrid search, code search and agent memory, behind an Elasticsearch-compatible API; returns cited answers.",
+      "source": "github-trending",
+      "source_domain": "github.com",
+      "status": "unreviewed",
+      "tags": [
+        "github-trending",
+        "mcp",
+        "memory-rag",
+        "rust",
+        "search"
+      ],
+      "title": "GitHub trending: xerj-org/xerj — AI search engine and MCP server for bots and agents. One Rust binary indexes code, docs, logs, JSONL/CSV and P",
+      "url": "https://github.com/xerj-org/xerj"
+    }
+  ]
+}

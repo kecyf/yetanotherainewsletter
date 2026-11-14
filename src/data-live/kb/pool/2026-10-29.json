@@ -1,0 +1,209 @@
+{
+  "date": "2026-10-29",
+  "entries": [
+    {
+      "date": "2026-10-29",
+      "id": "p_f40066880a48",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "cursor.com",
+      "status": "unreviewed",
+      "tags": [
+        "cursor",
+        "labs-news"
+      ],
+      "title": "Oct 20, 2026 · product Introducing the Agent SDK Rustam Lalkaka 5m Rustam Lalkaka · 5m",
+      "url": "https://cursor.com/blog/agent-sdk"
+    },
+    {
+      "date": "2026-10-29",
+      "id": "p_cb08e9af981e",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "cursor.com",
+      "status": "unreviewed",
+      "tags": [
+        "cursor",
+        "labs-news"
+      ],
+      "title": "Aug 18, 2026 · Research Git at any scale VM Vicent Martí · 27m 27 min read",
+      "url": "https://cursor.com/blog/git-at-any-scale"
+    },
+    {
+      "date": "2026-10-29",
+      "id": "p_20b744e598ba",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "cursor.com",
+      "status": "unreviewed",
+      "tags": [
+        "cursor",
+        "labs-news"
+      ],
+      "title": "Aug 14, 2026 · Company Cursor is now a part of SpaceX Cursor has officially been acquired by SpaceX. Cursor Team · 2m 2 min read",
+      "url": "https://cursor.com/blog/joining-spacex"
+    },
+    {
+      "date": "2026-10-29",
+      "id": "p_41c97fe8dc29",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "Legora is building the agentic operating system for legal work",
+      "url": "https://openai.com/index/legora"
+    },
+    {
+      "date": "2026-10-29",
+      "id": "p_75e2017ed4c5",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+      "url": "https://openai.com/index/openai-servicenow-partnership-expansion"
+    },
+    {
+      "date": "2026-10-29",
+      "id": "p_0dc3cf0b7c98",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "The future of the firm",
+      "url": "https://openai.com/index/the-future-of-the-firm"
+    },
+    {
+      "date": "2026-10-29",
+      "id": "p_ad10900db6cd",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "anthropic",
+        "labs-news"
+      ],
+      "title": "AI for Science expands to foundations and research institutions",
+      "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"
+    },
+    {
+      "date": "2026-10-29",
+      "id": "p_16faca12f964",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "anthropic",
+        "labs-news"
+      ],
+      "title": "Expanding our partnership with GSA to bring Claude to all levels of government",
+      "url": "https://www.anthropic.com/news/expanding-partnership-gsa"
+    },
+    {
+      "date": "2026-10-29",
+      "id": "p_edf59637f599",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Anthropic files S-1 with the SEC for proposed initial public offering Today, Anthropic, PBC filed a registration statement on Form S-1 with the U.S. Securities and Exchange Commission relating to its",
+      "source": "veille",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "anthropic",
+        "labs-news"
+      ],
+      "title": "Anthropic files S-1 with the SEC for proposed initial public offering Today, Anthropic, PBC filed a registration statement on Form S-1 with the U.S. Securities",
+      "url": "https://www.anthropic.com/news/s1-sec"
+    },
+    {
+      "date": "2026-10-29",
+      "id": "p_c485f3f61a99",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "How SpaceXSI is using Grok Bot to scale customer support We rebuilt the combined SpaceXSI and Cursor support operation around Grok Bot, expanding to a much broader product portfolio without adding hea",
+      "source": "veille",
+      "source_domain": "x.ai",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "xai"
+      ],
+      "title": "How SpaceXSI is using Grok Bot to scale customer support We rebuilt the combined SpaceXSI and Cursor support operation around Grok Bot, expanding to a much broa",
+      "url": "https://x.ai/news/grok-bot-customer-support"
+    },
+    {
+      "date": "2026-10-29",
+      "id": "p_e506197bdd39",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Memory in Grok Build Grok Build now carries conventions, decisions, and project facts from one session to the next. Notes are written in the background as you work and read back when you return to the",
+      "source": "veille",
+      "source_domain": "x.ai",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "xai"
+      ],
+      "title": "Memory in Grok Build Grok Build now carries conventions, decisions, and project facts from one session to the next. Notes are written in the background as you w",
+      "url": "https://x.ai/news/grok-build-memory"
+    },
+    {
+      "date": "2026-10-29",
+      "id": "p_7a7bb84cf160",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "x.ai",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "xai"
+      ],
+      "title": "Introducing Grok Voice Transcribe 2.0 Announcing SpaceXSI's newest speech-to-text model, with unparalleled accuracy and cost effectiveness. Sep 18, 2026",
+      "url": "https://x.ai/news/grok-voice-transcribe-2"
+    }
+  ]
+}

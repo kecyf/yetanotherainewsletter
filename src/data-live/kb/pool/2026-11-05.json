@@ -1,0 +1,107 @@
+{
+  "date": "2026-11-05",
+  "entries": [
+    {
+      "date": "2026-11-05",
+      "id": "p_a4f4c423c542",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "A thousand fewer paths to root",
+      "url": "https://openai.com/index/a-thousand-fewer-paths-to-root"
+    },
+    {
+      "date": "2026-11-05",
+      "id": "p_75679f5aa60b",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
+      "url": "https://openai.com/index/daybreak-red-aws-govcloud"
+    },
+    {
+      "date": "2026-11-05",
+      "id": "p_bf25be8f8779",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "DevRev delivers autonomous self-service with GPT-6.1 Sol",
+      "url": "https://openai.com/index/devrev-enterprise-self-service"
+    },
+    {
+      "date": "2026-11-05",
+      "id": "p_0a437d67f2ef",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "Introducing Images 2.6",
+      "url": "https://openai.com/index/introducing-images-2-6"
+    },
+    {
+      "date": "2026-11-05",
+      "id": "p_3a06f84c0f51",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "OpenAI to acquire Pierre Computer Company, Inc.",
+      "url": "https://openai.com/index/openai-to-acquire-pierre"
+    },
+    {
+      "date": "2026-11-05",
+      "id": "p_c4f5d2954769",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "November 4, 2026 Agile Deliberation: How AI helps humans define the gray areas Data Mining & Modeling · Generative AI · Human-Computer Interaction and Visualization · Machine Intelligence",
+      "source": "veille",
+      "source_domain": "research.google",
+      "status": "unreviewed",
+      "tags": [
+        "google-research",
+        "labs-news"
+      ],
+      "title": "November 4, 2026 Agile Deliberation: How AI helps humans define the gray areas Data Mining & Modeling · Generative AI · Human-Computer Interaction and Visualiza",
+      "url": "https://research.google/blog/agile-deliberation-how-ai-helps-humans-define-the-gray-areas/"
+    }
+  ]
+}

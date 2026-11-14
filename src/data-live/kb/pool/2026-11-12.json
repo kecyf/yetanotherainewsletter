@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-12",
+  "entries": [
+    {
+      "date": "2026-11-12",
+      "id": "p_8c999d6885d2",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
+      "url": "https://openai.com/index/jiostar-vijay-seshadri"
+    },
+    {
+      "date": "2026-11-12",
+      "id": "p_9a0e58e782b2",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "November 11, 2026 Using wearables to enable cardiovascular-kidney-metabolic (CKM) risk profiling for personalized coaching Health & Bioscience · Machine Intelligence",
+      "source": "veille",
+      "source_domain": "research.google",
+      "status": "unreviewed",
+      "tags": [
+        "google-research",
+        "labs-news"
+      ],
+      "title": "November 11, 2026 Using wearables to enable cardiovascular-kidney-metabolic (CKM) risk profiling for personalized coaching Health & Bioscience · Machine Intelli",
+      "url": "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/"
+    },
+    {
+      "date": "2026-11-12",
+      "id": "p_9c7c8759efa3",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "x.ai",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "xai"
+      ],
+      "title": "Nov 2, 2026 Introducing Grok Bot 1.0 Bots now work with your whole team, take on work without being asked, and get more done, faster. Read More",
+      "url": "https://x.ai/news/grok-bot-1-0"
+    }
+  ]
+}

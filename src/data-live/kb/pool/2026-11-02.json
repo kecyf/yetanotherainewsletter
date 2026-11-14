@@ -1,0 +1,209 @@
+{
+  "date": "2026-11-02",
+  "entries": [
+    {
+      "date": "2026-11-02",
+      "id": "p_f5c413d73956",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Oct 29, 2026 · company Security notice — malicious version of Anthropic.claude-code (2.1.312 and 2.1.313) identified in the Cursor VS Code Extension Marketplace Cursor Team 5m Cursor Team · 5m",
+      "source": "veille",
+      "source_domain": "cursor.com",
+      "status": "unreviewed",
+      "tags": [
+        "cursor",
+        "labs-news"
+      ],
+      "title": "Oct 29, 2026 · company Security notice — malicious version of Anthropic.claude-code (2.1.312 and 2.1.313) identified in the Cursor VS Code Extension Marketplace",
+      "url": "https://cursor.com/blog/claude-code-extension-security-notice"
+    },
+    {
+      "date": "2026-11-02",
+      "id": "p_c7606af40dbb",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "Community safety report and new protections for teens",
+      "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens"
+    },
+    {
+      "date": "2026-11-02",
+      "id": "p_6750c2461412",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot",
+      "url": "https://openai.com/index/credit-saison"
+    },
+    {
+      "date": "2026-11-02",
+      "id": "p_d2282bcce162",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "Fair use benefits everyone",
+      "url": "https://openai.com/index/fair-use-benefits-everyone"
+    },
+    {
+      "date": "2026-11-02",
+      "id": "p_25cc4c9bb2e3",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "Making it easier for websites to express AI training preferences",
+      "url": "https://openai.com/index/helping-websites-express-ai-training-preferences"
+    },
+    {
+      "date": "2026-11-02",
+      "id": "p_3c115b0c264d",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "research.google",
+      "status": "unreviewed",
+      "tags": [
+        "google-research",
+        "labs-news"
+      ],
+      "title": "October 23, 2026 Bringing foundational models to the front lines of TB screening Generative AI · Health & Bioscience",
+      "url": "https://research.google/blog/bringing-foundational-models-to-the-front-lines-of-tb-screening/"
+    },
+    {
+      "date": "2026-11-02",
+      "id": "p_2de1f3f85cd4",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "research.google",
+      "status": "unreviewed",
+      "tags": [
+        "google-research",
+        "labs-news"
+      ],
+      "title": "October 21, 2026 Empowering frontline maternal care with AI-assisted ultrasound Health & Bioscience · Machine Perception",
+      "url": "https://research.google/blog/empowering-frontline-maternal-care-with-ai-assisted-ultrasound/"
+    },
+    {
+      "date": "2026-11-02",
+      "id": "p_83945f3b589d",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "research.google",
+      "status": "unreviewed",
+      "tags": [
+        "google-research",
+        "labs-news"
+      ],
+      "title": "October 16, 2026 Grounding AI agents in biological reality: Building blocks for autonomous wet labs General Science · Health & Bioscience · Robotics",
+      "url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/"
+    },
+    {
+      "date": "2026-11-02",
+      "id": "p_19f3965005eb",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "research.google",
+      "status": "unreviewed",
+      "tags": [
+        "google-research",
+        "labs-news"
+      ],
+      "title": "October 14, 2026 Research@ 2026: 10 ways we're amplifying human ingenuity General Science · Generative AI · Health & Bioscience",
+      "url": "https://research.google/blog/research-2026-10-ways-were-amplifying-human-ingenuity/"
+    },
+    {
+      "date": "2026-11-02",
+      "id": "p_91ab09be6954",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "October 27, 2026 The sleep framework: A new way for LLMs to retain knowledge in continual learning Education Innovation · General Science · Machine Intelligence · Natural Language Processing",
+      "source": "veille",
+      "source_domain": "research.google",
+      "status": "unreviewed",
+      "tags": [
+        "google-research",
+        "labs-news"
+      ],
+      "title": "October 27, 2026 The sleep framework: A new way for LLMs to retain knowledge in continual learning Education Innovation · General Science · Machine Intelligence",
+      "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/"
+    },
+    {
+      "date": "2026-11-02",
+      "id": "p_915270ee6341",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "deepseek.com",
+      "status": "unreviewed",
+      "tags": [
+        "deepseek",
+        "labs-news"
+      ],
+      "title": "DeepSeek Harness",
+      "url": "https://www.deepseek.com/harness/"
+    },
+    {
+      "date": "2026-11-02",
+      "id": "p_420c16d3441f",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "deepseek.com",
+      "status": "unreviewed",
+      "tags": [
+        "deepseek",
+        "labs-news"
+      ],
+      "title": "DeepSeek V4.1",
+      "url": "https://www.deepseek.com/news/deepseek-v4-1-flash/"
+    }
+  ]
+}

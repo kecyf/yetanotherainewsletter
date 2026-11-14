@@ -1,0 +1,292 @@
+{
+  "date": "2026-10-07",
+  "entries": [
+    {
+      "date": "2026-10-07",
+      "id": "p_d9324ea8e07b",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Running many coding agents side by side on one workstation needs a governing runtime, not a window multiplexer: MemMux turns resource governance into checkable signals (per-agent memory attribution, complete reclamation of a killed agent's process tree, escaped-child detection…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "box",
+        "coding-agents",
+        "harness",
+        "observability",
+        "parallel-agents",
+        "runtime",
+        "sota"
+      ],
+      "title": "arXiv MemMux: runtime verification + resource attribution for fleets of parallel coding agents (2610.07257)",
+      "url": "https://arxiv.org/abs/2610.07257"
+    },
+    {
+      "date": "2026-10-07",
+      "id": "p_94d4b015594b",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Shared agent memory leaks through legitimately computed results: content/role-gated stores (MemGPT, Zep, A-MEM) miss cached insights that embed a forbidden column. Attaching a full lineage graph to each cached result and serving a hit only when the requester is authorised for…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "acl",
+        "arxiv",
+        "governance",
+        "memory",
+        "privacy",
+        "sota"
+      ],
+      "title": "arXiv Lineage-Aware Memory Governance: derivation-gated column-level ACL for shared agent memory (2610.07258)",
+      "url": "https://arxiv.org/abs/2610.07258"
+    },
+    {
+      "date": "2026-10-07",
+      "id": "p_9e20f9b64482",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Parallel coding agents fail as a team even when each passes its own tests. Treating coordination as up-front scheduling (partition declared scopes into disjoint sets, order merges along the producer-consumer graph) lifts clean integration from 1/9 to 9/9 scenarios and cuts merge…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "coordination",
+        "eval",
+        "memory",
+        "multi-agent",
+        "sota"
+      ],
+      "title": "arXiv NP-Bench: verifying coordination in parallel coding agents with a scheduling planner (2610.07261)",
+      "url": "https://arxiv.org/abs/2610.07261"
+    },
+    {
+      "date": "2026-10-07",
+      "id": "p_d30d461cf2a2",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "First systematic study + benchmark of coding-agent harness security (Claude Code, Codex CLI, Gemini CLI, gptme, Qwen Code, GitHub Copilot). Turning on auto-approve lifts attack success from 29.2% to 95.6%; network isolation and read-only cut attacks but cost real utility, while…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "acl",
+        "arxiv",
+        "coding-agents",
+        "eval",
+        "harness",
+        "security",
+        "sota"
+      ],
+      "title": "arXiv HarnessSecurity-Bench: do security mechanisms really protect coding agent harnesses? (2610.07639)",
+      "url": "https://arxiv.org/abs/2610.07639"
+    },
+    {
+      "date": "2026-10-07",
+      "id": "p_59939644184e",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Coding-agent changes can pass tests yet break repo contribution rules; RepoNorm mines explicit and implicit norms independently of the task, verifies content + applicability against repo evidence (and Git history when needed), and hands existing agents a norm package. On…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "competitive",
+        "compliance",
+        "harness",
+        "instructions",
+        "repo-norms",
+        "skills",
+        "sota"
+      ],
+      "title": "arXiv RepoNorm: acquiring and verifying repository norms for coding agents (2610.07757)",
+      "url": "https://arxiv.org/abs/2610.07757"
+    },
+    {
+      "date": "2026-10-07",
+      "id": "p_4aa882ffbb86",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Pairing each repository artifact with a resident small LLM (a Dev-Primitive) plus dependency-aware activation and evidence-to-component bug diagnosis beats matched baseline harnesses by 12.4% on average across four SE benchmarks. With strong activation/diagnosis models, Qwen3-8B…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "competitive",
+        "cost-quality",
+        "harness",
+        "small-models",
+        "sota"
+      ],
+      "title": "arXiv HERMES: harness engineering for SE via modular executable Dev-Primitives (2610.07832)",
+      "url": "https://arxiv.org/abs/2610.07832"
+    },
+    {
+      "date": "2026-10-07",
+      "id": "p_c43ada0f3595",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Over-cautious risk treatment is an independent capability axis for coding agents: ParanoiaEval (200 evidence-controlled repo task pairs, Avoidance/Transfer/Mitigation/Acceptance framework) finds unnecessary risk treatment in 11.2–58.7% of runs despite explicit evidence, varying…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "calibration",
+        "coding-agents",
+        "eval",
+        "harness",
+        "model-choice",
+        "safety",
+        "sota"
+      ],
+      "title": "arXiv ParanoiaEval: benchmarking unnecessary defensive work in agentic coding (2610.08662)",
+      "url": "https://arxiv.org/abs/2610.08662"
+    },
+    {
+      "date": "2026-10-07",
+      "id": "p_ecd4573e22e0",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Cursor iOS app can now see and reply to local agents running on your computer; on by default except Enterprise orgs, no cloud agents required.",
+      "source": "agent",
+      "source_domain": "cursor.com",
+      "status": "unreviewed",
+      "tags": [
+        "changelog",
+        "cursor",
+        "labs-news",
+        "local-agents",
+        "mobile",
+        "remote-control"
+      ],
+      "title": "Cursor: remote control for local agents from the iOS app",
+      "url": "https://cursor.com/changelog/remote-control-local-agents"
+    },
+    {
+      "date": "2026-10-07",
+      "id": "p_9964af802e9c",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "OpenAI partners with Ironclad to turn contracting workflows into training/eval tasks for computer-use agents; GPT-6 Astra scores 32% higher than GPT-5.6 Sol on them, 48% faster per attempt.",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "agents",
+        "computer-use",
+        "enterprise-software",
+        "eval",
+        "gpt-6-astra",
+        "labs-news",
+        "openai"
+      ],
+      "title": "OpenAI x Ironclad: training computer-use agents on real contracting workflows",
+      "url": "https://openai.com/index/advancing-computer-use-with-ironclad"
+    },
+    {
+      "date": "2026-10-07",
+      "id": "p_60ef2af305e7",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "OpenAI GPT-6 family models will power agents across Atlassian's platform and Rovo, grounded in the Teamwork Graph; 3,000+ Atlassian developers use Codex.",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "atlassian",
+        "codex",
+        "competitive",
+        "enterprise",
+        "labs-news",
+        "openai",
+        "partnership"
+      ],
+      "title": "Atlassian and OpenAI expand partnership: GPT-6 family powers Rovo agents",
+      "url": "https://openai.com/index/atlassian-partnership"
+    },
+    {
+      "date": "2026-10-07",
+      "id": "p_47b9255d8fa0",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "OpenAI publishes new results on open math problems from an unreleased internal frontier model, with Lean formalizations, reasoning summaries and compute stats in a GitHub repo.",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "internal-frontier-model",
+        "labs-news",
+        "lean",
+        "mathematics",
+        "openai",
+        "research"
+      ],
+      "title": "OpenAI shares internal frontier model math results with Lean proofs on GitHub",
+      "url": "https://openai.com/index/sharing-ai-progress-in-mathematics"
+    },
+    {
+      "date": "2026-10-07",
+      "id": "p_ad4e14640e35",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "consumer",
+        "education",
+        "labs-news",
+        "openai",
+        "product",
+        "teens"
+      ],
+      "title": "OpenAI: College Planner, flashcards, quizzes and a teen AI council for ChatGPT for Teens",
+      "url": "https://openai.com/index/teens-learn-and-plan"
+    },
+    {
+      "date": "2026-10-07",
+      "id": "p_a22a6ca92e5c",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Anthropic merges Project Glasswing and CVP into one tiered program (Defense, Red Team, Specialized) giving vetted security teams reduced cyber blocks on Opus 5.5, Sonnet 5.5 and Mythos 5.1.",
+      "source": "agent",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "access-tiers",
+        "agent-security",
+        "anthropic",
+        "cyber",
+        "cyber-verification",
+        "labs-news",
+        "safeguards",
+        "security"
+      ],
+      "title": "Anthropic expands Cyber Verification Program to three access tiers",
+      "url": "https://www.anthropic.com/news/cyber-verification-program"
+    }
+  ]
+}

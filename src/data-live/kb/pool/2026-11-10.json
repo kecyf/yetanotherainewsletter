@@ -1,0 +1,107 @@
+{
+  "date": "2026-11-10",
+  "entries": [
+    {
+      "date": "2026-11-10",
+      "id": "p_9c331579e229",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "ChatGPT Enterprise now available in AWS Marketplace",
+      "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace"
+    },
+    {
+      "date": "2026-11-10",
+      "id": "p_23b94c697622",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "CodeRabbit scales agentic software development and ships 20x more",
+      "url": "https://openai.com/index/coderabbit-codex-daybreak"
+    },
+    {
+      "date": "2026-11-10",
+      "id": "p_f37b680abcf7",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+      "url": "https://openai.com/index/control-room"
+    },
+    {
+      "date": "2026-11-10",
+      "id": "p_932fe34bad72",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "Kuken Industries searches 70 years of drawings in minutes",
+      "url": "https://openai.com/index/kuken"
+    },
+    {
+      "date": "2026-11-10",
+      "id": "p_5f5a5a012b72",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "research.google",
+      "status": "unreviewed",
+      "tags": [
+        "google-research",
+        "labs-news"
+      ],
+      "title": "November 9, 2026 Exploring the world's languages with Language Explorer Natural Language Processing · Open Source Models & Datasets",
+      "url": "https://research.google/blog/exploring-the-worlds-languages-with-language-explorer/"
+    },
+    {
+      "date": "2026-11-10",
+      "id": "p_796a7f7ee338",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Introducing Claude Fable 5.2 and Claude Mythos 5.2 Our most capable models for daunting technical work, Claude Fable 5.2 and Claude Mythos 5.2 set a new bar in coding, finance, and the sciences.",
+      "source": "veille",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "anthropic",
+        "labs-news"
+      ],
+      "title": "Introducing Claude Fable 5.2 and Claude Mythos 5.2 Our most capable models for daunting technical work, Claude Fable 5.2 and Claude Mythos 5.2 set a new bar in",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+    }
+  ]
+}

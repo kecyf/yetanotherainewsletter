@@ -1,0 +1,204 @@
+{
+  "date": "2026-10-05",
+  "entries": [
+    {
+      "date": "2026-10-05",
+      "id": "p_9bd57e72fc1e",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Oct 2026 arXiv: resource-layer defense where an isolated-context digital twin learns user-specific least-privilege policies and answers the agent's permission requests as the user's proxy; complements tool-call auto-mode classifiers.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "acl",
+        "arxiv",
+        "coding-agents",
+        "harness",
+        "security",
+        "sota"
+      ],
+      "title": "Pincer: Resource Authorization for Agents using a Digital Twin",
+      "url": "https://arxiv.org/abs/2610.02569"
+    },
+    {
+      "date": "2026-10-05",
+      "id": "p_2c3efdab0edd",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Oct 2026 arXiv: harness optimizer that also evolves its own tools/skills/hooks, gated by execution-based verification; best harness 42.3% held-out SWE-rebench and 37.7% OOD (5 languages) vs 39.2% / 29.3% strongest baselines.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "harness",
+        "harness-evolution",
+        "sota"
+      ],
+      "title": "VERSE: Verified Self-Evolving Optimizer for Agent Harnesses",
+      "url": "https://arxiv.org/abs/2610.02616"
+    },
+    {
+      "date": "2026-10-05",
+      "id": "p_80d9c485e2e5",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Oct 2026 arXiv: defines User-conditioned Relational Agent Memory (how this agent should work with this user) beside user facts; 3,065 episodes / 50,961 sessions / 61,210 QA; Full-Pipeline QA drops sharply vs Gold-Memory, low Capture recall and unsafe deletion across 20 models.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "agent-memory",
+        "arxiv",
+        "benchmark",
+        "memory",
+        "sota"
+      ],
+      "title": "DyadMem: A Long-Term Memory Benchmark of How Agents Work with Users",
+      "url": "https://arxiv.org/abs/2610.03020"
+    },
+    {
+      "date": "2026-10-05",
+      "id": "p_2abebc09ea2c",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "LiteTrajEval: offline domain rule profiles + deterministic budget serialization + single rubric-guided LLM judge. Improves failure-localization alignment ~20–35pp vs AgentRx on Magentic-One; ~6× cheaper / >8× faster under same judge. Deployed in enterprise agentic platform.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "competitive",
+        "eval",
+        "harness",
+        "llm-as-judge",
+        "observability",
+        "production",
+        "sota",
+        "trajectory"
+      ],
+      "title": "arXiv LiteTrajEval: Budget-Bounded Trajectory Evaluation (2610.03315)",
+      "url": "https://arxiv.org/abs/2610.03315"
+    },
+    {
+      "date": "2026-10-05",
+      "id": "p_6d2916eddf04",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Task–harness co-evolution (RSI): online + post-task harness updates with candidate gate; fixed weights/verifier. Solver acc 100%→54.8% over 14 rounds; Full beats Task-only by 23.5pp. 27B SFT on 10K synth math → 62.5% APEX mean-16. Complements VERSE/ScholarEvolve.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "competitive",
+        "harness",
+        "harness-evolution",
+        "reasoning-data",
+        "recursive-self-improvement",
+        "rsi",
+        "sota"
+      ],
+      "title": "arXiv Recursive Harness Self-Improvement for Reasoning Data Synthesis (2610.03548)",
+      "url": "https://arxiv.org/abs/2610.03548"
+    },
+    {
+      "date": "2026-10-05",
+      "id": "p_eded90998b52",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "DepGPO redistributes GRPO advantages via command read–write dependency graphs traced to verifier-inspected resources. Beats strongest RL baseline by 3.2–10.0pp pass@1 on Terminal-Bench 2.0/2.1 (Qwen3.5-9B / 3.6-27B × SETA/TMAX); more stable late training than GRPO/GiGPO.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "competitive",
+        "credit-assignment",
+        "eval",
+        "grpo",
+        "harness",
+        "rl",
+        "sota",
+        "terminal-agents"
+      ],
+      "title": "arXiv DepGPO: Dependency-Aware Credit for Terminal Agents (2610.03634)",
+      "url": "https://arxiv.org/abs/2610.03634"
+    },
+    {
+      "date": "2026-10-05",
+      "id": "p_93c9b98a2f21",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "OpenAI Oct 5: textGrain text watermark — EU ChatGPT/Codex outputs watermarked in coming weeks, global API opt-in today (off by default), detector limited to approved researchers; no quality loss on Astra benches, but weak on short/edited/math text.",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "eu-ai-act",
+        "labs-news",
+        "openai",
+        "provenance",
+        "watermarking"
+      ],
+      "title": "OpenAI: Our approach to EU text provenance rules (textGrain watermark)",
+      "url": "https://openai.com/index/eu-text-provenance/"
+    },
+    {
+      "date": "2026-10-05",
+      "id": "p_38b78f686382",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "OpenAI Oct 5: new visual ad format tested during ChatGPT image generation (US, later in Oct), Conversions API + attribution partners (AppsFlyer, Triple Whale, Northbeam…), incrementality pilots, Negative Phrases and DV/IAS brand-suitability pilots; ChatGPT at 1.2B weekly users.",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "advertising",
+        "chatgpt-ads",
+        "competitive",
+        "labs-news",
+        "measurement",
+        "monetization",
+        "openai"
+      ],
+      "title": "OpenAI: Building advertising for the way people use AI (ChatGPT Ads visual format + measurement)",
+      "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/"
+    },
+    {
+      "date": "2026-10-05",
+      "id": "p_9f2dde650fe4",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Anthropic commits $100M to train 10,000 Frontier Deployed Engineers by end-2027 via an FDE Residency (in-person sim + 12-week real deployment, badged); first cohorts Accenture, Bain, Capgemini, CBA, Deloitte, McKinsey, Morgan Stanley, Novo Nordisk.",
+      "source": "agent",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "adoption",
+        "anthropic",
+        "competitive",
+        "enterprise",
+        "fde",
+        "labs-news",
+        "talent",
+        "training"
+      ],
+      "title": "Anthropic: Claude Frontier Academy ($100M, 10k Frontier Deployed Engineers)",
+      "url": "https://www.anthropic.com/news/claude-frontier-academy"
+    }
+  ]
+}

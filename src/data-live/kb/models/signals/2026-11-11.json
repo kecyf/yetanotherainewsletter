@@ -1,0 +1,231 @@
+{
+  "date": "2026-11-11",
+  "listed": {
+    "new": 6,
+    "price": 7
+  },
+  "signals": [
+    {
+      "date": "2026-11-11",
+      "details": {
+        "created": "2026-11-10"
+      },
+      "id": "2026-11-11:new:baidu/ernie-5.5-flash-preview:free",
+      "model_id": "baidu/ernie-5.5-flash-preview:free",
+      "model_id_basis": "catalog",
+      "name": "Baidu: ERNIE-5.5-Flash-Preview (free)",
+      "provider": "Baidu",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-11",
+      "details": {
+        "created": "2026-11-10"
+      },
+      "id": "2026-11-11:new:baidu/ernie-light-dt-1.0-intl",
+      "model_id": "baidu/ernie-light-dt-1.0-intl",
+      "model_id_basis": "catalog",
+      "name": "Baidu: ERNIE-Light-DT-1.0",
+      "provider": "Baidu",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-11",
+      "details": {
+        "created": "2026-11-10"
+      },
+      "id": "2026-11-11:new:google/gemini-4-carbon",
+      "model_id": "google/gemini-4-carbon",
+      "model_id_basis": "catalog",
+      "name": "Google: Gemini 4 Carbon",
+      "provider": "Google",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-11",
+      "details": {
+        "created": "2026-11-10"
+      },
+      "id": "2026-11-11:new:google/gemini-4-carbon:batch",
+      "model_id": "google/gemini-4-carbon:batch",
+      "model_id_basis": "catalog",
+      "name": "Google: Gemini 4 Carbon (batch)",
+      "provider": "Google",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-11",
+      "details": {
+        "created": "2026-11-05"
+      },
+      "id": "2026-11-11:new:kt/midm-k-3.0-pro",
+      "model_id": "kt/midm-k-3.0-pro",
+      "model_id_basis": "catalog",
+      "name": "KT: Mi:dm K 3.0 Pro",
+      "provider": "KT",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-11",
+      "details": {
+        "created": "2026-11-02"
+      },
+      "id": "2026-11-11:new:motif-technologies/motif-3",
+      "model_id": "motif-technologies/motif-3",
+      "model_id_basis": "catalog",
+      "name": "Motif Technologies: Motif 3",
+      "provider": "Motif Technologies",
+      "source": "openrouter-catalog",
+      "type": "new"
+    },
+    {
+      "date": "2026-11-11",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.75,
+          "to": 0.5
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.4,
+          "to": 0.3
+        }
+      },
+      "id": "2026-11-11:price:mancer/weaver",
+      "model_id": "mancer/weaver",
+      "model_id_basis": "catalog",
+      "name": "Mancer: Weaver (alpha)",
+      "provider": "Mancer",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-11",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.65,
+          "to": 0.5
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.35,
+          "to": 0.3
+        }
+      },
+      "id": "2026-11-11:price:undi95/remm-slerp-l2-13b",
+      "model_id": "undi95/remm-slerp-l2-13b",
+      "model_id_basis": "catalog",
+      "name": "ReMM SLERP 13B",
+      "provider": null,
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-11",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 6.8,
+          "to": 6.8
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.006,
+          "to": 0.007
+        }
+      },
+      "id": "2026-11-11:price:z-ai/glm-5.2",
+      "model_id": "z-ai/glm-5.2",
+      "model_id_basis": "catalog",
+      "name": "Z.ai: GLM 5.2",
+      "provider": "Z.ai",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-11",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.5,
+          "to": 0.0784
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.15,
+          "to": 0.0399
+        }
+      },
+      "id": "2026-11-11:price:z-ai/glm-5.3-flash",
+      "model_id": "z-ai/glm-5.3-flash",
+      "model_id_basis": "catalog",
+      "name": "Z.ai: GLM 5.3 Flash",
+      "provider": "Z.ai",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-11",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.061,
+          "to": 0.061
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.03,
+          "to": 0.047
+        }
+      },
+      "id": "2026-11-11:price:z-ai/glm-5.3-flash:batch",
+      "model_id": "z-ai/glm-5.3-flash:batch",
+      "model_id_basis": "catalog",
+      "name": "Z.ai: GLM 5.3 Flash (batch)",
+      "provider": "Z.ai",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-11",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 9.3388,
+          "to": 11.0055
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.152,
+          "to": 0.1824
+        }
+      },
+      "id": "2026-11-11:price:~moonshotai/kimi-latest",
+      "model_id": "~moonshotai/kimi-latest",
+      "model_id_basis": "catalog",
+      "name": "MoonshotAI: Kimi Latest",
+      "provider": "MoonshotAI",
+      "source": "openrouter-catalog",
+      "type": "price"
+    },
+    {
+      "date": "2026-11-11",
+      "details": {
+        "completion_usd_per_mtok": {
+          "from": 0.083,
+          "to": 0.0784
+        },
+        "prompt_usd_per_mtok": {
+          "from": 0.0335,
+          "to": 0.0399
+        }
+      },
+      "id": "2026-11-11:price:~z-ai/glm-flash-latest",
+      "model_id": "~z-ai/glm-flash-latest",
+      "model_id_basis": "catalog",
+      "name": "Z.ai: GLM Flash Latest",
+      "provider": "Z.ai",
+      "source": "openrouter-catalog",
+      "type": "price"
+    }
+  ],
+  "totals": {
+    "new": 6,
+    "price": 7
+  }
+}

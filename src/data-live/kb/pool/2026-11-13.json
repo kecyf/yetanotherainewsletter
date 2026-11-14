@@ -1,0 +1,89 @@
+{
+  "date": "2026-11-13",
+  "entries": [
+    {
+      "date": "2026-11-13",
+      "id": "p_8dc08977a4d1",
+      "item_id": "2026-11-13#3",
+      "published_at": "2026-11-12T17:47:14Z",
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "github.com",
+      "status": "kept",
+      "tags": [
+        "agno"
+      ],
+      "title": "agno v3.2.0 v3.2.0",
+      "url": "https://github.com/agno-agi/agno/releases/tag/v3.2.0"
+    },
+    {
+      "date": "2026-11-13",
+      "id": "p_5b0f73df89a6",
+      "item_id": "2026-11-13#2",
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "kept",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+      "url": "https://openai.com/business/customer-stories/amplitude"
+    },
+    {
+      "date": "2026-11-13",
+      "id": "p_90d79223706e",
+      "item_id": null,
+      "published_at": null,
+      "reason": "vendor-published customer story with self-reported figures, nothing reusable",
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "dropped",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "Gondola doubles revenue as its team builds more with Codex",
+      "url": "https://openai.com/business/customer-stories/gondola"
+    },
+    {
+      "date": "2026-11-13",
+      "id": "p_0990939c7d6e",
+      "item_id": null,
+      "published_at": null,
+      "reason": "vendor-published customer story with self-reported rebuild figures, nothing reusable",
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "dropped",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "Holiday Extras is rethinking what it can build with Codex",
+      "url": "https://openai.com/business/customer-stories/holidays-extras-codex"
+    },
+    {
+      "date": "2026-11-13",
+      "id": "p_b06379671ede",
+      "item_id": "2026-11-13#1",
+      "published_at": null,
+      "reason": null,
+      "short_description": null,
+      "source": "veille",
+      "source_domain": "openai.com",
+      "status": "kept",
+      "tags": [
+        "labs-news",
+        "openai"
+      ],
+      "title": "Supporting research on AI and children’s safety",
+      "url": "https://openai.com/index/children-first-declaration"
+    }
+  ]
+}

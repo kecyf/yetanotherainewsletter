@@ -1,0 +1,183 @@
+{
+  "date": "2026-10-08",
+  "entries": [
+    {
+      "date": "2026-10-08",
+      "id": "p_8fac634761c4",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "On 87 SkillsBench tasks across nine model–harness configurations, the same Skills help some configurations and hurt others on 36.78% of tasks; relevance ranking misses more useful Skills, reranking by support for required operations lifts first-choice pass rate by 4.35–5.80 pp…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "agent-skills",
+        "arxiv",
+        "coding-agents",
+        "harness",
+        "skills",
+        "sota"
+      ],
+      "title": "arXiv: empirical study of Agent Skills downstream utility (same Skill helps or hurts by model–harness config) (2610.08875)",
+      "url": "https://arxiv.org/abs/2610.08875"
+    },
+    {
+      "date": "2026-10-08",
+      "id": "p_a5ea111f6d81",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "The agent that writes the code is a weak judge of whether it is done, so put the judgement in the harness: Humanize has a human approve a plan contract, a builder agent implement in rounds, and a reviewer agent from another vendor decide completion, with deterministic hooks (not…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "gates",
+        "harness",
+        "judgement",
+        "multi-agent",
+        "review",
+        "sota"
+      ],
+      "title": "arXiv Humanize: judgement engineering for agentic coding (cross-vendor reviewer + deterministic gates) (2610.08900)",
+      "url": "https://arxiv.org/abs/2610.08900"
+    },
+    {
+      "date": "2026-10-08",
+      "id": "p_8932e0226f35",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Community-shared rule files (e.g. .cursorrules) are a supply-chain attack surface: injected prompts in otherwise benign rule files can make coding agents swap legitimate dependencies for attacker-controlled packages. PackHallu evolves these injections with trajectory-level…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "harness",
+        "prompt-injection",
+        "rule-files",
+        "security",
+        "sota",
+        "supply-chain"
+      ],
+      "title": "arXiv PackHallu: package hallucination attacks on coding agents via prompt injection in rule files (.cursorrules / AGENTS-style) (2610.09264)",
+      "url": "https://arxiv.org/abs/2610.09264"
+    },
+    {
+      "date": "2026-10-08",
+      "id": "p_1901cebbe559",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Issue-derived coding benchmarks miss how engineers actually use interactive agents: 4,782 real JetBrains IDE agent sessions show long sessions mix questions, planning, review, refactoring and execution and switch types throughout. SWE-TaskFlow reshapes any issue-derived…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "benchmarks",
+        "coding-agents",
+        "competitive",
+        "evaluation",
+        "sota"
+      ],
+      "title": "arXiv SWE-TaskFlow: coding-agent benchmarks should match their users’ task flows (JetBrains production sessions) (2610.09633)",
+      "url": "https://arxiv.org/abs/2610.09633"
+    },
+    {
+      "date": "2026-10-08",
+      "id": "p_7a1d6318535c",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Letting frontier coding agents decide at runtime to spawn parallel sub-agents is an orchestration bet, not a free speedup: on short tasks model capability dominates, while on long-horizon development orchestration becomes central to completion. A controlled on/off study of…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "competitive",
+        "harness",
+        "orchestration",
+        "parallel-agents",
+        "sota",
+        "sub-agents"
+      ],
+      "title": "arXiv: promises and pitfalls of dynamic sub-agent concurrency in long-horizon coding (Codex / Claude Code / Kimi Code) (2610.10263)",
+      "url": "https://arxiv.org/abs/2610.10263"
+    },
+    {
+      "date": "2026-10-08",
+      "id": "p_a4c74c2be58b",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Agent memory should be evaluated before generation: without update resolution 70.3% of prompts expose a superseded value; serving only the active value per correctly keyed slot removes observed stale exposure, but assigning revisions to the right slot is the hard part…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "agent-memory",
+        "arxiv",
+        "memory",
+        "personal-memory",
+        "provenance",
+        "sota"
+      ],
+      "title": "arXiv: Stale, Misattributed, or Late — where personal agent memory fails before generation (2610.10265)",
+      "url": "https://arxiv.org/abs/2610.10265"
+    },
+    {
+      "date": "2026-10-08",
+      "id": "p_0ca1450969b5",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "GPT-6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly.",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "chatgpt",
+        "consumer",
+        "gpt-6",
+        "intelligent-ui",
+        "labs-news",
+        "openai",
+        "product"
+      ],
+      "title": "OpenAI: GPT-6 with Intelligent UI rolling out globally in ChatGPT",
+      "url": "https://openai.com/index/gpt-6-for-everyone"
+    },
+    {
+      "date": "2026-10-08",
+      "id": "p_4bb428a07b2a",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Haiku 5.5: fastest and cheapest Claude, first Haiku with adjustable effort, ~75% cheaper to run than Haiku 4.5; Sonnet 5.5 cache reads halved (~20% cheaper agentic work); new monthly API credits for Max/Team.",
+      "source": "agent",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "anthropic",
+        "computer-use",
+        "haiku-5-5",
+        "labs-news",
+        "model-eval",
+        "model-launch",
+        "pricing",
+        "sonnet-5-5",
+        "subagent"
+      ],
+      "title": "Anthropic: Claude Haiku 5.5, cheap fast small model with effort setting + Sonnet 5.5 cache-read price cut",
+      "url": "https://www.anthropic.com/claude-haiku-5-5"
+    }
+  ]
+}

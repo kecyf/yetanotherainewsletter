@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-15",
+  "entries": [
+    {
+      "date": "2026-10-15",
+      "id": "p_f48f260769af",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Pandey, Singh, Akshit, Tyagi & Crossley (cs.CR/cs.AI, submitted 2026-10-13) profile agent-skill attack surface rather than binary maliciousness: a skill is Markdown the agent reads then acts on with session privileges, so install grants authority. On 6,309 marketplace listings…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "attack-surface",
+        "clawhub",
+        "coding-agent",
+        "harness-security",
+        "marketplace",
+        "permissions",
+        "skills",
+        "sota"
+      ],
+      "title": "arXiv 2610.19264 Beyond Maliciousness: half of marketplace agent skills grant shell; permission frontmatter under-declares 59%",
+      "url": "https://arxiv.org/abs/2610.19264"
+    },
+    {
+      "date": "2026-10-15",
+      "id": "p_d509e402e04c",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Parashar, Dutta, Chauhan, Gulwani, Gupta, Hasanbeig, Le, Tiwari & Williams (cs.AI, submitted 2026-10-13) study zero-shot cost-aware routing at the user-turn boundary for stateful agents, where difficulty depends on prior state and model switches break conversational prompt-cache…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "cost",
+        "model-routing",
+        "prompt-cache",
+        "sota",
+        "stateful-agent"
+      ],
+      "title": "arXiv 2610.19292 Context-guided model routing for stateful agents: history-aware routers near always-expensive; downward switches recover cache cost in ≤2 calls",
+      "url": "https://arxiv.org/abs/2610.19292"
+    },
+    {
+      "date": "2026-10-15",
+      "id": "p_c370cd5c77ce",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Xu, Zhang, Wu & Chen (cs.AI, submitted 2026-10-14) introduce CTXGAP: how much task state a human supervisor can recover from an agent's accumulated user-facing reports versus the full recorded execution context. Across 37 coding tasks and 4,799 valid probes, agents answer 93.6%…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agent",
+        "eval",
+        "faithfulness",
+        "harness",
+        "reporting",
+        "sota",
+        "supervision"
+      ],
+      "title": "arXiv 2610.20003 CTXGAP: coding-agent user reports recover only 52% of task state that full execution context holds (40.7 pp gap)",
+      "url": "https://arxiv.org/abs/2610.20003"
+    },
+    {
+      "date": "2026-10-15",
+      "id": "p_de0567b9bf59",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Ge et al. (cs.SE/cs.AI, submitted 2026-10-14) argue agent success depends as much on the harness around the model as on the model, yet existing benches fix the harness and score downstream tasks. Doc2Harness is a two-stage deterministic benchmark for harness engineering itself…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "benchmark",
+        "coding-agent",
+        "eval",
+        "frontier-models",
+        "harness",
+        "sota"
+      ],
+      "title": "arXiv 2610.20344 Doc2Harness: first deterministic bench for long-horizon harness engineering of coding agents (GPT-6 Astra 53.05%, weakest 27.44%)",
+      "url": "https://arxiv.org/abs/2610.20344"
+    },
+    {
+      "date": "2026-10-15",
+      "id": "p_c9ddbc2bb893",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Anthropic election update: politics is ~5.75% of US Claude.ai chats (elections 0.51%, \"whom to vote for\" ~0.01%); Democracy Works official voting info inside Claude.ai responses later in Oct and live election-night results; 5.5 models 99% evenhanded; new classifiers for…",
+      "source": "agent",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "anthropic",
+        "classifiers",
+        "claude",
+        "elections",
+        "labs-news",
+        "policy",
+        "political-bias",
+        "safeguards",
+        "usage-policy"
+      ],
+      "title": "Anthropic: preparing for the 2026 US midterms — Democracy Works voting info in Claude.ai, election-night results, new multi-step misuse classifiers (2026-10-14)",
+      "url": "https://www.anthropic.com/news/2026-us-midterms"
+    },
+    {
+      "date": "2026-10-15",
+      "id": "p_793cd0506ac4",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "xAI released Grok Voice 3.0 speech-to-speech: AA S2S Index 86.9 (#1, vs GPT-Live-1 83.2), Full Duplex 97%, τ-Voice 71.6% at ~40% lower latency than GPT-Live-1; Voice Agent API $0.08/min unchanged; grok-voice-latest auto-switched; powers Grok Bot voice mode.",
+      "source": "agent",
+      "source_domain": "x.ai",
+      "status": "unreviewed",
+      "tags": [
+        "benchmark",
+        "grok",
+        "grok-bot",
+        "labs-news",
+        "pricing",
+        "speech-to-speech",
+        "voice",
+        "voice-agent-api",
+        "xai"
+      ],
+      "title": "xAI Grok Voice 3.0: #1 on Artificial Analysis Speech-to-Speech Index, same API price (2026-10-14)",
+      "url": "https://x.ai/news/grok-voice-3"
+    }
+  ]
+}

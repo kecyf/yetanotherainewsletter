@@ -1,0 +1,141 @@
+{
+  "date": "2026-10-02",
+  "entries": [
+    {
+      "date": "2026-10-02",
+      "id": "p_2982fc7aad4f",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Sep 2026 arXiv: NanoHarness component study; tool registry + task-specific subagents win; context compression/general subagents can hurt; +7.37/+6.21pp vs mini-SWE on ProgramBench.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "eval",
+        "harness",
+        "sota"
+      ],
+      "title": "Beyond the Model: Demystifying Harness Effects in SE Agents (NanoHarness)",
+      "url": "https://arxiv.org/abs/2609.32459"
+    },
+    {
+      "date": "2026-10-02",
+      "id": "p_6d279ae3de51",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Oct 2026 arXiv: Progression of States (PoS) — explicit belief + consistency validation + Belief-Trapping recovery; up to +22.7% ALFWorld / +37.9% RCA-100 joint vs strongest baselines across 3 backbones.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "harness",
+        "long-horizon",
+        "memory",
+        "sota"
+      ],
+      "title": "PoS: Explicit Belief States Beyond Memory for Long-Horizon Agents",
+      "url": "https://arxiv.org/abs/2610.01415"
+    },
+    {
+      "date": "2026-10-02",
+      "id": "p_07365552538b",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Oct 2026 arXiv: 18k+ trajectories on 4 AI4S tasks; ~54% score variance is run-to-run noise; Information axis outranks Model and Budget; verification works better as a system tool than as a prompt.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "agentic",
+        "arxiv",
+        "eval",
+        "harness",
+        "sota"
+      ],
+      "title": "Agents Are Systems, Not Models: Rethinking Agentic Evaluation",
+      "url": "https://arxiv.org/abs/2610.01618"
+    },
+    {
+      "date": "2026-10-02",
+      "id": "p_486f1cc694fb",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Oct 2026 arXiv: local Windows/Ollama harness; LRAB 0.886 vs goose 0.631 / opencode 0.479 / agent-mini 0.405 (288 cells); τ²-bench 0.856 vs 0.791/0.737; 2B cliff avoided (0.821).",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "harness",
+        "local",
+        "sota"
+      ],
+      "title": "Mingbird: Local-First Agent Harness for Small Open Models",
+      "url": "https://arxiv.org/abs/2610.02001"
+    },
+    {
+      "date": "2026-10-02",
+      "id": "p_1176bd4838bf",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Oct 2026 arXiv: trains coding agents to decide when/what/how to compact; SWE-bench Verified 39.6% (+9.2pp) and SWE-PolyBench 24.5% (+5.0pp) over base; gains across $0.10–$4 budgets.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "harness",
+        "memory",
+        "sota"
+      ],
+      "title": "AutoCompact: Learning When to Compact Context in Long-Horizon Coding Agents",
+      "url": "https://arxiv.org/abs/2610.02163"
+    },
+    {
+      "date": "2026-10-02",
+      "id": "p_493bf73afd7b",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "OpenAI Oct 2 model guide for GPT-6 Astra/Sol/Luna: match model+effort+speed, caching/compaction, steering/async tools/multi-agent, computer use — production Q-P playbook.",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "gpt-6",
+        "labs-news",
+        "openai",
+        "production"
+      ],
+      "title": "OpenAI: A model guide for the GPT-6 family",
+      "url": "https://openai.com/index/practical-guide-building-gpt-6/"
+    },
+    {
+      "date": "2026-10-02",
+      "id": "p_656b8553426d",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "OpenAI Intelligence Age essay (Asirvatham/Mokski, Oct 1): genius AI vs institutional/execution complements; civilization of depth vs width — most machine intelligence may do boring bureaucracy, not Einsteins.",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "intelligence-age",
+        "labs-news",
+        "openai"
+      ],
+      "title": "OpenAI: The eternal complement (Intelligence Age)",
+      "url": "https://openai.com/index/the-eternal-complement/"
+    }
+  ]
+}

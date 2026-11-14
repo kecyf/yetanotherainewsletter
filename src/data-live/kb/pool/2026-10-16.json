@@ -1,0 +1,254 @@
+{
+  "date": "2026-10-16",
+  "entries": [
+    {
+      "date": "2026-10-16",
+      "id": "p_2dc50b19338d",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Training-free runtime that records task focus, findings, repo relations, unfinished work; Claude Sonnet 5 RefactorBench full-chain 29.4→35.3, LHTB 0.427→0.576.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agent",
+        "harness",
+        "long-horizon",
+        "memory",
+        "sota"
+      ],
+      "title": "arXiv 2610.17616 StateHarness: evolving project state for long-horizon coding agents (RefactorBench chains 29.4%→35.3%; LHTB 0.427→0.576)",
+      "url": "https://arxiv.org/abs/2610.17616"
+    },
+    {
+      "date": "2026-10-16",
+      "id": "p_35b663fdf101",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Formal taxonomy + PAC-style admission for harness self-evolution with model weights fixed; HarnessOpt SpreadsheetBench GPT-5.4-nano+HO 77.58% vs GPT-5.5 SkillOpt 76.20%.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "harness",
+        "rsi",
+        "self-evolution",
+        "sota",
+        "taxonomy"
+      ],
+      "title": "arXiv 2610.18813 Self-evolving Agent Harness: formal taxonomy + PAC admission for harness RSI (weights fixed)",
+      "url": "https://arxiv.org/abs/2610.18813"
+    },
+    {
+      "date": "2026-10-16",
+      "id": "p_0a271f839c02",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "PROBE trains a 4B auditor vs frozen 30B tool agent: policy coverage 35%→60% (deterministic re-score 55%); frames policy compliance as third eval axis beyond capability/content-safety. SkyAssist 20 policies; transfers to τ-bench.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "acl",
+        "agents",
+        "arxiv",
+        "eval",
+        "policy",
+        "sota"
+      ],
+      "title": "arXiv 2610.22124 PROBE: learned multi-turn auditors for tool-agent policy compliance",
+      "url": "https://arxiv.org/abs/2610.22124"
+    },
+    {
+      "date": "2026-10-16",
+      "id": "p_68b144b5df7b",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Terminal-RSI alternates actor-only Recursive Self-Rewrite with critic-inheriting Recursive Policy-Refine (TB-GAE + SPR rewards). Terminal-RSI-27B: 50.58% four-suite mean (+29.9pp vs Base); TB4.0 19.84%, TB2.1 86.52%, LHTB 0.37 / 5/46 strict.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "harness",
+        "rsi",
+        "sota",
+        "terminal-agents"
+      ],
+      "title": "arXiv 2610.22192 Terminal-RSI: recursive self-improving terminal agents (27B → 50.58% four-suite mean)",
+      "url": "https://arxiv.org/abs/2610.22192"
+    },
+    {
+      "date": "2026-10-16",
+      "id": "p_bf8b5e48c625",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Three-level shortcut audit of LinuxArena + TS-Bench (AgentDojo/AgentHarm). Haiku blocking −8.33pp on marker rewrite / +11.46pp on tool aliases; exact-tool F1 .901→.495 under domain holdout. Eval-unit and construct-preservation recommendations.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "eval",
+        "guards",
+        "harness",
+        "safety",
+        "sota"
+      ],
+      "title": "arXiv 2610.22243 Shortcut Sensitivity: cue edits change agent-safety guard decisions",
+      "url": "https://arxiv.org/abs/2610.22243"
+    },
+    {
+      "date": "2026-10-16",
+      "id": "p_7cae8d8840ad",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Training-free W2SE: weak open-weight default; escalate on Mahalanobis distance of hidden states; shadow observer every 3 steps. OSWorld Qwen3.5-35B-A3B LEASH 73.66% @ $0.41 vs always-on Opus 5 72.90% @ $0.51.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "computer-use",
+        "cost",
+        "harness",
+        "routing",
+        "sota",
+        "uncertainty"
+      ],
+      "title": "arXiv 2610.22280 LEASH: latent-uncertainty weak-to-strong escalation + shadow oversight for computer-use agents",
+      "url": "https://arxiv.org/abs/2610.22280"
+    },
+    {
+      "date": "2026-10-16",
+      "id": "p_960907c3be05",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Stop-and-report scaffolding: Codex unchanged across envs; report-on-uncertainty prompt lifts ARC-AGI-3 RHAE +1.37–7.29pp; Controlled_RESET recovers 34–60% of gap to specialized twma_v1.61.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agent",
+        "eval",
+        "harness",
+        "scaffolding",
+        "sota"
+      ],
+      "title": "arXiv 2610.22289 EnvTraverse: stop-and-report scaffolding lifts env-agnostic coding agents (ARC-AGI-3 +1.4–7.3 RHAE)",
+      "url": "https://arxiv.org/abs/2610.22289"
+    },
+    {
+      "date": "2026-10-16",
+      "id": "p_593e40449112",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Capability-laundering class: approved MCP tool args reach host files outside declared contract; 21097 servers cataloged; 150 confirmed; Anthropic Git MCP CVE-2025-68143 + CVE-2026-27735.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "acl",
+        "arxiv",
+        "containment",
+        "harness",
+        "mcp",
+        "security",
+        "sota"
+      ],
+      "title": "arXiv 2610.22301 MCP-FSD: filesystem capability laundering in MCP servers (21k catalog; 150 confirmed; Anthropic Git MCP 2 CVEs)",
+      "url": "https://arxiv.org/abs/2610.22301"
+    },
+    {
+      "date": "2026-10-16",
+      "id": "p_53bd31882517",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "MLExpert (35B MoE from Qwen3.6-35B-A3B): hierarchical agentic SFT + Windowed Interaction RL. MLE-Bench Lite Any Medal 37.9%→72.7% (ties GLM-5.3/Kimi-K3); transfers to NatureBench Surpass-SOTA 0→50%, AIME scaffold opt, MLS-Bench components.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "agents",
+        "arxiv",
+        "harness",
+        "mle",
+        "rsi",
+        "sota"
+      ],
+      "title": "arXiv 2610.22344 MLExpert: 35B MoE agentic MLE — medal 37.9%→72.7% via WIRL",
+      "url": "https://arxiv.org/abs/2610.22344"
+    },
+    {
+      "date": "2026-10-16",
+      "id": "p_27463d79fa2e",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Forward-deployed engineer delivery bench: 95 tasks / 20 scenarios / 18 sectors; Opus 5.5 leads L3 at 0.56 resolving 14/95; discovering unstated constraints is primary bottleneck.",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "agents",
+        "arxiv",
+        "benchmark",
+        "delivery",
+        "eval",
+        "sota"
+      ],
+      "title": "arXiv 2610.22350 FDE-Gym: 95 real-delivery tasks; best model 0.56 mean / 14 resolved (Claude Opus 5.5)",
+      "url": "https://arxiv.org/abs/2610.22350"
+    },
+    {
+      "date": "2026-10-16",
+      "id": "p_a72d1e4da6b0",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "New Rosalind Academic Plan: eligible U.S. academic labs get up to 30 Business Standard seats free for 12 months plus trusted-access GPT-Rosalind (life-sciences model + Workbench). API not included; research data not used for training by default.",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "access",
+        "labs-news",
+        "openai",
+        "product"
+      ],
+      "title": "OpenAI: Rosalind Academic Plan — sponsored GPT-Rosalind for labs",
+      "url": "https://openai.com/index/introducing-the-rosalind-academic-plan"
+    },
+    {
+      "date": "2026-10-16",
+      "id": "p_dc9ed14da7f5",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Anthropic embeds six METR staff with employee-like access (no veto on publish; narrow redactions only) and defines a 3-tier evaluator access model; also working with SecureBio, Accenture/Faculty; early talks with Hugging Face.",
+      "source": "agent",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "anthropic",
+        "labs-news",
+        "policy",
+        "safety"
+      ],
+      "title": "Anthropic: independent evaluators — METR employee-like access",
+      "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators"
+    }
+  ]
+}

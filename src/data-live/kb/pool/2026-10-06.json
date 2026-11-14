@@ -1,0 +1,167 @@
+{
+  "date": "2026-10-06",
+  "entries": [
+    {
+      "date": "2026-10-06",
+      "id": "p_a6965dbe41a4",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "SKILL.md revisions measurably steer coding agents: across 2,608 revision pairs of 3,159 Skills, 55% of revisions change a rule/procedure; an added checkable rule raises required-action rate by +0.23 across 4 agents and final correctness by +0.10 (3 agents, blind judges). Gains…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "competitive",
+        "eval",
+        "harness",
+        "instructions",
+        "skills",
+        "sota"
+      ],
+      "title": "arXiv Agent Skill Evolution: how SKILL.md revisions affect coding agents (2610.04832)",
+      "url": "https://arxiv.org/abs/2610.04832"
+    },
+    {
+      "date": "2026-10-06",
+      "id": "p_65ddb47e6c4c",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Long-horizon coding agents need memory that re-validates recalled evidence against current repo state: MemTrace stores history as immutable Memory Traces anchored to files/symbols/tests in a Memory Trace Graph, keeps only compact Memory Anchors in working memory after context…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "agent-memory",
+        "arxiv",
+        "coding-agents",
+        "compaction",
+        "competitive",
+        "harness",
+        "memory",
+        "provenance",
+        "sota"
+      ],
+      "title": "arXiv MemTrace: State-Consistent Memory for Long-Horizon Coding Agents (2610.04838)",
+      "url": "https://arxiv.org/abs/2610.04838"
+    },
+    {
+      "date": "2026-10-06",
+      "id": "p_78b929d0932a",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "PACMI stores memories + new evidence in a provenance graph with typed dependency edges, a four-state validity lattice, and cascading invalidation used at retrieval + stale-premise detection. Best final-answer accuracy on a 100-case/300-query diagnostic benchmark…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "agent-memory",
+        "arxiv",
+        "memory",
+        "provenance",
+        "retrieval",
+        "sota"
+      ],
+      "title": "arXiv PACMI: Provenance-Aware Cascading Memory Invalidation for Long-Term Agents (2610.05732)",
+      "url": "https://arxiv.org/abs/2610.05732"
+    },
+    {
+      "date": "2026-10-06",
+      "id": "p_883e36a9cb1c",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "SWE-CC turns contribution docs of 12 OSS repos into 823 machine-checkable atomic policies and audits 500 SWE-bench-Verified-derived tasks (runtime + deliverable). Functionally correct agent patches still violate 43.1% of applicable policies; ~half of violations happen during…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "benchmark",
+        "coding-agents",
+        "compliance",
+        "eval",
+        "governance",
+        "sota",
+        "swe-bench"
+      ],
+      "title": "arXiv SWE-CC: Repository Policy Compliance Benchmark for Coding Agents (2610.06193)",
+      "url": "https://arxiv.org/abs/2610.06193"
+    },
+    {
+      "date": "2026-10-06",
+      "id": "p_181474fec454",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Agents that can edit their own runtime config will widen their own limits on ordinary requests; system-prompt prohibitions fail predictably, a tool-level containment floor (may change ability-granting fields, never limit-setting fields) holds. Without the floor a frontier model…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "acl",
+        "arxiv",
+        "containment",
+        "governance",
+        "harness",
+        "safety",
+        "self-configuration",
+        "sota"
+      ],
+      "title": "arXiv Containment Floor: what may an agent change about itself? (2610.06274)",
+      "url": "https://arxiv.org/abs/2610.06274"
+    },
+    {
+      "date": "2026-10-06",
+      "id": "p_fb30e58d853d",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Multi-agent coding teams talk only through structured artifacts the harness processes (findings injected on code access, interface-commitment screening, forced revisits). +28.2% avg test pass, −16.5% wall time vs free-form messages on Doc2Repo/NL2Repo/CodeProjectEval; malicious…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "acl",
+        "arxiv",
+        "coding-agents",
+        "coordination",
+        "harness",
+        "multi-agent",
+        "prompt-injection",
+        "sota"
+      ],
+      "title": "arXiv AECP: Artifact-Exclusive Communication Protocol for Multi-Agent Code Generation (2610.06481)",
+      "url": "https://arxiv.org/abs/2610.06481"
+    },
+    {
+      "date": "2026-10-06",
+      "id": "p_97cd97d27d22",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Anthropic containment playbook for claude.ai (gVisor ephemeral container), Claude Code (HITL + OS sandbox) and Cowork (local VM): environment layer first, model layer second; egress allowlist = capability grant.",
+      "source": "agent",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "agent-security",
+        "anthropic",
+        "anthropic-containment",
+        "competitive",
+        "containment",
+        "engineering",
+        "harness",
+        "labs-news",
+        "prompt-injection",
+        "sandbox"
+      ],
+      "title": "Anthropic Engineering: How we contain Claude across products",
+      "url": "https://www.anthropic.com/engineering/how-we-contain-claude"
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "date": "2026-10-09",
+  "entries": [
+    {
+      "date": "2026-10-09",
+      "id": "p_f9d0c4527fea",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "A second agent from another provider reviewing a coding agent's turn is useful only under an explicit contract (separate resource pools, bounded execution, read-only reviewer, complete input, explicit failure states, durable per-attempt evidence): in a 20-turn pilot, 8 turns had…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "cross-vendor",
+        "harness",
+        "review",
+        "sota"
+      ],
+      "title": "arXiv: cross-provider review as a runtime contract for coding agents — pilot + fault injection (2610.10961)",
+      "url": "https://arxiv.org/abs/2610.10961"
+    },
+    {
+      "date": "2026-10-09",
+      "id": "p_9ce81aba7a3c",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "In a survey of 239 code reviewers from 31 countries, AI authorship was not itself a rejection signal; reviewers spend effort on an AI-authored PR only when it arrives as an accountable contribution — bounded scope, project-grounded rationale, validation beyond CI, a responsive…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "arxiv",
+        "coding-agents",
+        "governance",
+        "harness",
+        "pull-requests",
+        "review",
+        "sota"
+      ],
+      "title": "arXiv: Who pays the review cost of AI-authored PRs — \"reviewability debt\" (2610.11179)",
+      "url": "https://arxiv.org/abs/2610.11179"
+    },
+    {
+      "date": "2026-10-09",
+      "id": "p_c48c11c5f4ba",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "When two installed skills do the same job, the model picks by name and description alone, and the wrong one silently wins: a similar skill takes about one in five runs from the intended skill without lowering task completion, and those runs lose over a third of the intended…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "agent-skills",
+        "arxiv",
+        "bench",
+        "coding-agents",
+        "harness",
+        "normative-rules",
+        "skills-library",
+        "sota"
+      ],
+      "title": "arXiv: One Skill Too Many — co-installed similar skills silently override each other in coding agents (2610.11647)",
+      "url": "https://arxiv.org/abs/2610.11647"
+    },
+    {
+      "date": "2026-10-09",
+      "id": "p_cdc942a9b992",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "SkillMorph improves agent skills by comparing abstracted failure and success trajectories across repeated runs to find suspicious actions, mapping them to specific edit sites in the skill text, and revising only there; evolved skills beat the originals and four prior…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "agent-skills",
+        "arxiv",
+        "bench",
+        "harness",
+        "skill-evolution",
+        "skills-library",
+        "sota"
+      ],
+      "title": "arXiv: SkillMorph — fix agent skills by localizing the faulty skill text from failed vs successful trajectories (2610.11858)",
+      "url": "https://arxiv.org/abs/2610.11858"
+    },
+    {
+      "date": "2026-10-09",
+      "id": "p_c482e29803df",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "A comparative case study of 2026 cyber evaluations where OpenAI, Anthropic and Google agents reached real systems outside authorized scope argues no single sandbox or assumed boundary is enough: scope must be verified continuously while the agent operates. It proposes a…",
+      "source": "agent",
+      "source_domain": "arxiv.org",
+      "status": "unreviewed",
+      "tags": [
+        "agent-security",
+        "arxiv",
+        "coding-agents",
+        "containment",
+        "labs",
+        "risk",
+        "sota"
+      ],
+      "title": "arXiv: lessons from 2026 OpenAI / Anthropic / Google agent security incidents — boundaries must be verified while the agent runs (2610.12463)",
+      "url": "https://arxiv.org/abs/2610.12463"
+    },
+    {
+      "date": "2026-10-09",
+      "id": "p_077dea1e8a7a",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "OpenAI disrupted two AI-enabled influence operations that used false-front journalists and a think tank to spread geopolitical messaging.",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "influence-ops",
+        "labs-news",
+        "openai",
+        "threat-intel"
+      ],
+      "title": "OpenAI disrupts two AI-enabled false-front influence operations",
+      "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations"
+    },
+    {
+      "date": "2026-10-09",
+      "id": "p_f6d3626eb7c8",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "LegalOn cut estimated daily Codex costs by 65% while maintaining development speed by matching Astra, Sol, and Luna to tasks and managing budgets.",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "codex",
+        "cost",
+        "customer-story",
+        "labs-news",
+        "model-tiering",
+        "openai"
+      ],
+      "title": "OpenAI customer story: LegalOn cuts Codex costs 65% by matching Astra, Sol and Luna to tasks",
+      "url": "https://openai.com/index/legalon-halves-codex-costs"
+    },
+    {
+      "date": "2026-10-09",
+      "id": "p_edd58468d564",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Sophos (Daybreak cyber program) runs an investigation agent plus a plan-execute-review loop over MDR cases: avg response ~38 min to 89 s for agent-handled cases, 52% of MDR cases resolved end-to-end by AI, with Notify / Collaborate / Authorise autonomy modes and destructive…",
+      "source": "agent",
+      "source_domain": "openai.com",
+      "status": "unreviewed",
+      "tags": [
+        "agents",
+        "autonomy-tiers",
+        "customer-story",
+        "cyber",
+        "hitl",
+        "labs-news",
+        "openai"
+      ],
+      "title": "OpenAI: Sophos uses Daybreak agents to cut MDR investigations from ~38 min to 89 s, 52% of cases end-to-end",
+      "url": "https://openai.com/index/sophos"
+    },
+    {
+      "date": "2026-10-09",
+      "id": "p_7a238471d709",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Annual Usage Policy refresh, mostly clarifications for longer autonomous work; takes effect Nov 12, 2026.",
+      "source": "agent",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "agents",
+        "anthropic",
+        "cyber-verification",
+        "labs-news",
+        "policy",
+        "usage-policy"
+      ],
+      "title": "Anthropic: 2026 Usage Policy update (effective 2026-11-12)",
+      "url": "https://www.anthropic.com/news/2026-usage-policy-update"
+    },
+    {
+      "date": "2026-10-09",
+      "id": "p_db9c355075ab",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "Long-term defender program: CIDP for operational technology with 11 founding partners, and OSS Scanner, free model-generated vulnerability scans for open-source projects.",
+      "source": "agent",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "anthropic",
+        "cyber",
+        "labs-news",
+        "open-source",
+        "security"
+      ],
+      "title": "Anthropic Cyber Mission: Critical Infrastructure Defense Program + free OSS Scanner",
+      "url": "https://www.anthropic.com/news/anthropic-cyber-mission"
+    },
+    {
+      "date": "2026-10-09",
+      "id": "p_26f5049650b4",
+      "item_id": null,
+      "published_at": null,
+      "reason": null,
+      "short_description": "$150M over three years to bring Claude, Claude Code and API credits to 15+ federal agencies in the Genesis Mission.",
+      "source": "agent",
+      "source_domain": "anthropic.com",
+      "status": "unreviewed",
+      "tags": [
+        "anthropic",
+        "government",
+        "labs-news",
+        "science"
+      ],
+      "title": "Anthropic commits $150M over three years to the US Genesis Mission",
+      "url": "https://www.anthropic.com/news/genesis-mission-commitment"
+    }
+  ]
+}

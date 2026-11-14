@@ -409,9 +409,8 @@
   "date": "2026-11-13",
   "notes": [
     "AA scores belong to the benchmarked tier (often Max/High reasoning); the catalog price is the standard route, so pairs are optimistic.",
-    "Prices are the base tier; some routes charge more above a prompt-size threshold (flagged in extra).",
-    "Bulk uses the AA Intelligence Index as a proxy: no public index scores label/extraction obedience.",
-    "A frontier is a shortlist for probes, never a routing decision; this job only reports."
+    "Prices are the base tier; some routes charge more above a prompt-size threshold (flagged in `notes`).",
+    "Bulk uses the AA Intelligence Index as a proxy: no public index scores label/extraction obedience."
   ],
   "priced_routes": 341,
   "scored_routes": 203,

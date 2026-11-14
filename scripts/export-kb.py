@@ -348,7 +348,7 @@ def build_signals(day, catalog):
 # ----------------------------------------------------------------------------------------------------------
 
 PARETO_SOURCES_OK = ('openrouter', 'artificial analysis', 'lmarena')
-PARETO_INTERNAL = re.compile(r'\b(seat|skill|re-pin|kevin|lumi|brain|hermes)\b', re.I)
+PARETO_INTERNAL = re.compile(r'\b(seat|skill|re-pin|kevin|lumi|brain|hermes|job)\b', re.I)
 
 
 def num(s):
@@ -419,7 +419,7 @@ def parse_pareto(body, day):
             keep = [s.strip() for s in re.split(r'(?<=[.)])\s+(?=[A-Z])', bullet) if s.strip()]
             keep = [s for s in keep if not PARETO_INTERNAL.search(s)]
             if keep:
-                notes.append(' '.join(keep))
+                notes.append(' '.join(keep).replace('(flagged in extra)', '(flagged in `notes`)'))
     return {
         'date': day,
         'priced_routes': int(pm.group(1)) if pm else None,

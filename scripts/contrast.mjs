@@ -30,6 +30,7 @@ const row = (fg, bg, min = 4.5) => {
 };
 for (const bg of bgs) for (const fg of text) row(fg, bg);
 row('accent-ink', 'accent');
+row('fg-preface', 'bg', 7); // the issue intro is the page preface: dim tier, never disabled (v1.3)
 row('fg-1', 'link-line'); // ::selection
 row('accent', 'bg', 3); // focus ring (non-text, 3:1)
 console.log(failed ? `\n${failed} pair(s) under 4.5:1` : '\nall text pairs >= 4.5:1');

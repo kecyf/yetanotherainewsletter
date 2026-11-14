@@ -231,19 +231,22 @@ console.log('\n[6] latest.md == newest dated .md, byte for byte');
   else ok(`latest.md == ${newest}.md`);
 }
 
+// v1.3: the prompt block carries hanging-indent spans; its text is the same string without the tags
+const promptText = (html) => norm(/<pre id="prompt"[^>]*>([\s\S]*?)<\/pre>/.exec(html)[1].replace(/<[^>]+>/g, ''));
+
 console.log('\n[7] prompt consistency: issue page == agent view == llms.txt, dated .md only');
 {
   const bad = [];
   const newest = issueDates[issueDates.length - 1];
   const llms = read(path.join(DIST, 'llms.txt'));
   for (const d of issueDates) {
-    const p1 = norm(/<pre id="prompt"[^>]*>([\s\S]*?)<\/pre>/.exec(read(page(d)))[1]);
-    const p2 = norm(/<pre id="prompt"[^>]*>([\s\S]*?)<\/pre>/.exec(read(path.join(DIST, `${d}/agent/index.html`)))[1]);
+    const p1 = promptText(read(page(d)));
+    const p2 = promptText(read(path.join(DIST, `${d}/agent/index.html`)));
     if (p1 !== p2) bad.push(`${d}: issue page prompt != agent view prompt`);
     if (!p1.includes(`/${d}.md`)) bad.push(`${d}: prompt does not point at the dated .md`);
     if (p1.includes('latest')) bad.push(`${d}: prompt mentions latest`);
   }
-  const p1 = norm(/<pre id="prompt"[^>]*>([\s\S]*?)<\/pre>/.exec(read(page(newest)))[1]);
+  const p1 = promptText(read(page(newest)));
   const llmsPrompt = norm(/^---\n([\s\S]*?)\n---$/m.exec(llms)?.[1] ?? '');
   if (llmsPrompt !== p1) bad.push(`llms.txt prompt != issue page prompt\n    llms:  ${JSON.stringify(llmsPrompt)}\n    issue: ${JSON.stringify(p1)}`);
   if (bad.length) fail('prompt consistency', bad.join('\n'));

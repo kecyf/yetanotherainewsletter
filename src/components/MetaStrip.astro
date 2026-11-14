@@ -17,6 +17,7 @@ const { sources, read, proposed, dropped, hand, kept, models, assembled, curator
 if (kept !== proposed - dropped + hand) {
   throw new Error(`meta strip does not reconcile: kept (${kept}) != proposed - dropped + hand`);
 }
+// v1.3: a compact key/value grid, two pairs per row from 30rem and one per row below. the models list spans the row.
 const pairs = [
   [copy.strip.sources, String(sources)],
   [copy.strip.read, String(read)],
@@ -24,26 +25,23 @@ const pairs = [
   [copy.strip.dropped, String(dropped)],
   [copy.strip.byHand, String(hand)],
   [copy.strip.kept, String(kept)],
+  [copy.strip.assembled, formatUtcTime(assembled)],
+  [copy.strip.curator, curator],
 ];
 ---
 
-<dl class="strip flex flex-wrap gap-x-4 gap-y-1 py-3 font-mono text-micro" aria-label={copy.strip.ariaLabel}>
-  {pairs.map(([k, v]) => (
-    <div class="flex gap-1">
-      <dt class="text-fg-3">{k}</dt>
-      <dd class="text-strip-val">{v}</dd>
+<div class="border-t border-line pt-4 flex flex-col gap-4">
+  <dl class="kv font-mono text-micro" aria-label={copy.strip.ariaLabel}>
+    {pairs.map(([k, v]) => (
+      <div class="kv-pair">
+        <dt class="text-fg-3">{k}</dt>
+        <dd class="text-strip-val">{v}</dd>
+      </div>
+    ))}
+    <div class="kv-pair kv-wide">
+      <dt class="text-fg-3">{copy.strip.models}</dt>
+      <dd class="text-strip-val">{models.join(', ')}</dd>
     </div>
-  ))}
-  <div class="basis-full flex gap-1">
-    <dt class="text-fg-3">{copy.strip.models}</dt>
-    <dd class="text-strip-val">{models.join(', ')}</dd>
-  </div>
-  <div class="flex gap-1">
-    <dt class="text-fg-3">{copy.strip.assembled}</dt>
-    <dd class="text-strip-val">{formatUtcTime(assembled)}</dd>
-  </div>
-  <div class="flex gap-1">
-    <dt class="text-fg-3">{copy.strip.curator}</dt>
-    <dd class="text-strip-val">{curator}</dd>
-  </div>
-</dl>
+  </dl>
+  <p class="font-mono text-micro text-fg-3">{copy.item.numbersNote}</p>
+</div>

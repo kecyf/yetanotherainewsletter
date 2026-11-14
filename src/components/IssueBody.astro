@@ -1,8 +1,8 @@
 ---
-// the issue reading order (DESIGN.md §2 + §10.3, v1.1): header (subject → date
+// the issue reading order (DESIGN.md §2 + §10.3, v1.1; §12 v1.3): header (subject → date
 // line → intro), lead item, sections (fixed order, signal only if present,
-// fleet required), signoff, metadata strip (demoted to the end), dropped,
-// agent block, subscribe.
+// fleet required), signoff, then the quiet colophon (stats grid, dropped as a rule),
+// the prompt card, and the optional `after` slot (the home page's api band). no subscribe form.
 import IssueHeader from './IssueHeader.astro';
 import MetaStrip from './MetaStrip.astro';
 import SectionHeader from './SectionHeader.astro';
@@ -12,9 +12,10 @@ import FleetNote from './FleetNote.astro';
 import Signoff from './Signoff.astro';
 import DroppedList from './DroppedList.astro';
 import AgentBlock from './AgentBlock.astro';
-import SubscribeForm from './SubscribeForm.astro';
+import CopyScript from './CopyScript.astro';
 import FixtureNote from './FixtureNote.astro';
 import { copy } from '../content/copy';
+import { agentPrompt } from '../lib/prompt';
 import type { IssueEntry } from '../content/schema';
 
 interface Props {
@@ -34,6 +35,9 @@ const bodyText = [
 // v1.1 (DESIGN.md §10.3.2): the lead — the flagged item, else the first item of
 // the first section. It renders immediately after the intro and is not
 // repeated inside its section.
+const prompt = agentPrompt(entry.date, entry.issue);
+if (prompt.includes('latest')) throw new Error('the prompt must always point at the dated .md, never latest.md');
+
 const flagged = entry.sections.flatMap((s) => s.items).filter((i) => i.lead);
 if (flagged.length > 1)
   throw new Error(`lead: true may flag exactly one item; found ${flagged.length}`);
@@ -83,18 +87,24 @@ const visibleSections = entry.sections
   )}
   <FleetNote agent={entry.fleet.agent} model={entry.fleet.model} text={entry.fleet.text} />
   <Signoff text={entry.signoff.text} curator={entry.curator} />
-  <MetaStrip
-    sources={entry.stats.sources}
-    read={entry.stats.read}
-    proposed={entry.stats.proposed}
-    dropped={entry.stats.dropped}
-    hand={entry.stats.hand}
-    kept={entry.stats.kept}
-    models={entry.models}
-    assembled={entry.assembled}
-    curator={entry.curator}
-  />
-  {entry.dropped.length > 0 && <DroppedList items={entry.dropped} />}
-  <AgentBlock date={entry.date} issue={entry.issue} />
-  <SubscribeForm variant="compact" />
+  <div class="flex flex-col gap-4">
+    <MetaStrip
+      sources={entry.stats.sources}
+      read={entry.stats.read}
+      proposed={entry.stats.proposed}
+      dropped={entry.stats.dropped}
+      hand={entry.stats.hand}
+      kept={entry.stats.kept}
+      models={entry.models}
+      assembled={entry.assembled}
+      curator={entry.curator}
+    />
+    {entry.dropped.length > 0 && <DroppedList items={entry.dropped} />}
+  </div>
+  <AgentBlock prompt={prompt}>
+    <a class="tap-box text-micro" href={`/${entry.date}/agent`}>{copy.agentBlock.viewAsMarkdown}</a>
+    <a class="tap-box font-mono text-micro" href={`/${entry.date}.md`}>{entry.date}.md</a>
+  </AgentBlock>
+  <slot name="after" />
+  <CopyScript />
 </main>

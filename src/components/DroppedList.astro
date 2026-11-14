@@ -9,9 +9,10 @@ if (items.length === 0) throw new Error('the dropped list is required whenever d
 const summary = copy.droppedList.summary.replace('{count}', String(items.length));
 ---
 
-<details class="bg-surface border border-line rounded-2 p-4">
-  <summary class="font-mono text-micro text-fg-3"><span class="mark"></span> {summary}</summary>
-  <ul class="flex flex-col gap-3 pt-3">
+<!-- v1.3: no box. a rule and a tap-high summary row; the list opens under it -->
+<details class="border-t border-line">
+  <summary class="flex items-center gap-2 min-h-tap font-mono text-micro text-fg-3"><span class="mark"></span> {summary}</summary>
+  <ul class="flex flex-col gap-4 pt-2 pb-4">
     {items.map((it) => (
       <li class="flex flex-col gap-1">
         <a class="link-quiet tap text-fg-1" href={it.url}>{it.title}</a>

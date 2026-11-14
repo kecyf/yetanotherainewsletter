@@ -1,6 +1,6 @@
 # yaan: design brief v1
 
-`yetanotherainewsletter.org`: a daily ai veille. the agents assemble it, one human curates it, and every page is readable by an agent in one fetch.
+`yetanotherainewsletter.org`: a daily ai veille **and a public knowledge base your agent can query**. the agents assemble it, one human curates it, and every page is readable by an agent in one fetch. (v1.3 repositioning: §12. email is on hold; sections that describe the email product below are marked *closed v1.3* and kept for the day it reopens.)
 
 decisions are marked **[decision]** in one line each. override them inline and nothing else needs to change.
 
@@ -109,7 +109,7 @@ classes allowed: `bg-bg bg-surface bg-surface-2 border-line border-line-strong t
 
 breakpoints: mobile-first base; **one** breakpoint at `md: 768px`. at md: gutter becomes 24px, page top padding becomes 48px, and the metadata strip and item provenance go from wrapped to single-line where they fit. there is no multi-column layout anywhere. **[decision]** a single 620px column on every page.
 
-shared shell: `<body class="bg-bg text-fg-2 text-body font-sans">`. the container is `mx-auto max-w-[--w-read]`, expressed as the `.col` utility defined once in global.css. it is a flex column, `gap-12`. top nav: `yaan` (link to `/`) on the left; `archive · about · subscribe` on the right, micro, fg-3. footer at the end. no sticky elements.
+shared shell: `<body class="bg-bg text-fg-2 text-body font-sans">`. the container is `mx-auto max-w-[--w-read]`, expressed as the `.col` utility defined once in global.css. it is a flex column, `gap-12`. top nav: `yaan` (link to `/`) on the left; `archive · api · about` on the right (v1.3: `subscribe` removed, `api` added), micro, fg-3. footer at the end. no sticky elements.
 
 ### issue page `/2026-10-26`
 reading order:
@@ -120,7 +120,7 @@ reading order:
 5. signoff
 6. dropped list (`<details>`, closed)
 7. agent block
-8. subscribe form (compact)
+8. (v1.3: the quiet `for your agent` band on the home page only; the subscribe form is gone)
 9. footer
 
 details:
@@ -141,7 +141,7 @@ states:
 - **[decision]** an html companion at `/2026-10-26/agent` (mockup c) shows the prompt block, the endpoints and the raw markdown in a `<pre>`. the issue page links to it as `view as markdown`.
 
 ### archive `/archive`
-- h1 `archive`, then a micro count line, then a compact subscribe line.
+- h1 `archive`, then a micro count line (v1.3: no subscribe line).
 - month groups (newest first). each group has a mono section header `2026-10`, followed by dated rows.
 - a row is date · subject (link) · micro `6 items · .md`.
 - **skipped days appear as rows**, with the reason in fg-3 and a warning-coloured `skipped` marker. they are never hidden.
@@ -159,7 +159,7 @@ the h1, then h2 blocks (Title level 2, sans, not mono) in this order:
 7. **what yaan doesn't do**.
 8. **model changelog**: dated rows.
 
-### subscribe `/subscribe` + state routes
+### subscribe `/subscribe` + state routes (*closed v1.3: reachable by url only, shows the closed notice; no nav or footer link*)
 no js is required. the form posts to the provider, which redirects to a static state route.
 
 - ~~**[decision]** provider = buttondown~~ — **SUPERSEDED 2026-10-26 (Kevin): the sending relay is parked, no provider is chosen.** Intent: leaning AWS SES with hard cost guardrails, and the subscriber list is planned to live in our own database (self-hosted tool) rather than at the provider. Until a provider is actually chosen, **copy must not name one.**
@@ -256,7 +256,7 @@ all components live in `src/components/`. every list is `flex flex-col gap-*`, a
 - trap prevented: an accent-filled subscribe button, a modal, or a sticky bar. subscribe is deliberately quieter than the agent cta.
 
 **`Nav.astro`**
-- `<nav class="flex justify-between items-baseline">`. on the left, `yaan` in mono fg-1 with no underline. on the right, micro links `archive · about · subscribe` in fg-3, with the separators in fg-3.
+- `<nav class="flex justify-between items-baseline">`. on the left, `yaan` in mono fg-1 with no underline. on the right, links `archive · api · about` in fg-2 (v1.3), with the separators in fg-3.
 - `aria-current="page"` turns the current link fg-1.
 - trap prevented: a logo, a hamburger, or a theme toggle. there is one theme.
 
@@ -300,7 +300,7 @@ all copy is lowercase except proper nouns inside source titles, urls and model i
 
 ### hero (`/` only)
 
-- line: `yet another ai newsletter. assembled by agents, curated by a human, readable by your agent in one fetch.`
+- line: see `copy.hero.line` (v1.3: a daily ai veille and a public knowledge base; the v1 line that said "newsletter" is retired)
 - before today's issue lands (a build later than 00:00 utc with no entry for today): `today's issue lands around 06:00 utc. this is the latest one.`
 
 ### issue header
@@ -387,7 +387,7 @@ using what you know about me, my work and my projects, tell me:
 skip everything else. cite each item by number as https://yetanotherainewsletter.org/{date}#{n}. if nothing in this issue matters to me, say so in one line. don't summarise the whole issue, and don't add anything that isn't in it.
 ```
 
-### cta: subscribe (every occurrence)
+### cta: subscribe (every occurrence) (*closed v1.3: kept for the day email reopens; no page shows it now*)
 
 | where | string |
 |---|---|
@@ -427,7 +427,7 @@ skip everything else. cite each item by number as https://yetanotherainewsletter
 
 ### footer (three lines, every page)
 
-1. `yaan · a daily ai veille · rss · feed.json · llms.txt · latest.md`
+1. `yaan · a daily ai veille · api · llms.txt · openapi.json · rss · feed.json` (v1.3)
 2. `text cc by 4.0 · code mit · items link to their sources, which keep their own rights`
 3. `no cookies, no tracking · privacy · hello@yetanotherainewsletter.org`
 
@@ -591,7 +591,7 @@ All of it goes in the single token file; components still consume mapped classes
 --fs-subject: 26px;  --lh-subject: 34px;   /* page h1, the day's subject (was 20/28) */
 --fs-lead:    20px;  --lh-lead:    28px;   /* the lead item's title */
 --fs-lead-why:17px;  --lh-lead-why:26px;   /* the lead item's why-it-matters */
---fs-item:    17px;  --lh-item:    25px;   /* every other item title */
+--fs-item:    17px;  --lh-item:    25px;   /* every other item title (v1.3: 19px/26px, see §12) */
 --fs-body-r:  16.5px;--lh-body-r:  27px;   /* reader running text (was 14/22) */
 --fs-kicker:  13px;  --lh-kicker:  20px;   /* section names, rendered uppercase */
 --tr-kicker:  0.08em;
@@ -678,3 +678,58 @@ Earlier text said "a fleet of agents reads a couple of hundred sources overnight
 4. Under `prefers-reduced-motion: reduce` no element has a `transform` (or `all`) transition.
 5. The home page makes same-origin requests only.
 6. No divider narrower than the column; no section header without content.
+
+---
+
+## 12. Revision v1.3 — the knowledge base is the product; the page is its front door
+
+**Why this exists.** Kevin's call (2026-11-14): no newsletter yet. yaan is a daily ai veille *and* a public, read-only knowledge base other people's agents can query (`docs/kb-api-v1.md`). The human view must say that, document the api, and stop advertising a list that does not exist. A fresh critique of v1.2 also found the lower half of an issue flattening into four equal-weight blocks, no middle tier between the 28px lead title and the 16.5px body, an intro that read as disabled, unexplained citation numbers, and a prompt block whose wrapped lines did not hang under their numbers.
+
+### 12.1 What changed
+
+| area | v1.2 | v1.3 | why |
+|---|---|---|---|
+| positioning | newsletter + subscribe | `copy.positioning` + `copy.hero.line`: veille + public kb | the product is the kb |
+| nav | archive · about · subscribe | archive · api · about | subscribe is closed; the api is the door for agents |
+| footer line 1 | rss, feed.json, llms.txt, latest.md | api, llms.txt, openapi.json, rss, feed.json | machine entry points |
+| home | latest issue, subscribe form | latest issue, then the quiet `for your agent` band (`AgentBand`): /api, /llms.txt, /openapi.json, mcp url | one door, no box, no accent |
+| `/api` | none | new page, `src/pages/api.astro` (§12.3) | the human docs of the api |
+| `/subscribe` | nav + footer + home + archive | url only, closed notice (`copy.subscribe.closed`); privacy says no list exists | honesty |
+| stats | one wrapped mono strip | `MetaStrip`: key/value grid (`kv`), 2 pairs per row from 30rem, 1 per row below; models span the row | scannable, quiet |
+| dropped list | boxed `<details>` | a rule plus a tap-high summary row (no box) | the only boxes left are the fleet note and the prompt card |
+| item titles | 17px, 25px | `--fs-item` 19px, `--lh-item` 26px (rem) | a middle tier between lead 28px and body 16.5px |
+| intro / preface | `--fg-3`-ish `#a3a3ab` | `--fg-preface #b0b0b8`, 9.1:1 on `--bg` | dim but never disabled; asserted >= 7:1 |
+| citation ids | unexplained chips | `copy.item.numbersNote` under the stats: `numbers are stable citation ids, not a ranking.` | the lead is not always #1 |
+| prompt block | wraps anywhere | `codeHtml()` wraps list lines in `.hang` (padding-left + negative text-indent = the list number width, `--hang`); `white-space: pre-wrap` only for the prompt, `pre` for every other code block | wrapped lines hang under the text; urls never break (the block scrolls) |
+| code blocks | one border box | `Snippet`: caption bar (label, quiet copy button) joined to a `codeblock`; css-only scroll shadows show only on the side that has more | machine text is copyable and honest about overflow |
+| `.col` | `margin-inline: auto` only | adds `width: 100%` | auto margins shrink a flex item to its content, so a long code line widened the whole column |
+| `tap-box` | 44 high | 44 high and 44 wide (`min-width: var(--tap)`) | `api` and `rss` were 34 wide |
+
+### 12.2 Tokens and utilities
+
+Tokens: `--fs-item 1.1875rem`, `--lh-item 1.625rem`, `--fg-preface #b0b0b8` (was `#a3a3ab`), `--strip-val` now `var(--fg-preface)` in the reader view (keys stay `--fg-3`), `--bp-kv` removed (the kv grid uses a plain `30rem` media query). No new colour, no new font, one accent still (AgentBlock cta, focus ring, link hover).
+
+New utilities in `global.css`: `kv`, `kv-pair`, `kv-wide`, `defrow` (stacked on mobile, `--w-def` 17rem label column from 30rem), `path` (mono, breaks only at slashes), `codeblock-wrap`, `hang`, `btn-quiet` (text-only, 44px high). `codeblock` is now `white-space: pre` with scroll shadows. `details summary` gets a hover colour under `(hover: hover) and (pointer: fine)` only.
+
+New components: `AgentBand` (home), `Snippet` (code card), `CopyScript` (the one 20-line inline script, shared by every copy button; hides nothing without js, the buttons are `hidden` until it runs). New lib: `src/lib/codeHtml.ts`.
+
+### 12.3 `/api` (human docs of `docs/kb-api-v1.md`)
+
+Order: h1 + entry links (openapi.json, llms.txt, llms-full.txt) + the agent cta (anchor to the prompt) + preface; base url card + facts grid (`access, key, methods, cors, format, version, license, caching`); **quick start** (curl latest, curl search, mcp config json: three `Snippet`s); **endpoints** and **files** (stacked `defrow` rows: mono path, a quiet example link, one-line what; the shared `/api/v1/` prefix is dimmed; no tables, so 320px never overflows); **mcp** (url card + tools); **shapes** (the envelope and the id forms); the **prompt card** (`AgentBlock`, six lines, ordered so a wrapped line hangs); **terms** (license, cite, sources). Every string, path and command lives in `copy.api`; `{origin}` is filled from `copy.site.origin` at build. Readable without css or js: plain headings, lists and `<pre>`.
+
+### 12.4 Copy keys added or changed
+
+`copy.positioning.short|long`, `copy.hero.line`, `copy.nav.api`, `copy.footer.line1.*`, `copy.band.*`, `copy.item.numbersNote`, `copy.api.*`, `copy.about.forAgents*`, `copy.subscribe.closed`, `copy.privacy` (`whatsStoredBody`, `emailBody`: no list exists, the api keeps no per-caller state).
+
+### 12.5 Statements that depend on the api actually shipping
+
+`/api`, the band, the about paragraph and the privacy page state facts from `docs/kb-api-v1.md`: the paths, `/mcp`, `/openapi.json`, `/llms-full.txt`, no key, cors `*`, cc by 4.0, caching, the tool names, the id forms and "no article text is served". If the contract changes before merge, edit `copy.api` and this list, nothing else.
+
+### 12.6 Acceptance checks added or tightened
+
+1. scrollWidth <= clientWidth on `/`, `/{date}`, `/archive`, `/about`, `/api`, `/privacy` at 1280, 390, 320 and 390 with a 200% root font.
+2. every link, button and summary is >= 44 high and >= 44 wide (or has a `tap` extension) at 390.
+3. worst text contrast over every page >= 4.5:1 (measured on rendered colours, not tokens); the preface >= 7:1.
+4. the home page makes only same-origin requests (document, css, two woff2).
+5. each copy button writes exactly the text of its block (prompt line breaks included), and every `[data-copy]` button is `hidden` with js off.
+6. `scripts/check.mjs` check [7] compares the prompt on the issue page, the agent page and the `.md` twin after stripping the hang spans.

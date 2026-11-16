@@ -366,7 +366,7 @@ section('[kb 5] llms, mcp card, headers, functions');
   const sitemap = read(path.join(DIST, 'sitemap.xml'));
   for (const u of ['/openapi.json', '/llms-full.txt', '/api/v1/']) if (!sitemap.includes(`${ORIGIN}${u}<`)) errs.push(`sitemap lacks ${u}`);
   const headers = read(path.join(ROOT, 'public/_headers'));
-  for (const rule of ['/api/*', '/openapi.json', '/mcp', '/llms.txt', '/llms-full.txt', '/.well-known/mcp.json'])
+  for (const rule of ['/api/v1/*', '/openapi.json', '/mcp', '/llms.txt', '/llms-full.txt', '/.well-known/mcp.json'])
     if (!new RegExp(`^${rule.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*\\n(\\s+.+\\n)*?\\s+Access-Control-Allow-Origin: \\*`, 'mi').test(headers)) errs.push(`_headers: no CORS * rule for ${rule}`);
   for (const f of ['functions/api/v1/search.ts', 'functions/mcp.ts']) if (!fs.existsSync(path.join(ROOT, f))) errs.push(`missing ${f}`);
   if (errs.length) bad('static surface', errs);

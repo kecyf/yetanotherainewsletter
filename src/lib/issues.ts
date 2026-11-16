@@ -49,12 +49,14 @@ export function launchDate(issues: IssueEntry[]): string {
   return firstIssue < firstSkipped ? firstIssue : firstSkipped;
 }
 
-/** every date from launch to today is an issue or a skipped day. never both, never neither. */
+/** every date from launch to yesterday (utc) is an issue or a skipped day. never both, never neither. */
 export function assertCalendarComplete(issues: IssueEntry[]): void {
   if (issues.length === 0) return; // empty-state build: nothing to cover yet
   const issueDates = new Set(issues.map((i) => i.date));
   const skipped = getSkipped();
-  for (const d of dateRange(launchDate(issues), todayUtc())) {
+  // the calendar must be complete up to YESTERDAY (utc): today's issue may legitimately not exist yet.
+  const yesterday = new Date(Date.parse(`${todayUtc()}T00:00:00Z`) - 86400000).toISOString().slice(0, 10);
+  for (const d of dateRange(launchDate(issues), yesterday)) {
     const isIssue = issueDates.has(d);
     const isSkipped = skipped.has(d);
     if (isIssue && isSkipped) throw new Error(`${d} is both an issue and a skipped day`);

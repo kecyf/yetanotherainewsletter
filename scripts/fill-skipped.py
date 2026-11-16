@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """record gap days in src/data-live/skipped.json so the calendar invariant holds.
-every date from the first live issue to today (utc) is an issue or a skipped day.
+every date from the first live issue to YESTERDAY (utc) is an issue or a skipped day.
 saturdays/sundays get an honest weekend reason; other gaps say the pipeline produced nothing.
 dates with a pending draft in src/data-live/drafts/ are left alone. idempotent. usage: fill-skipped.py [--today YYYY-MM-DD]"""
 import argparse, datetime as dt, json, pathlib
@@ -19,7 +19,7 @@ sk = json.loads(sk_path.read_text())
 days = sk.setdefault("days", {})
 drafts = {p.name[:10] for p in (live / "drafts").glob("????-??-??.json")}
 d = dt.date.fromisoformat(issues[0])
-end = dt.date.fromisoformat(a.today)
+end = dt.date.fromisoformat(a.today) - dt.timedelta(days=1)  # today's issue may not exist yet
 added = []
 while d <= end:
     s = d.isoformat()

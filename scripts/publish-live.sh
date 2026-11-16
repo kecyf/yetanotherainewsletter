@@ -14,7 +14,7 @@ node scripts/check-kb.mjs dist --prod
 
 # Pages Functions (functions/: /api/v1/search and /mcp). `wrangler pages deploy` reads ./functions from the
 # repo root (we cd'd there above), so nothing extra is needed to ship them; this just proves they bundle.
-WRANGLER="$HOME/.hermes/cache/scratch/wr/node_modules/.bin/wrangler"
+WRANGLER="$HOME/.hermes/tools/wrangler/node_modules/.bin/wrangler"
 if [ -x "$WRANGLER" ]; then
   FN_OUT="$(mktemp -d "${TMPDIR:-/tmp}/yaan-fn.XXXXXX")"
   "$WRANGLER" pages functions build functions --outdir "$FN_OUT/worker" --output-routes-path "$FN_OUT/_routes.json" >/dev/null
